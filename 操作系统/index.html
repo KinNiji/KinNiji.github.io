@@ -1,0 +1,462 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Niji"><title>操作系统 · NijiBlog</title><meta name="description" content="操作系统
+概论
+常见操作系统名称
+Ubuntu
+Windows
+UNIX
+DOS
+BSD
+操作系统类型
+批处理：batch
+
+适用调度算法：先来先服务、最高响应比优先、高优先级优先
+
+交互式：interactive
+
+适用调度算法：多级反馈队列、时间片轮转、高优先级优先"><meta name="keywords" content="Hexo,Blog"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">NijiBlog</a></h3><div class="description"><p>Nothing lasts forever.</p></div></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="http://weibo.com/7276000901"><i class="fa fa-weibo"></i></a></li><li><a target="_blank" rel="noopener" href="http://github.com/KinNiji"><i class="fa fa-github"></i></a></li></ul><div class="footer"><span>Powered by</span><a href="https://hexo.io/zh-cn/" target="_blank"> Hexo</a><span> &</span><a target="_blank" rel="noopener" href="https://github.com/Ben02/hexo-theme-Anatole"> Anatole</a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/profile.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>操作系统</a></h3></div><div class="post-content"><h1 id="操作系统">操作系统</h1>
+<h2 id="概论">概论</h2>
+<h3 id="常见操作系统名称">常见操作系统名称</h3>
+<p>Ubuntu</p>
+<p>Windows</p>
+<p>UNIX</p>
+<p>DOS</p>
+<p>BSD</p>
+<h3 id="操作系统类型">操作系统类型</h3>
+<p>批处理：batch</p>
+<ul>
+<li>适用调度算法：先来先服务、最高响应比优先、高优先级优先</li>
+</ul>
+<p>交互式：interactive</p>
+<ul>
+<li>适用调度算法：多级反馈队列、时间片轮转、高优先级优先</li>
+</ul>
+<p>实时：real-time</p>
+<p>分布式：distributed</p>
+<p>个人计算机式</p>
+<p>网络操作式</p>
+<p>嵌入式</p>
+<h3 id="操作系统的主要组成部分">操作系统的主要组成部分</h3>
+<p>进程线程管理</p>
+<p>内存管理</p>
+<p>文件管理</p>
+<p>设备管理</p>
+<h3 id="操作系统管理的系统资源">操作系统管理的系统资源</h3>
+<figure>
+<img src="../images/系统资源.png" alt="系统资源" /><figcaption aria-hidden="true">系统资源</figcaption>
+</figure>
+<p>硬件、软件（代码、数据）</p>
+<p>可共享资源（可以同时共享和互斥共享）：硬盘、CPU（中央处理单元，主要部件为：运算器、控制器、寄存器、高速缓存）、可重入代码</p>
+<p>不可共享资源（必须互斥共享）：打印机、扫描仪、磁带机、投影仪、内存分配模块、时钟发生器</p>
+<h4 id="寄存器">寄存器</h4>
+<p>用户可见：数据寄存器、地址寄存器、条件码寄存器</p>
+<p>用户不可见：程序状态字寄存器、程序计数寄存器、指令寄存器</p>
+<h5 id="程序状态字psw">程序状态字（PSW）</h5>
+<p>不在其中（列出部分页表标项信息）：驻留位（A）、保护位（P）、修改位（M）、访问位（R）</p>
+<p>包含：CPU的工作状态代码、条件码、中断屏蔽码</p>
+<h3 id="操作系统提供的内容">操作系统提供的内容</h3>
+<p>计算机应用角度：人机交互接口</p>
+<p>软件设计和开发角度：软件开发基础平台</p>
+<p>计算机安全保护角度：第一道安全防线</p>
+<p>计算机系统发展角度：虚拟机和扩展机</p>
+<h3 id="操作系统的接口">操作系统的接口</h3>
+<p>命令接口：提供组命令供用户直接或间接操作。根据作业的方式不同，命令接口又分为联机命令接口和脱机命令接口</p>
+<p>程序接口：程序接口由一组系统调用命令组成，提供一组系统调用命令供用户程序使用</p>
+<p>图形界面接口：通过图标、窗口、菜单、对话框及其他元素和文字组合在桌面上形成一个直观易懂，使用方便的计算机操作环境</p>
+<h3 id="操作系统的状态转换">操作系统的状态转换</h3>
+<p>CPU在运行时的状态：</p>
+<ul>
+<li>管态=内核态=特权态</li>
+<li>目态=用户态=普通态</li>
+</ul>
+<p>内核态→用户态：修改程序状态字</p>
+<p>用户态→内核态：调用访管指令</p>
+<p>内核态指令：屏蔽中断、关中断</p>
+<p>用户态指令：置移位方向标志</p>
+<h3 id="中断和异常">中断和异常</h3>
+<h4 id="中断">中断</h4>
+<p>由外部事件引发，由软硬件相互配合实现</p>
+<p>中断事件、中断源：引起中断的那些事件</p>
+<p>中断请求：中断控制器向处理器发出的信号</p>
+<p>中断响应：正在执行的程序暂停，请求处理，转而进入中断处理程序</p>
+<p>中断断点：正在运行的程序的暂停点</p>
+<p>例如：缓冲区满、鼠标操作、键盘输入、计时器归零</p>
+<h4 id="异常">异常</h4>
+<p>由正在执行的指令引发</p>
+<p>例如：除以零、算术溢出、内存保护出错、虚拟储存中缺页、访问文件出错、对只读内存执行写指令、用户态执行内核态指令</p>
+<h3 id="系统调用">系统调用</h3>
+<p>传递参数方式：</p>
+<ul>
+<li>由陷人指令自带参数</li>
+<li>通过有关通用寄存器来传递参数</li>
+<li>专用堆栈区来传递参数</li>
+</ul>
+<p>传递返回值方式：</p>
+<ul>
+<li>通过专用堆栈区</li>
+</ul>
+<h2 id="进程与线程">进程与线程</h2>
+<h3 id="进程必要组成部分">进程必要组成部分</h3>
+<p>程序（代码）</p>
+<p>数据</p>
+<p>进程控制块</p>
+<h3 id="进程控制块pcb">进程控制块（PCB）</h3>
+<p>调度信息：</p>
+<ul>
+<li><p>进程标识符（进程名、进程号）</p></li>
+<li><p>进程当前状态</p></li>
+<li><p>进程优先级</p></li>
+<li><p>存储信息</p></li>
+<li><p>资源清单</p></li>
+<li><p>家族关系</p></li>
+<li><p>消息队列指针</p></li>
+<li><p>进程队列指针</p></li>
+<li><p>当前打开文件</p></li>
+</ul>
+<p>现场信息：</p>
+<ul>
+<li>程序状态字</li>
+<li>时钟</li>
+<li>界地址寄存器</li>
+</ul>
+<p>没有：用户栈、进程页表、动态链接库</p>
+<h3 id="线程描述表">线程描述表</h3>
+<p>线程ID</p>
+<p>指令地址寄存器</p>
+<p>处理器寄存器</p>
+<p>硬件设备寄存器</p>
+<p>栈现场状态</p>
+<h3 id="线程操作">线程操作</h3>
+<p>pthread_create，创建一个新线程。</p>
+<p>pthread_join，以阻塞的方式等待thread指定的线程结束。当函数返回时，被等待线程的资源被收回。如果进程已经结束，那么该函数会立即返回。并且thread指定的线程必须是joinable的。</p>
+<p>pthread_yield，线程让出CPU。</p>
+<p>pthread_exit，终止调用其的线程并返回一个指向某对象的指针。</p>
+<p>pthread_mutex_init，创建一个互斥量。</p>
+<h3 id="进线程状态">进线程状态</h3>
+<figure>
+<img src="../images/线程状态.png" alt="线程状态" /><figcaption aria-hidden="true">线程状态</figcaption>
+</figure>
+<h3 id="进线程调度">进线程调度</h3>
+<p>引起调度：进程运行结束、运行的进程阻塞、运行的进程时间片到、进程所需资源没有准备好、进程出现错误</p>
+<p>不会引起调度：创建新进程、进程唤醒后进入就绪队列</p>
+<h3 id="进线程调度算法">进线程调度算法</h3>
+<p>FCFS：先来先服务</p>
+<p>SJF：短作业优先</p>
+<p>HRRF：最高响应比优先</p>
+<p>RR：时间片轮转</p>
+<p>PF：高优先级优先</p>
+<p>MLFQ：多级反馈队列</p>
+<p>时间相关：先来先服务、短作业优先、最高响应比优先、时间片轮转</p>
+<p>可采用进程调度算法：先来先服务、高优先级优先、时间片轮转、多级反馈队列</p>
+<p>公平性：先来先服务、时间片轮转</p>
+<h2 id="并发与同步">并发与同步</h2>
+<h3 id="进程间的相互制约关系">进程间的相互制约关系</h3>
+<figure>
+<img src="../images/进程制约关系.png" alt="进程制约关系" /><figcaption aria-hidden="true">进程制约关系</figcaption>
+</figure>
+<h3 id="通信方式">通信方式</h3>
+<p>共享内存：在相互通信的进程之间设一公共区域，一组进程向该公共区域写，另一组进程从公共区域读, 通过这种方式实现两组进程间的信息交换。</p>
+<ul>
+<li>优点：公共内存的互斥访问由程序员控制，相对较灵活</li>
+</ul>
+<p>消息缓冲：在内存中开辟若干区域，发送进程申请一个区域， 并将信息送入，然后把它插入到接收进程的相应队列中，之后通知接收进程。</p>
+<ul>
+<li>通信机制包含：消息缓冲区、消息队列首指针、同步互斥信号量和收发消息原语</li>
+</ul>
+<p>信箱：发送进程首先创建一个链接两个进程的通信机制， 然后把信息送入该机制;发送进程和接收进程不直接建立联系，而接收进程可以在任何时刻从该机制中取走信。</p>
+<ul>
+<li>优点：发送方和接收方不必直接建立联系</li>
+</ul>
+<p>管道：发送进程创建好连接两个进程的一个打开的共享文件，然后写入数据流；接收进程在需要时可以从该共享文件读出数据，写入和读出数据的长度是可变的。</p>
+<ul>
+<li>优点：同步与互斥都由操作系统自动进行，对用户是透明的</li>
+</ul>
+<h3 id="pv操作">PV操作</h3>
+<p>P减V加</p>
+<p>为了实现进程的互斥与同步</p>
+<h3 id="信号量初始值">信号量初始值</h3>
+<p>mutex = 1</p>
+<p>empty = C</p>
+<p>full = 0</p>
+<h2 id="内存管理">内存管理</h2>
+<h3 id="内存调度算法">内存调度算法</h3>
+<p>最佳置换算法：OPT：置换以后不再需要的、或者在最长时间以后才会用到的页面</p>
+<p>先进先出算法：FIFO：置换驻留在内存中时间最长的页面</p>
+<p>最近最少使用置换算法：LRU：置换近期最长时间以来没被访问的页面（访问次数最多且访问位为0）</p>
+<p>最近最不常用置换算法：LFU：根据一段时间内页面被使用的次数的多少选择调出的页面（只看访问次数最少）</p>
+<p>最近末使用置换算法：NRU：（访问位和修改位为0）</p>
+<p>第二次机会置换算法：检查进入内存时间最久页面的R位，如果是0，则置换该页；如果是1，就将R位清0，并把该页面放到链表的尾端，修改其进入时间，然后继续搜索</p>
+<p>时钟算法：CLOCK：最近的一个时钟滴答中尽量置换一个没有被访问的和没有被修改过的页面</p>
+<h3 id="内存碎片">内存碎片</h3>
+<p>内部碎片：已经分配出去的内存中，没有得到利用的内存空间（页式、虚拟页式、段页式、固定分区：所有带页字的和固定分区）</p>
+<p>外部碎片：内存空间大小无法满足分配要求的碎片（除了产生内部碎片的）</p>
+<p>移动技术是将无法满足分配要求的外部碎片集中起来，使得集中后的未分配空间增大，从而满足分配要求，进而可以分配的技术，不能采用移动技术解决的碎片问题通常都是内部碎片的问题</p>
+<h3 id="储存管理方法">储存管理方法</h3>
+<p>固定分区</p>
+<p>可变分区</p>
+<ul>
+<li>可变分区储存分配算法
+<ul>
+<li>最佳适配：空闲分区表按大小递增</li>
+<li>最差适配：空闲分区表按大小递减</li>
+<li>最先/首次适配：空闲分区表按地址递增</li>
+<li>下次适配：上次分配后的下个地址</li>
+<li>随机适配：纯随机</li>
+</ul></li>
+</ul>
+<p>简单页式</p>
+<p>虚拟页式：</p>
+<ul>
+<li>页面调入策略：请求调页、预调页</li>
+<li>虚拟页式储存方案：
+<ul>
+<li>固定分配：为每一个进程分配固定数目的内存页面</li>
+<li>可变分配：进程运行中，其内存页面可以动态增长或减少；为每个进程分配一定数目的内存页面</li>
+<li>局部置换：进程运行中出现缺页，只能在本进程的页面中进行置换</li>
+<li>全局置换：运行的进程当其页面不够时可以从系统中的任何进程处进行置换</li>
+</ul></li>
+</ul>
+<p>简单段式</p>
+<p>虚拟段式</p>
+<p>段页式</p>
+<p>可产生外部碎片：可变分区、段式</p>
+<p>可进程部分交换：页式、段式、段页式</p>
+<p>可进程整体交换：固定分区、可变分区</p>
+<h3 id="页表表项信息">页表表项信息</h3>
+<p>有效位（驻留位）</p>
+<p>修改位</p>
+<p>访问位（引用位）</p>
+<p>页面修改、置换时：修改位、访问位</p>
+<p>调入内存：内存块号、驻留位、访问位</p>
+<p>淘汰：驻留位</p>
+<h3 id="地址转换方式">地址转换方式</h3>
+<p>基址寄存器和地址转换线路组合方式</p>
+<p>重定位：逻辑地址→绝对地址</p>
+<p>静态重定位：在装入一个程序时，把程序中的指令地址和数据地址全部转换成物理地址，这种转换工作是在程序开始前集中完成的，在程序执行过程中无须再进行地址转换。</p>
+<p>动态重定位：在装入一个程序时，不进行地址转换，而是直接把程序装到分配的主区域中。在程序执行过程中，每当执行一条指令时都由硬件的地址转换机构转换成物理地址。 这种方式的地址转换是在程序执行时动态完成的，这种方式能保证一个程序在主存中被改变了存放位置后仍能正确执行。</p>
+<h2 id="文件管理">文件管理</h2>
+<h3 id="存储介质物理结构与存取方式">存储介质、物理结构与存取方式</h3>
+<figure>
+<img src="../images/存储.png" alt="存储" /><figcaption aria-hidden="true">存储</figcaption>
+</figure>
+<p>顺序结构的优点：</p>
+<ul>
+<li><p>文件的逻辑块号到物理块号的变换简单</p></li>
+<li><p>支持顺序存取和随机存取</p></li>
+<li><p>查找文件的速度较快</p></li>
+</ul>
+<p>顺序结构的缺点：</p>
+<ul>
+<li><p>文件内容不易动态增加</p></li>
+<li><p>磁盘空间出现碎片较多</p></li>
+</ul>
+<p>链接结构的优点：</p>
+<ul>
+<li><p>适合顺序存取，<strong>不适合随机存取</strong></p></li>
+<li><p>文件内容可以很容易动态增加</p></li>
+<li><p>磁盘空间出现的碎片较少</p></li>
+</ul>
+<p>索引结构的优点：</p>
+<ul>
+<li><p>文件的逻辑块号到物理块号的变换简单</p></li>
+<li><p>既适合顺序存取，又适合随机存取</p></li>
+<li><p>文件内容可以很容易动态增加</p></li>
+<li><p>文件查找速度较快</p></li>
+</ul>
+<h3 id="文件控制块fcb">文件控制块（FCB）</h3>
+<p>包含以下的文件属性信息：</p>
+<ul>
+<li><p>文件标志和控制信息：文件名、文件号、文件类型、文件地址、文件属性、文件大小、文件创建时间、文件拥有者、文件访问权限</p></li>
+<li><p>文件逻辑结构信息</p></li>
+<li><p>文件物理结构信息</p></li>
+<li><p>文件使用信息：文件建立日期、文件最后修改日期、文件最后访问日期、文件保存期限</p></li>
+<li><p>文件管理信息</p></li>
+</ul>
+<p>不位于其中：文件修改次数、文件分配表、用户打开文件列表、文件目录、文件访问控制列表</p>
+<h3 id="文件目录">文件目录</h3>
+<p>所有文件的文件控制块有机地组织起来构成的一个有序集合</p>
+<h3 id="磁盘磁臂调度算法">磁盘磁臂调度算法</h3>
+<p>先来先服务调度：FCFS：按照访问请求的次序为各个进程服务。</p>
+<p>电梯调度：SCAN：将依次升序访问比当前位置大的道，然后降序序访问比当前位置小的道。（也可指明方向）</p>
+<p>循环扫描调度：C-SCAN：循环扫描算法修改了原扫描路径，将双向服务改为单向服务，即当磁头从外道移向内道时，如果经过的磁道有访问请求，则为其服务，直到最内端的请求服务完毕，然后立即快速回到最外边有请求的磁道(返程)，继续下一 个循环。</p>
+<p>最短寻道优先调度：SSTF：根据磁头的当前位置，首先选择请求者中距磁头距离最短的请求为之服务。</p>
+<h3 id="文件分类">文件分类</h3>
+<p>按性质和用途：系统、程序库、用户</p>
+<p>按保护方式：可执行、只读、读写、不保护</p>
+<p>按存放时限：临时、永久、档案</p>
+<p>按物理结构：顺序、链接、索引</p>
+<p>按组织形式：普通、目录、特殊</p>
+<h3 id="文件相关的操作顺序">文件相关的操作顺序</h3>
+<p>创建文件：检查参数合法性→检查重名→查找FCB空闲位置→填写FCB</p>
+<p>打开文件：查找FCB主部→检查打开方式→检查用户身份→填写进程打开文件表</p>
+<p>修改文件：查找文件→修改FCB相关内容→置FCB为“非活跃"→写回磁盘</p>
+<p>删除文件：查找文件→检查删除合法性→收回FCB资源→收回文件存储空间</p>
+<h2 id="io设备管理">IO设备管理</h2>
+<h3 id="io软件层次结构">IO软件层次结构</h3>
+<p>用户IO软件层</p>
+<p>与设备无关的操作系统软件层</p>
+<p>设备驱动程序层</p>
+<p>中断处理程序层</p>
+<h3 id="io设备分类">IO设备分类</h3>
+<p>按信息组织方式：块设备（如磁盘、磁带机）、字符设备（如键盘、终端、打印机）</p>
+<p>按共享属性：独占设备（如打印机、扫描仪、时钟发生器）、共享设备（如串行通信端口、硬盘）</p>
+<h3 id="设备管理的任务">设备管理的任务</h3>
+<p>缓冲管理（匹配高低速设备）</p>
+<p>设备分配（通过协调技术避免设备冲突）</p>
+<p>设备处理</p>
+<p>虚拟设备（提高并发度）</p>
+<p>实现设备独立性</p>
+<p>主要：缓冲管理、设备分配、设备处理，通过接口技术为用户提供一致的系统调用。</p>
+<h3 id="io控制方式">IO控制方式</h3>
+<p>程序直接控制：</p>
+<ul>
+<li>用户进程在等待键盘输入命令时，不断检测状态寄存器的完成位是否为1。</li>
+<li>需要部件：设备状态寄存器、设备控制寄存器、设备数据缓冲区、地址译码器、地址总线和数据总线</li>
+</ul>
+<p>中断：</p>
+<ul>
+<li>CPU在配置I/O设备后，继续自己的工作，直到I/O设备准备好后，向CPU发送中断请求，再由CPU接管，提供服务。</li>
+<li>需要部件：中断控制器、设备控制器、地址总线和数据总线</li>
+</ul>
+<p>DMA：</p>
+<ul>
+<li>控制器从CPU完全接管对总线的控制，数据交换不经过CPU，而直接在内存和I/O设备之间进行。</li>
+<li>需要部件：DMA控制器、地址总线和数据总线</li>
+</ul>
+<p>通道：</p>
+<ul>
+<li>系统引入一个不同于CPU的特殊功能处理单元，它有自己的指令和程序，可以实现对外围设备的统一管理和外围设备与内存之间的数据传送。</li>
+<li>需要部件：通道控制器、设备控制器、通道程序代码、地址总线和数据总线</li>
+</ul>
+<h3 id="适用于设备分配的算法">适用于设备分配的算法</h3>
+<p>先来先服务</p>
+<p>高优先级优先</p>
+<h3 id="设备无关软件层功能">设备无关软件层功能</h3>
+<p>设备驱动程序的同一接口</p>
+<p>设备命名</p>
+<p>设备保护</p>
+<p>提供一个与设备无关的逻辑块</p>
+<p>缓冲</p>
+<p>存储设备的块分配</p>
+<p>独占设备的分配和释放</p>
+<p>出错处理</p>
+<h2 id="死锁">死锁</h2>
+<h3 id="预防死锁">预防死锁</h3>
+<p>可以向输出缓冲区写数据</p>
+<p>一次分配所有资源</p>
+<p>有序分配资源</p>
+<p>剥夺其他进程的资源</p>
+<h3 id="避免死锁">避免死锁</h3>
+<p>银行家算法</p>
+<h3 id="产生死锁的原因">产生死锁的原因</h3>
+<p>竞争资源引起进程死锁</p>
+<ul>
+<li>申请不同类型资源：P1拥有设备A，请求设备B；P2拥有设备B，请求设备A</li>
+<li>申请相同类型资源：P1申请一页内存，P2申请一页内存；P1释放一页内存，P2释放一页内存</li>
+<li>使用临时性资源：P1等待接收P2发来的信件Q后向P2发送信件R；P2 等待接收P1发来的信件R后向P1发送信件Q</li>
+</ul>
+<p>进程推进顺序不当引起死锁</p>
+<ul>
+<li>同步互斥机制使用不当：P1和P2先进行同步信号量P操作，再进行互斥信号量P操作</li>
+</ul>
+<h3 id="形成死锁的必要条件">形成死锁的必要条件</h3>
+<p>资源<strong>互斥</strong>使用：没有采用SPOOLing技术的系统中，进程P1和P2同时申请使用同一台打印机</p>
+<p><strong>请求和保持</strong>：进程P1拥有打印机并申请扫描仪</p>
+<p>已分配资源<strong>不可剥夺</strong>：进程P1额外申请内存不成功，则持有原有的内存进入阻塞状态</p>
+<p>资源请求形成<strong>循环等待</strong>：进程P1等待P2完成视频解压缩的信号，P2正等待P1发来的解压数据</p>
+<h3 id="破坏形成死锁的必要条件">破坏形成死锁的必要条件</h3>
+<p>互斥：采用SPOOLing技术、建设立交桥</p>
+<p>请求和保持：采用给进程一次性分配其所需资源的方法、使用红绿灯</p>
+<p>不可剥夺：若进程处于非运行状态时允许其他进程使用该进程经占用的资源、设置黄色网格缓冲区</p>
+<p>循环等待：采用资源的按序分配方法、某一方向道路实行单向行驶</p>
+<h3 id="解除死锁的方法">解除死锁的方法</h3>
+<p>定时为进程设置还原点，若运行受阻则退回还原点</p>
+<p>剥夺某些进程所占有的资源</p>
+<p>撤消某些进程</p>
+<p>重新启动系统</p>
+<h3 id="哲学家进餐问题">哲学家进餐问题</h3>
+<p>预防死锁：</p>
+<ul>
+<li>仅当某哲学家左右两边的筷子都可用时，允许他取筷子</li>
+<li>最多允许4个哲学家可以同时申请进餐，取得筷子</li>
+<li>奇数号的哲学家先取左边的筷子，偶数的则先取右边的筷子</li>
+<li>给其中某一个哲学家增配1只筷子</li>
+<li>为每位哲学家的左右两只筷子各设置一个信号量，哲学家同时对两个信号量执行P、V操作</li>
+</ul>
+<p>解除死锁：</p>
+<ul>
+<li>某一位哲学家主动放下右手的筷子</li>
+<li>某哲学家暴力夺取邻近哲学家的筷子</li>
+</ul>
+<h1 id="数据库">数据库</h1>
+<h3 id="模型">模型</h3>
+<p>概念数据模型：实体联系模型(E-R模型)、扩充的实体联系模型(EER模型)、面向对象模型、谓词模型</p>
+<h3 id="关系代数">关系代数</h3>
+<figure>
+<img src="关系代数.png" alt="关系代数" /><figcaption aria-hidden="true">关系代数</figcaption>
+</figure>
+<p>交换律：选择、自然连接、集合的并交</p>
+<p>分配率：投影的并、选择的并交差</p>
+<p>结合率：集合的并交、自然连接</p>
+<p>关系代数的操作可分为三类：</p>
+<p>基于传统集合论的操作：这类操作讲关系看成是元组的集合,其操作是从关系的“水平”向，即行的角度来进行的，有并、交、差、笛卡尔积。</p>
+<p>专门的关系操作：这列操作又可分为一元操作和二元操作。一元操作有选择和投影；二元操作有连接和除。连接操作又包括θ连接、等值连接和自然连接。</p>
+<p>扩充的关系操作：这类操作主要有广义投影、赋值、外连接、半连接、聚集、外部并等。并、差、笛卡尔积、投影和选择这五种操作称为基本的操作。</p>
+<h3 id="参照完整性">参照完整性</h3>
+<p>参照关系=从关系：外码所在的关系</p>
+<p>被参照关系=主关系：以外码作为主码的关系</p>
+<p>外码并不一定要与相应的主码同名。</p>
+<p>参照完整性规则：</p>
+<p>若属性（或属性值）F是关系R的外码，它与关系S的主码Ks相对应(关系R和S不一定是不同的关系)，则对于R中每个元组在F上的值必须满足：</p>
+<ul>
+<li>或者取空值(F的每个属性值均为空值)</li>
+<li>或者等于S中某个元组的主码值</li>
+</ul>
+<h3 id="armstrong公理系统">Armstrong公理系统</h3>
+<p>设 F 是属性组 U 上的一组函数依赖，于是有如下推理规则：</p>
+<ul>
+<li>自反律：若 Y ⊆ X ⊆ U，则 X → Y 为 F 所逻辑蕴含</li>
+<li>增广律：若 X → Y 为 F 所逻辑蕴含，且 Z ⊆ U，则 XZ → YZ 为 F 所逻辑蕴含</li>
+<li>传递律：若 X → Y 及 Y → Z 为 F 所逻辑蕴含，则 X → Z 为 F 所逻辑蕴含</li>
+</ul>
+<p>根据Armstrong公理系统的三条推理规则，可以得到如下推理规则：</p>
+<ul>
+<li>合并规则：由 X → Y， X → Z，有 X → YZ</li>
+<li>伪传递规则：由 X → Y，WY → Z，有 XW → Z</li>
+<li>分解规则：由 X → Y，Z ⊆ Y，有 X → Z</li>
+</ul>
+<h3 id="模式分解">模式分解</h3>
+<p>分解具有无损连接性和分解保持函数依赖是两个相互独立的标准。</p>
+<p>具有无损连接性的分解不定保持函数依赖，保持函数依赖的分解不一定具有无损连接性。</p>
+<p>关系模式的个分解可能是具有无损连接性，可能是保持函数依赖的，也可能是既具有无损连接性又保持函数依赖的。</p>
+<h4 id="无损连接">无损连接</h4>
+<p>达到BCNF，并进一步达到4NF</p>
+<p>若对于 R 的任何一个可能取值 r，都有 r 在 R1，R2，...，Rn 上的投影的自然连接等于 r</p>
+<h4 id="函数依赖">函数依赖</h4>
+<p>达到3NF，但不一定达到BCNF</p>
+<p>F 所逻辑蕴含的函数依赖一定也由分解得到的各个关系模式中的函数依赖所逻辑蕴含</p>
+<ul>
+<li>若 X → Y，Y ⊆ X，则称 X → Y 为平凡的函数依赖</li>
+<li>若 X → Y，Y ⊄ X，则称 X → Y 为非平凡的函数依赖</li>
+</ul>
+<h4 id="多值依赖">多值依赖</h4>
+<p>性质：</p>
+<ul>
+<li>若 X →→ Y，则 X →→ Z，其中 Z = U - X - Y，即多值依赖具有对称性
+<ul>
+<li>推论：若 Z = ∅，则 X →→ Y</li>
+</ul></li>
+<li>若 X → Y，则 X →→ Y，即函数依赖可以看做多值依赖的特殊情况</li>
+<li>若 XY ⊆ W ⊆ U，那么当 X →→ Y 在 R(U) 上成立时，X →→ Y 也在 R(W) 上成立</li>
+<li>若 X →→ Y 在 R(U) 上成立，且 Y’ ⊆ Y，<strong>不能</strong>断言 X →→Y‘ 在 R(U) 上成立</li>
+<li>若 X → Y 在 R(U) 上成立，且 Y’ ⊆ Y，那么肯定 X → Y' 在 R(U) 上成立。</li>
+</ul>
+<h3 id="事务的acid性质">事务的ACID性质</h3>
+<p>原子性(Atomicity)</p>
+<p>一致性(Consistency)</p>
+<p>隔离性(Isolation)</p>
+<p>持久性(Durability)</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-07-01</span><i class="fa fa-tag"></i><a class="tag" href="/categories/笔记/" title="笔记">笔记 </a><a class="tag" href="/tags/计算机/" title="计算机">计算机 </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://KinNiji.github.io/操作系统/,NijiBlog,操作系统,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E9%87%8D%E7%82%B9/" title="自然语言处理重点">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" title="信息安全">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
