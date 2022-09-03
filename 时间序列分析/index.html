@@ -203,310 +203,332 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h2 id="时间序列的定义"><a href="#时间序列的定义" class="headerlink" title="时间序列的定义"></a>时间序列的定义</h2><p><img src="../images/时间序列的定义.png" alt="时间序列的定义"></p>
-<h2 id="时间序列的特征"><a href="#时间序列的特征" class="headerlink" title="时间序列的特征"></a>时间序列的特征</h2><ul>
+            <h2 id="时间序列的定义">时间序列的定义</h2>
+<figure>
+<img src="../images/时间序列的定义.png" alt="时间序列的定义" /><figcaption aria-hidden="true">时间序列的定义</figcaption>
+</figure>
+<h2 id="时间序列的特征">时间序列的特征</h2>
+<ul>
 <li>观测值按照时间有序排列。</li>
 <li>每一个时刻的取值或数据点的位置有一定的随机性。</li>
 <li>前后观测值之间有一定的相关性。</li>
 <li>从整体上看，往往呈现某种趋势性或周期性。</li>
 </ul>
-<h2 id="时间序列的分类"><a href="#时间序列的分类" class="headerlink" title="时间序列的分类"></a>时间序列的分类</h2><ul>
-<li>按所研究的对象的多少<ul>
+<h2 id="时间序列的分类">时间序列的分类</h2>
+<ul>
+<li>按所研究的对象的多少
+<ul>
 <li>一元时间序列</li>
 <li>多元时间序列</li>
-</ul>
-</li>
-<li>按时间的连续性<ul>
+</ul></li>
+<li>按时间的连续性
+<ul>
 <li>离散时间序列</li>
 <li>连续时间序列</li>
-</ul>
-</li>
-<li>按序列的统计特性分<ul>
+</ul></li>
+<li>按序列的统计特性分
+<ul>
 <li>平稳时间序列</li>
 <li>非平稳时间序列</li>
-</ul>
-</li>
-<li>按序列的分布规律<ul>
+</ul></li>
+<li>按序列的分布规律
+<ul>
 <li>高斯型(Gaussian)时间序列</li>
 <li>非高斯型(non-Gaussian)时间序列</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="时间序列的建立"><a href="#时间序列的建立" class="headerlink" title="时间序列的建立"></a>时间序列的建立</h2><ul>
-<li>时间序列数据的采集<ul>
+<h2 id="时间序列的建立">时间序列的建立</h2>
+<ul>
+<li>时间序列数据的采集
+<ul>
 <li>按照一定的时间间隔对所研究的系统响应进行记录和观察，我们称之为采样。</li>
 <li>相应地把记录和观察时间间隔称为采样间隔。</li>
 <li>选择合适的采样间隔是建立时间序列的关键。</li>
 <li>理想的采样间隔就是既没有损失信息，也没有出现信息冗余。</li>
-</ul>
-</li>
-<li>离群点的检验与处理<ul>
+</ul></li>
+<li>离群点的检验与处理
+<ul>
 <li>离群点(Outlier)是指一个时间序列中，远离序列一般水平的极端大值和极端小值。</li>
 <li>离群点可以通过将序列与平滑值的比较来检验。</li>
-<li>离群点的分类<ul>
+<li>离群点的分类
+<ul>
 <li>加性离群点：仅对序列产生一个即时效应。</li>
 <li>革新离群点：标志着一个长期的外部干扰作用于系统的开始。</li>
 <li>水平位移离群点：它的出现改变了系统结构，使序列均值发生水平位移。</li>
 <li>暂时变更离群点：它的出现改变了系统结构，但影响会随着时间逐渐消失。</li>
-</ul>
-</li>
-<li>离群点的处理<ul>
+</ul></li>
+<li>离群点的处理
+<ul>
 <li>直接进行剔除。</li>
 <li>对数据模型进行修正处理分析。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>缺损值(Missing value)的补足<ul>
+</ul></li>
+</ul></li>
+<li>缺损值(Missing value)的补足
+<ul>
 <li>依据系统运动轨迹或变化趋势，运用一定的方法对缺损值进行估计、推测，以补足缺损的数值。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="时间序列的建模步骤"><a href="#时间序列的建模步骤" class="headerlink" title="时间序列的建模步骤"></a>时间序列的建模步骤</h2><p><img src="../images/时间序列的建模步骤.png" alt="时间序列的建模步骤"></p>
-<h2 id="时间序列的描述"><a href="#时间序列的描述" class="headerlink" title="时间序列的描述"></a>时间序列的描述</h2><ul>
-<li><p>数据图法</p>
-</li>
+<h2 id="时间序列的建模步骤">时间序列的建模步骤</h2>
+<figure>
+<img src="../images/时间序列的建模步骤.png" alt="时间序列的建模步骤" /><figcaption aria-hidden="true">时间序列的建模步骤</figcaption>
+</figure>
+<h2 id="时间序列的描述">时间序列的描述</h2>
+<ul>
+<li><p>数据图法</p></li>
 <li><p>指标法</p>
 <ul>
-<li><p>核心指标反映系统的动态特征。</p>
-</li>
+<li><p>核心指标反映系统的动态特征。</p></li>
 <li><p>指标描述</p>
 <ul>
 <li><p>增长量：时间序列中各时点与基期水平的差值。</p>
 <ul>
 <li><p>逐期增长量：某时点与上一时点之差</p>
-<p>  <img src="../images/formula1.png" alt="formula"></p>
-</li>
+<figure>
+<img src="../images/formula1.png" alt="formula" /><figcaption aria-hidden="true">formula</figcaption>
+</figure></li>
 <li><p>累计增长量：某时点与某一个固定点之差</p>
-<p>  <img src="../images/formula2.png" alt="formula"></p>
-</li>
-</ul>
-</li>
+<figure>
+<img src="../images/formula2.png" alt="formula" /><figcaption aria-hidden="true">formula</figcaption>
+</figure></li>
+</ul></li>
 <li><p>增长速度：增长量与基期之比</p>
 <ul>
 <li><p>环比增长速度</p>
-<p>  <img src="../images/formula3.png" alt="formula"></p>
-</li>
-</ul>
-</li>
+<figure>
+<img src="../images/formula3.png" alt="formula" /><figcaption aria-hidden="true">formula</figcaption>
+</figure></li>
+</ul></li>
 <li><p>发展速度：两个不同时间点的比值</p>
 <ul>
 <li><p>环比：相邻两个时间点之比</p>
-<p>  <img src="../images/formula4.png" alt="formula"></p>
-</li>
+<figure>
+<img src="../images/formula4.png" alt="formula" /><figcaption aria-hidden="true">formula</figcaption>
+</figure></li>
 <li><p>定基比：与某一固定点之比</p>
-<p>  <img src="../images/formula5.png" alt="formula"></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<figure>
+<img src="../images/formula5.png" alt="formula" /><figcaption aria-hidden="true">formula</figcaption>
+</figure></li>
+</ul></li>
+</ul></li>
+</ul></li>
 <li><p>模型法</p>
 <ul>
 <li>根据统计理论和数学方法，建立描述该序列的适应或最优统计模型，并进而进行预测和控制。</li>
-<li>模型方法<ul>
+<li>模型方法
+<ul>
 <li>以时间回归</li>
 <li>移动平均</li>
 <li>指数平滑</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="时间序列分析的目的"><a href="#时间序列分析的目的" class="headerlink" title="时间序列分析的目的"></a>时间序列分析的目的</h2><ul>
+<h2 id="时间序列分析的目的">时间序列分析的目的</h2>
+<ul>
 <li>描述——认识系统的运行规律性。</li>
 <li>建模——刻画系统结构和生成机制。</li>
 <li>预测——预测系统未来行为。</li>
 <li>控制——控制系统未来行为。</li>
 </ul>
-<h2 id="时间序列分析的方法"><a href="#时间序列分析的方法" class="headerlink" title="时间序列分析的方法"></a>时间序列分析的方法</h2><p>描述性时间序列分析：沿着时间的发展，记录下随机变量的数据，通过直观的数据比较或绘图观察，寻找序列中蕴含的发展规律。</p>
+<h2 id="时间序列分析的方法">时间序列分析的方法</h2>
+<p>描述性时间序列分析：沿着时间的发展，记录下随机变量的数据，通过直观的数据比较或绘图观察，寻找序列中蕴含的发展规律。</p>
 <p>统计时间序列分析</p>
 <ul>
-<li>频域分析法<ul>
+<li>频域分析法
+<ul>
 <li>特点：非常有用的动态数据分析方法，但是由于分析方法复杂，结果抽象，有一定的使用局限性。</li>
-</ul>
-</li>
-<li>时域分析法<ul>
+</ul></li>
+<li>时域分析法
+<ul>
 <li>原理：事件的发展通常都具有一定的惯性，这种惯性用统计的语言来描述就是序列值之间存在着一定的相关关系，这种相关关系通常具有某种统计规律。</li>
 <li>目的：寻找出序列值之间相关关系的统计规律，并拟合出适当的数学模型来描述这种规律，进而利用这个拟合模型预测序列未来的走势。</li>
 <li>特点：理论基础扎实，操作步骤规范，分析结果易于解释，是时间序列分析的主流方法 。</li>
-<li>基本步骤<ul>
+<li>基本步骤
+<ul>
 <li>考察观察值序列的特征</li>
 <li>根据序列的特征选择适当的拟合模型</li>
 <li>根据序列的观察数据确定模型的参数值</li>
 <li>检验模型，优化模型</li>
 <li>利用拟合好的模型来推断序列其它的统计性质或预测序列将来的发展</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="时间序列分析和其它统计科目的主要区别"><a href="#时间序列分析和其它统计科目的主要区别" class="headerlink" title="时间序列分析和其它统计科目的主要区别"></a>时间序列分析和其它统计科目的主要区别</h2><p><strong>取样：有时间关联的相依样本</strong>；独立样本。</p>
+<h2 id="时间序列分析和其它统计科目的主要区别">时间序列分析和其它统计科目的主要区别</h2>
+<p><strong>取样：有时间关联的相依样本</strong>；独立样本。</p>
 <p><strong>目的：建立模型进行预报和控制</strong>；统计推断。</p>
 <p><strong>回归模型与时序模型：动态模型</strong>；静态模型。</p>
-<h2 id="时间序列的特征统计量"><a href="#时间序列的特征统计量" class="headerlink" title="时间序列的特征统计量"></a>时间序列的特征统计量</h2><ul>
+<h2 id="时间序列的特征统计量">时间序列的特征统计量</h2>
+<ul>
 <li><p>均值</p>
-<p>  <img src="../images/图片1.png" alt="图片1"></p>
-</li>
+<figure>
+<img src="../images/图片1.png" alt="图片1" /><figcaption aria-hidden="true">图片1</figcaption>
+</figure></li>
 <li><p>方差</p>
-<p>  <img src="../images/图片2.png" alt="图片2"></p>
-</li>
+<figure>
+<img src="../images/图片2.png" alt="图片2" /><figcaption aria-hidden="true">图片2</figcaption>
+</figure></li>
 <li><p>自协方差</p>
-<p>  <img src="../images/图片3.png" alt="图片3"></p>
-</li>
+<figure>
+<img src="../images/图片3.png" alt="图片3" /><figcaption aria-hidden="true">图片3</figcaption>
+</figure></li>
 <li><p>延迟 k 自协方差</p>
-<p>  <img src="../images/图片8.png" alt="图片8" style="zoom:80%;" /></p>
-<p>  当k=0时，</p>
-<p>  <img src="../images/图片9.png" alt="图片9" style="zoom: 80%;" /></p>
-<p>  估计值</p>
-<p>  <img src="../images/图片11.png" alt="图片11" style="zoom: 80%;" /></p>
-</li>
+<p><img src="../images/图片8.png" alt="图片8" style="zoom:80%;" /></p>
+<p>当k=0时，</p>
+<p><img src="../images/图片9.png" alt="图片9" style="zoom: 80%;" /></p>
+<p>估计值</p>
+<p><img src="../images/图片11.png" alt="图片11" style="zoom: 80%;" /></p></li>
 <li><p>自相关系数</p>
-<p>  <img src="../images/图片4.png" alt="图片4"></p>
-</li>
+<figure>
+<img src="../images/图片4.png" alt="图片4" /><figcaption aria-hidden="true">图片4</figcaption>
+</figure></li>
 <li><p>延迟 k 自相关系数</p>
-<p>  <img src="../images/图片10.png" alt="图片10" style="zoom: 67%;" /></p>
-<p>  估计值</p>
-<p>  <img src="../images/图片12.png" alt="图片12"  /></p>
-</li>
+<p><img src="../images/图片10.png" alt="图片10" style="zoom: 67%;" /></p>
+<p>估计值</p>
+<p><img src="../images/图片12.png" alt="图片12"  /></p></li>
 </ul>
-<h2 id="时间序列的预处理"><a href="#时间序列的预处理" class="headerlink" title="时间序列的预处理"></a>时间序列的预处理</h2><h3 id="检验时间序列的平稳性"><a href="#检验时间序列的平稳性" class="headerlink" title="检验时间序列的平稳性"></a>检验时间序列的平稳性</h3><h4 id="平稳时间序列"><a href="#平稳时间序列" class="headerlink" title="平稳时间序列"></a>平稳时间序列</h4><ul>
-<li><p>严平稳：所有的统计学性质都不随时间变化。往往只具有理论意义。</p>
-</li>
+<h2 id="时间序列的预处理">时间序列的预处理</h2>
+<h3 id="检验时间序列的平稳性">检验时间序列的平稳性</h3>
+<h4 id="平稳时间序列">平稳时间序列</h4>
+<ul>
+<li><p>严平稳：所有的统计学性质都不随时间变化。往往只具有理论意义。</p></li>
 <li><p>宽平稳：只要保证低阶矩平稳即可。弱平稳、二阶平稳。</p>
-<p>  <img src="../images/图片5.png" alt="图片5"></p>
-</li>
+<figure>
+<img src="../images/图片5.png" alt="图片5" /><figcaption aria-hidden="true">图片5</figcaption>
+</figure></li>
 <li><p>严平稳和宽平稳</p>
 <ul>
 <li>严平稳条件比宽平稳条件苛刻，通常情况下，严平稳（低阶矩存在）能推出宽平稳成立，而宽平稳序列不能反推严平稳成立。</li>
 <li>不存在低阶矩的严平稳序列不满足宽平稳条件，例如服从柯西分布的严平稳序列就不是宽平稳序列（没有一、二阶矩）。</li>
 <li>当序列服从多元正态分布时，宽平稳可以推出严平稳。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="平稳时间序列的性质"><a href="#平稳时间序列的性质" class="headerlink" title="平稳时间序列的性质"></a>平稳时间序列的性质</h4><ul>
+<h4 id="平稳时间序列的性质">平稳时间序列的性质</h4>
+<ul>
 <li><p>常数均值</p>
-<p>  <img src="../images/图片6.png" alt="图片6" style="zoom:48%;" /></p>
-</li>
+<p><img src="../images/图片6.png" alt="图片6" style="zoom:48%;" /></p></li>
 <li><p>自协方差函数和自相关函数只依赖于时间的平移长度而与时间的起止点无关</p>
-<p>  <img src="../images/图片7.png" alt="图片7" style="zoom:48%;" /></p>
-</li>
+<p><img src="../images/图片7.png" alt="图片7" style="zoom:48%;" /></p></li>
 </ul>
-<h4 id="平稳时间序列的意义"><a href="#平稳时间序列的意义" class="headerlink" title="平稳时间序列的意义"></a>平稳时间序列的意义</h4><ul>
+<h4 id="平稳时间序列的意义">平稳时间序列的意义</h4>
+<ul>
 <li>平稳的基本思想是：时间序列的行为并不随时间改变。</li>
 <li>在平稳序列场合，序列的均值等于常数，这意味着原本含有可列多个随机变量的均值序列变成了只含有一个变量的常数序列。</li>
 <li>原本每个随机变量的均值（方差，自相关系数）只能依靠唯一的一个样本观察值去估计，现在由于平稳性，每一个统计量都将拥有大量的样本观察值。</li>
 <li>极大地减少了随机变量的个数，并增加了待估变量的样本容量。</li>
 <li>极大地简化了时序分析的难度，同时也提高了对特征统计量的估计精度。</li>
 </ul>
-<h4 id="平稳性检验常用方法"><a href="#平稳性检验常用方法" class="headerlink" title="平稳性检验常用方法"></a>平稳性检验常用方法</h4><ul>
+<h4 id="平稳性检验常用方法">平稳性检验常用方法</h4>
+<ul>
 <li><p>图检验</p>
 <ul>
-<li>时序图检验<ul>
+<li>时序图检验
+<ul>
 <li>平稳时间序列具有常数均值和方差。意味着平稳序列的时序图应该显示出该序列始终在一个常数值附近波动，而且波动的范围有界的特点</li>
 <li>如果序列的时序图显示出该序列有明显的趋势性或周期性，那该序列通常就不是平稳序列。</li>
-</ul>
-</li>
-<li>自相关图检验<ul>
+</ul></li>
+<li>自相关图检验
+<ul>
 <li>自相关图是一个平面二维坐标悬垂线图，横坐标表示延迟时期数，纵坐标表示自相关系数，悬垂线的长度表示自相关系数的大小。</li>
-<li>平稳序列通常具有短期相关性。用自相关系数来描述就是随着延迟阶数k的增加<ul>
-<li>平稳序列的自相关系数 $ρ_k$ 会很快地衰减向零。</li>
-<li>非平稳序列的自相关系数 $ρ_k$ 衰减向零的速度通常比较慢。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>平稳序列通常具有短期相关性。用自相关系数来描述就是随着延迟阶数k的增加
+<ul>
+<li>平稳序列的自相关系数 <span class="math inline">\(ρ_k\)</span> 会很快地衰减向零。</li>
+<li>非平稳序列的自相关系数 <span class="math inline">\(ρ_k\)</span> 衰减向零的速度通常比较慢。</li>
+</ul></li>
+</ul></li>
+</ul></li>
 <li><p>单位根检验</p>
 <ul>
 <li><p>DF检验</p>
-<p>  DF检验是从最简单的一种情况着手进行构造的单位根检验方法。假设序列的确定性部分可以只由过去一期的历史数据描述，即序列可以表达为</p>
-<p>  <img src="../images/图片14.png" alt="图片14" style="zoom: 67%;" /></p>
-<p>  显然该序列只有一个特征根，且特征根为</p>
-<p>  <img src="../images/图片15.png" alt="图片15" style="zoom:67%;" /></p>
-<p>  通过检验特征根是在单位圆内还是单位圆上（外）可以检验序列的平稳性。由于现实生活中绝大多数序列都是非平稳序列，所以单位根检验的原假设为序列非平稳，备择假设是序列平稳</p>
-<p>  <img src="../images/图片13.png" alt="图片13" style="zoom: 67%;" /></p>
-<p>  DF检验的三种类型</p>
-<p>  类型一：无漂移项自回归结构</p>
-<p>  拒绝H0，表明零均值平稳序列</p>
-<p>  拒绝H0，表明零均值一阶自相关平稳序列</p>
-<p>  类型二：有漂移项自回归结构</p>
-<p>  拒绝H0，表明均值为φ0的平稳序列</p>
-<p>  拒绝H0，表明均值非0的一阶自相关平稳序列</p>
-<p>  类型三：带趋势回归结构</p>
-<p>  拒绝H0，表明带趋势平稳序列。</p>
-<p>  拒绝H0，表明带趋势的一阶自相关平稳序列</p>
-<p>  如果序列的结构考虑如上三种类型（6种子类型），统计量的P值均显著大于显著性水平，则可以判断，序列考虑如上6种结构之一提取确定性信息，随机性部分都不能实现平稳。</p>
-</li>
+<p>DF检验是从最简单的一种情况着手进行构造的单位根检验方法。假设序列的确定性部分可以只由过去一期的历史数据描述，即序列可以表达为</p>
+<p><img src="../images/图片14.png" alt="图片14" style="zoom: 67%;" /></p>
+<p>显然该序列只有一个特征根，且特征根为</p>
+<p><img src="../images/图片15.png" alt="图片15" style="zoom:67%;" /></p>
+<p>通过检验特征根是在单位圆内还是单位圆上（外）可以检验序列的平稳性。由于现实生活中绝大多数序列都是非平稳序列，所以单位根检验的原假设为序列非平稳，备择假设是序列平稳</p>
+<p><img src="../images/图片13.png" alt="图片13" style="zoom: 67%;" /></p>
+<p>DF检验的三种类型</p>
+<p>类型一：无漂移项自回归结构</p>
+<p>拒绝H0，表明零均值平稳序列</p>
+<p>拒绝H0，表明零均值一阶自相关平稳序列</p>
+<p>类型二：有漂移项自回归结构</p>
+<p>拒绝H0，表明均值为φ0的平稳序列</p>
+<p>拒绝H0，表明均值非0的一阶自相关平稳序列</p>
+<p>类型三：带趋势回归结构</p>
+<p>拒绝H0，表明带趋势平稳序列。</p>
+<p>拒绝H0，表明带趋势的一阶自相关平稳序列</p>
+<p>如果序列的结构考虑如上三种类型（6种子类型），统计量的P值均显著大于显著性水平，则可以判断，序列考虑如上6种结构之一提取确定性信息，随机性部分都不能实现平稳。</p></li>
 <li><p>ADF检验</p>
-<p>  DF检验只适用于最简单的、确定性部分只由上一期历史数据描述的序列平稳性检验。为了使DF检验能适用于任意期确定性信息提取，人们对DF检验进行了一定的修正，得到了增广DF检验（augmented Dickey-Fuller），简记为ADF检验。</p>
-<p>  如果序列平稳，它必须满足所有非零特征根都在单位圆内。假如有一个单位根存在，不妨假设 λ1=1，则序列非平稳。把λ1=1代入特征方程，得到</p>
-<p>  <img src="../images/图片16.png" alt="图片16" style="zoom: 80%;" /></p>
-<p>  这意味着，如果序列非平稳，存在特征根，那么序列回归系数之和恰好等于1。因而，对于序列的平稳性检验，可以通过检验它的回归系数之和的性质进行判断。</p>
-<p>  <img src="../images/图片17.png" alt="图片17"  /></p>
-</li>
+<p>DF检验只适用于最简单的、确定性部分只由上一期历史数据描述的序列平稳性检验。为了使DF检验能适用于任意期确定性信息提取，人们对DF检验进行了一定的修正，得到了增广DF检验（augmented Dickey-Fuller），简记为ADF检验。</p>
+<p>如果序列平稳，它必须满足所有非零特征根都在单位圆内。假如有一个单位根存在，不妨假设 λ1=1，则序列非平稳。把λ1=1代入特征方程，得到</p>
+<p><img src="../images/图片16.png" alt="图片16" style="zoom: 80%;" /></p>
+<p>这意味着，如果序列非平稳，存在特征根，那么序列回归系数之和恰好等于1。因而，对于序列的平稳性检验，可以通过检验它的回归系数之和的性质进行判断。</p>
+<p><img src="../images/图片17.png" alt="图片17"  /></p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="检验时间序列的纯随机性"><a href="#检验时间序列的纯随机性" class="headerlink" title="检验时间序列的纯随机性"></a>检验时间序列的纯随机性</h3><h4 id="纯随机序列"><a href="#纯随机序列" class="headerlink" title="纯随机序列"></a>纯随机序列</h4><p>纯随机序列：如果序列满足如下两条性质，则称该序列为纯随机序列，也称为白噪声（White Noise）序列。</p>
+<h3 id="检验时间序列的纯随机性">检验时间序列的纯随机性</h3>
+<h4 id="纯随机序列">纯随机序列</h4>
+<p>纯随机序列：如果序列满足如下两条性质，则称该序列为纯随机序列，也称为白噪声（White Noise）序列。</p>
 <p><img src="../images/图片18.png" alt="图片18" style="zoom:67%;" /></p>
 <p>容易证明，白噪声序列一定是平稳序列，而且是最简单的平稳序列。</p>
-<h4 id="纯随机序列的性质"><a href="#纯随机序列的性质" class="headerlink" title="纯随机序列的性质"></a>纯随机序列的性质</h4><ul>
+<h4 id="纯随机序列的性质">纯随机序列的性质</h4>
+<ul>
 <li><p>纯随机性：各序列值之间没有任何相关关系，即为 “没有记忆”的序列，意味着所有信息都被提出来了。</p>
-<p>  <img src="../images/图片19.png" alt="图片19"></p>
-<p>  这是一种理论上才会出现的理想状况。实际上，由于观察值序列的有限性，纯随机序列的样本自相关系数不会绝对为零。</p>
-</li>
+<figure>
+<img src="../images/图片19.png" alt="图片19" /><figcaption aria-hidden="true">图片19</figcaption>
+</figure>
+<p>这是一种理论上才会出现的理想状况。实际上，由于观察值序列的有限性，纯随机序列的样本自相关系数不会绝对为零。</p></li>
 <li><p>方差齐性：根据马尔可夫定理，只有方差齐性假定成立时，用最小二乘法得到的未知参数估计值才是准确的、有效的。</p>
-<p>  <img src="../images/图片20.png" alt="图片20"></p>
-</li>
+<figure>
+<img src="../images/图片20.png" alt="图片20" /><figcaption aria-hidden="true">图片20</figcaption>
+</figure></li>
 </ul>
-<h4 id="纯随机性检验的原理"><a href="#纯随机性检验的原理" class="headerlink" title="纯随机性检验的原理"></a>纯随机性检验的原理</h4><ul>
+<h4 id="纯随机性检验的原理">纯随机性检验的原理</h4>
+<ul>
 <li><p>Bartlett定理：如果一个时间序列是纯随机的，得到一个观察期数为 <em>n</em> 的观察值序列，那么该序列的延迟非零期的样本自相关系数将近似服从均值为零，方差为序列观察期数倒数的正态分布</p>
-<p>  <img src="../images/图片21.png" alt="图片21" style="zoom: 50%;" /></p>
-</li>
+<p><img src="../images/图片21.png" alt="图片21" style="zoom: 50%;" /></p></li>
 <li><p>假设</p>
 <ul>
 <li><p>原假设：延迟期数小于或等于m期的序列值之间相互独立</p>
-<p>  <img src="../images/图片22.png" alt="图片22"></p>
-</li>
-<li><p>备择假设：延迟期数小于或等于m期的序列值之间有相关性 </p>
-<p>  <img src="../images/图片23.png" alt="图片23"></p>
-</li>
-</ul>
-</li>
+<figure>
+<img src="../images/图片22.png" alt="图片22" /><figcaption aria-hidden="true">图片22</figcaption>
+</figure></li>
+<li><p>备择假设：延迟期数小于或等于m期的序列值之间有相关性</p>
+<figure>
+<img src="../images/图片23.png" alt="图片23" /><figcaption aria-hidden="true">图片23</figcaption>
+</figure></li>
+</ul></li>
 <li><p>检验统计量</p>
 <ul>
 <li><p>Q统计量</p>
-<p>  <img src="../images/图片24.png" alt="图片24"></p>
-</li>
+<figure>
+<img src="../images/图片24.png" alt="图片24" /><figcaption aria-hidden="true">图片24</figcaption>
+</figure></li>
 <li><p>LB统计量</p>
-<p>  <img src="../images/图片25.png" alt="图片25"></p>
-</li>
-</ul>
-</li>
+<figure>
+<img src="../images/图片25.png" alt="图片25" /><figcaption aria-hidden="true">图片25</figcaption>
+</figure></li>
+</ul></li>
 </ul>
 <p>为什么在本例中只检验了前6期和前12期延迟的 Q 统计量就直接判断该序列是白噪声序列</p>
 <p>平稳序列通常具有短期相关性，如果序列值之间存在显著的相关关系，通常只存在于延迟时期比较短的序列值之间。 所以，如果一个平稳序列短期延迟的序列值之间都不存在显著的相关关系，通常长期延迟之间就更不会存在显著的相关关系了。假如一个平稳序列显示出显著的短期相关性, 那么该序列就一定不是白噪声序列，我们就可以对序列值之间存在的相关性进行分析。 假如此时考虑的延迟时期数太长，反而可能淹没了该序列的短期相关性。 因为平稳序列只要延迟时期足够长，自相关系数都会收敛于零。</p>
-<h2 id="时间序列的平稳化"><a href="#时间序列的平稳化" class="headerlink" title="时间序列的平稳化"></a>时间序列的平稳化</h2><h3 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h3><ul>
+<h2 id="时间序列的平稳化">时间序列的平稳化</h2>
+<h3 id="差分">差分</h3>
+<ul>
 <li><p><em>d</em> 阶差分</p>
-<p>  <img src="../images/图片30.png" alt="图片30" style="zoom:80%;" /></p>
-</li>
+<p><img src="../images/图片30.png" alt="图片30" style="zoom:80%;" /></p></li>
 <li><p><em>d</em> 步差分（包括季节差分）</p>
-<p>  <img src="../images/图片31.png" alt="图片31" style="zoom:80%;" /></p>
-</li>
+<p><img src="../images/图片31.png" alt="图片31" style="zoom:80%;" /></p></li>
 </ul>
-<h4 id="差分方式的选择"><a href="#差分方式的选择" class="headerlink" title="差分方式的选择"></a>差分方式的选择</h4><ul>
+<h4 id="差分方式的选择">差分方式的选择</h4>
+<ul>
 <li>对于线性趋势的序列，1阶差分可以实现趋势平稳。</li>
 <li>对于曲线趋势的序列，1~3阶差分可以实现趋势平稳。</li>
 <li>对于含有固定周期趋势的序列，以周期长度为差分步数，通常可以提取周期趋势。</li>
 <li>方差不齐的非线性趋势的序列，可以先变换，再差分。</li>
 </ul>
-<h4 id="过差分"><a href="#过差分" class="headerlink" title="过差分"></a>过差分</h4><p>一、二阶差分均能使序列达到平稳，但二阶差分序列的方差大于一阶差分的方差。方差越大估计精度就越低。可见，差分的阶数并非越高越好。</p>
+<h4 id="过差分">过差分</h4>
+<p>一、二阶差分均能使序列达到平稳，但二阶差分序列的方差大于一阶差分的方差。方差越大估计精度就越低。可见，差分的阶数并非越高越好。</p>
 <p>差分的目的是使序列平稳。为防止过差分，通常的做法是每次差分后进行一次平稳性检验，通过平稳性检验，若差分后已经是平稳序列，则停止差分运算。</p>
-<h3 id="变量变换"><a href="#变量变换" class="headerlink" title="变量变换"></a>变量变换</h3><p><img src="../images/图片26.png" alt="图片26" style="zoom:67%;" /></p>
+<h3 id="变量变换">变量变换</h3>
+<p><img src="../images/图片26.png" alt="图片26" style="zoom:67%;" /></p>
 <p>λ=1：没有进行实质上的转换</p>
 <p>λ=1/2：平方根转换+线性转换</p>
 <p>λ=1/3：立方根转换+线性转换</p>
@@ -517,114 +539,155 @@
 <li>变换后，可以一定程度上减小不可观测的误差和预测变量的相关性。主要操作是对因变量转换，使得变换后的因变量于回归自变量具有线性相依关系，误差也服从正态分布，误差各分量是等方差且相互独立。</li>
 <li>用这个变换来使得因变量获得一些性质，比如在时间序列分析中的平稳性，或者使得因变量分布为正态分布。</li>
 </ul>
-<h2 id="因素分解理论"><a href="#因素分解理论" class="headerlink" title="因素分解理论"></a>因素分解理论</h2><h3 id="Wold分解定理"><a href="#Wold分解定理" class="headerlink" title="Wold分解定理"></a>Wold分解定理</h3><p>对于任意一个离散平稳时间序列 ${x_t}$ ，它都可以分解为两个不相关的平稳序列之和，确定性部分和随机性部分，</p>
-<p><img src="../images/图片27.png" alt="图片27"></p>
-<p>因此，平稳序列 ${x_t}$ 可以表示为自回归移动平均模型（auto regression moving average, ARMA）</p>
+<h2 id="因素分解理论">因素分解理论</h2>
+<h3 id="wold分解定理">Wold分解定理</h3>
+<p>对于任意一个离散平稳时间序列 <span class="math inline">\(\{x_t\}\)</span> ，它都可以分解为两个不相关的平稳序列之和，确定性部分和随机性部分，</p>
+<figure>
+<img src="../images/图片27.png" alt="图片27" /><figcaption aria-hidden="true">图片27</figcaption>
+</figure>
+<p>因此，平稳序列 <span class="math inline">\(\{x_t\}\)</span> 可以表示为自回归移动平均模型（auto regression moving average, ARMA）</p>
 <p><img src="../images/图片28.png" alt="图片28" style="zoom: 50%;" /></p>
-<h3 id="Cramer分解定理"><a href="#Cramer分解定理" class="headerlink" title="Cramer分解定理"></a>Cramer分解定理</h3><p><img src="../images/image-20220113002037072.png" alt="image-20220113002037072" style="zoom: 67%;" /></p>
-<h3 id="确定性因素分解"><a href="#确定性因素分解" class="headerlink" title="确定性因素分解"></a>确定性因素分解</h3><p><img src="../images/image-20220113004415538.png" alt="image-20220113004415538" style="zoom: 67%;" /></p>
+<h3 id="cramer分解定理">Cramer分解定理</h3>
+<p><img src="../images/image-20220113002037072.png" alt="image-20220113002037072" style="zoom: 67%;" /></p>
+<h3 id="确定性因素分解">确定性因素分解</h3>
+<p><img src="../images/image-20220113004415538.png" alt="image-20220113004415538" style="zoom: 67%;" /></p>
 <p><img src="../images/image-20220113004430702.png" alt="image-20220113004430702" style="zoom:67%;" /></p>
-<h2 id="常见确定性趋势"><a href="#常见确定性趋势" class="headerlink" title="常见确定性趋势"></a>常见确定性趋势</h2><p>线性上升、下降</p>
+<h2 id="常见确定性趋势">常见确定性趋势</h2>
+<p>线性上升、下降</p>
 <p>指数上升、下降（对序列取对数后，可以直线化。序列数据如果有0或负数不适用。）</p>
 <p>周期趋势（可以用三角函数表示。）</p>
 <p>长期趋势+周期趋势</p>
 <p>多项式趋势</p>
-<h2 id="延迟算子"><a href="#延迟算子" class="headerlink" title="延迟算子"></a>延迟算子</h2><p><img src="../images/image-20220112192801404.png" alt="image-20220112192801404" style="zoom:67%;" /></p>
-<h3 id="延迟算子的性质"><a href="#延迟算子的性质" class="headerlink" title="延迟算子的性质"></a>延迟算子的性质</h3><p><img src="../images/image-20220112192838742.png" alt="image-20220112192838742" style="zoom:50%;" /></p>
-<h3 id="延迟算子和差分的关系"><a href="#延迟算子和差分的关系" class="headerlink" title="延迟算子和差分的关系"></a>延迟算子和差分的关系</h3><p><img src="../images/image-20220112192922461.png" alt="image-20220112192922461" style="zoom:50%;" /></p>
-<h2 id="AR模型"><a href="#AR模型" class="headerlink" title="AR模型"></a>AR模型</h2><p><img src="../images/image-20220112192657904.png" alt="image-20220112192657904" style="zoom: 80%;" /></p>
-<h3 id="用延迟算子表达AR模型"><a href="#用延迟算子表达AR模型" class="headerlink" title="用延迟算子表达AR模型"></a>用延迟算子表达AR模型</h3><p><img src="../images/image-20220112195929712.png" alt="image-20220112195929712" style="zoom:67%;" /></p>
-<h3 id="AR模型的统计性质"><a href="#AR模型的统计性质" class="headerlink" title="AR模型的统计性质"></a>AR模型的统计性质</h3><h4 id="自相关系数"><a href="#自相关系数" class="headerlink" title="自相关系数"></a>自相关系数</h4><p><img src="../images/image-20220112201422163.png" alt="image-20220112201422163" style="zoom: 50%;" /></p>
-<h3 id="AR模型的平稳性判别"><a href="#AR模型的平稳性判别" class="headerlink" title="AR模型的平稳性判别"></a>AR模型的平稳性判别</h3><ul>
+<h2 id="延迟算子">延迟算子</h2>
+<p><img src="../images/image-20220112192801404.png" alt="image-20220112192801404" style="zoom:67%;" /></p>
+<h3 id="延迟算子的性质">延迟算子的性质</h3>
+<p><img src="../images/image-20220112192838742.png" alt="image-20220112192838742" style="zoom:50%;" /></p>
+<h3 id="延迟算子和差分的关系">延迟算子和差分的关系</h3>
+<p><img src="../images/image-20220112192922461.png" alt="image-20220112192922461" style="zoom:50%;" /></p>
+<h2 id="ar模型">AR模型</h2>
+<p><img src="../images/image-20220112192657904.png" alt="image-20220112192657904" style="zoom: 80%;" /></p>
+<h3 id="用延迟算子表达ar模型">用延迟算子表达AR模型</h3>
+<p><img src="../images/image-20220112195929712.png" alt="image-20220112195929712" style="zoom:67%;" /></p>
+<h3 id="ar模型的统计性质">AR模型的统计性质</h3>
+<h4 id="自相关系数">自相关系数</h4>
+<p><img src="../images/image-20220112201422163.png" alt="image-20220112201422163" style="zoom: 50%;" /></p>
+<h3 id="ar模型的平稳性判别">AR模型的平稳性判别</h3>
+<ul>
 <li><p>判别原因</p>
 <ul>
 <li>要拟合一个平稳序列的发展，用来拟合的模型显然也应该是平稳的。</li>
-<li>AR模型是常用的平稳序列的拟合模型之一，但并非所有的 AR 模型都是平稳的。 </li>
-</ul>
-</li>
+<li>AR模型是常用的平稳序列的拟合模型之一，但并非所有的 AR 模型都是平稳的。</li>
+</ul></li>
 <li><p>判别方法</p>
 <ul>
 <li><p>特征根判别法</p>
-<p>  <img src="../images/image-20220112192508872.png" alt="image-20220112192508872" style="zoom: 67%;" /></p>
-</li>
+<p><img src="../images/image-20220112192508872.png" alt="image-20220112192508872" style="zoom: 67%;" /></p></li>
 <li><p>平稳域判别法</p>
 <ul>
 <li><p>AR（1）</p>
-<p>  <img src="../images/image-20220112193949717.png" alt="image-20220112193949717" style="zoom: 67%;" /></p>
-</li>
+<p><img src="../images/image-20220112193949717.png" alt="image-20220112193949717" style="zoom: 67%;" /></p></li>
 <li><p>AR（2）</p>
-<p>  <img src="../images/image-20220112193924989.png" alt="image-20220112193924989" style="zoom: 67%;" /></p>
-</li>
+<p><img src="../images/image-20220112193924989.png" alt="image-20220112193924989" style="zoom: 67%;" /></p></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="平稳AR模型的统计性质"><a href="#平稳AR模型的统计性质" class="headerlink" title="平稳AR模型的统计性质"></a>平稳AR模型的统计性质</h3><h4 id="均数"><a href="#均数" class="headerlink" title="均数"></a>均数</h4><p>平稳序列均值为常数</p>
-<h4 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h4><p><img src="../images/image-20220112194452534.png" alt="image-20220112194452534" style="zoom:67%;" /></p>
+<h3 id="平稳ar模型的统计性质">平稳AR模型的统计性质</h3>
+<h4 id="均数">均数</h4>
+<p>平稳序列均值为常数</p>
+<h4 id="方差">方差</h4>
+<p><img src="../images/image-20220112194452534.png" alt="image-20220112194452534" style="zoom:67%;" /></p>
 <ul>
 <li><p>AR（1）</p>
-<p>  <img src="../images/image-20220112194649057.png" alt="image-20220112194649057" style="zoom:67%;" /></p>
-</li>
+<p><img src="../images/image-20220112194649057.png" alt="image-20220112194649057" style="zoom:67%;" /></p></li>
 <li><p>AR（p）</p>
-<p>  <img src="../images/image-20220112194740776.png" alt="image-20220112194740776" style="zoom:67%;" /></p>
-</li>
+<p><img src="../images/image-20220112194740776.png" alt="image-20220112194740776" style="zoom:67%;" /></p></li>
 </ul>
-<h4 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h4><h4 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h4><h4 id="自相关系数-1"><a href="#自相关系数-1" class="headerlink" title="自相关系数"></a>自相关系数</h4><h4 id="偏自相关系数"><a href="#偏自相关系数" class="headerlink" title="偏自相关系数"></a>偏自相关系数</h4><p>偏自相关系数的p阶截尾性</p>
+<h4 id="协方差">协方差</h4>
+<h4 id="相关系数">相关系数</h4>
+<h4 id="自相关系数-1">自相关系数</h4>
+<h4 id="偏自相关系数">偏自相关系数</h4>
+<p>偏自相关系数的p阶截尾性</p>
 <p><img src="../images/image-20220112201801274.png" alt="image-20220112201801274" style="zoom:67%;" /></p>
-<h2 id="MA模型"><a href="#MA模型" class="headerlink" title="MA模型"></a>MA模型</h2><p><img src="../images/image-20220112195630529.png" alt="image-20220112195630529" style="zoom:67%;" /></p>
-<h3 id="用延迟算子表达MA模型"><a href="#用延迟算子表达MA模型" class="headerlink" title="用延迟算子表达MA模型"></a>用延迟算子表达MA模型</h3><p><img src="../images/image-20220112200133896.png" alt="image-20220112200133896" style="zoom:67%;" /></p>
-<h3 id="MA模型的统计性质"><a href="#MA模型的统计性质" class="headerlink" title="MA模型的统计性质"></a>MA模型的统计性质</h3><p><img src="../images/image-20220112200412382.png" alt="image-20220112200412382" style="zoom:67%;" /></p>
-<h4 id="自相关系数-2"><a href="#自相关系数-2" class="headerlink" title="自相关系数"></a>自相关系数</h4><p><img src="../images/image-20220112200542423.png" alt="image-20220112200542423" style="zoom:67%;" /></p>
-<h4 id="偏自相关系数-1"><a href="#偏自相关系数-1" class="headerlink" title="偏自相关系数"></a>偏自相关系数</h4><p>MA模型的偏自相关系数拖尾</p>
+<h2 id="ma模型">MA模型</h2>
+<p><img src="../images/image-20220112195630529.png" alt="image-20220112195630529" style="zoom:67%;" /></p>
+<h3 id="用延迟算子表达ma模型">用延迟算子表达MA模型</h3>
+<p><img src="../images/image-20220112200133896.png" alt="image-20220112200133896" style="zoom:67%;" /></p>
+<h3 id="ma模型的统计性质">MA模型的统计性质</h3>
+<p><img src="../images/image-20220112200412382.png" alt="image-20220112200412382" style="zoom:67%;" /></p>
+<h4 id="自相关系数-2">自相关系数</h4>
+<p><img src="../images/image-20220112200542423.png" alt="image-20220112200542423" style="zoom:67%;" /></p>
+<h4 id="偏自相关系数-1">偏自相关系数</h4>
+<p>MA模型的偏自相关系数拖尾</p>
 <p><img src="../images/image-20220112204041577.png" alt="image-20220112204041577" style="zoom:67%;" /></p>
-<h3 id="MA模型的可逆性"><a href="#MA模型的可逆性" class="headerlink" title="MA模型的可逆性"></a>MA模型的可逆性</h3><p>不同的MA模型，可能具有完全相同的自相关系数的现象。产生这种现象的原因：自相关系数有可能不唯一。这种自相关系数的不唯一性，会给我们将来的工作增加麻烦。为了保证一个给定的自相关函数能够对应唯一的模型，我们就要给模型增加约束条件。称为模型的可逆性条件。</p>
+<h3 id="ma模型的可逆性">MA模型的可逆性</h3>
+<p>不同的MA模型，可能具有完全相同的自相关系数的现象。产生这种现象的原因：自相关系数有可能不唯一。这种自相关系数的不唯一性，会给我们将来的工作增加麻烦。为了保证一个给定的自相关函数能够对应唯一的模型，我们就要给模型增加约束条件。称为模型的可逆性条件。</p>
 <p>可逆MA模型定义：若一个MA模型能够表示成为收敛的AR模型形式，那么该MA模型称为可逆MA模型。</p>
 <p>可逆概念的重要性：一个自相关系数列唯一对应一个可逆MA模型。</p>
-<h3 id="MA模型的可逆条件"><a href="#MA模型的可逆条件" class="headerlink" title="MA模型的可逆条件"></a>MA模型的可逆条件</h3><p><img src="../images/image-20220112202437807.png" alt="image-20220112202437807" style="zoom:67%;" /></p>
-<p><img src="../images/image-20220112202544566.png" alt="image-20220112202544566"></p>
-<h2 id="ARMA模型"><a href="#ARMA模型" class="headerlink" title="ARMA模型"></a>ARMA模型</h2><p><img src="../images/image-20220112202844889.png" alt="image-20220112202844889"></p>
-<h3 id="ARMA模型平稳条件与可逆条件"><a href="#ARMA模型平稳条件与可逆条件" class="headerlink" title="ARMA模型平稳条件与可逆条件"></a>ARMA模型平稳条件与可逆条件</h3><p><img src="../images/image-20220112203300774.png" alt="image-20220112203300774"></p>
-<h3 id="ARMA模型的统计性质"><a href="#ARMA模型的统计性质" class="headerlink" title="ARMA模型的统计性质"></a>ARMA模型的统计性质</h3><p><img src="../images/image-20220112203357885.png" alt="image-20220112203357885"></p>
-<h3 id="ARMA模型的相关性特征"><a href="#ARMA模型的相关性特征" class="headerlink" title="ARMA模型的相关性特征"></a>ARMA模型的相关性特征</h3><div class="table-container">
+<h3 id="ma模型的可逆条件">MA模型的可逆条件</h3>
+<p><img src="../images/image-20220112202437807.png" alt="image-20220112202437807" style="zoom:67%;" /></p>
+<figure>
+<img src="../images/image-20220112202544566.png" alt="image-20220112202544566" /><figcaption aria-hidden="true">image-20220112202544566</figcaption>
+</figure>
+<h2 id="arma模型">ARMA模型</h2>
+<figure>
+<img src="../images/image-20220112202844889.png" alt="image-20220112202844889" /><figcaption aria-hidden="true">image-20220112202844889</figcaption>
+</figure>
+<h3 id="arma模型平稳条件与可逆条件">ARMA模型平稳条件与可逆条件</h3>
+<figure>
+<img src="../images/image-20220112203300774.png" alt="image-20220112203300774" /><figcaption aria-hidden="true">image-20220112203300774</figcaption>
+</figure>
+<h3 id="arma模型的统计性质">ARMA模型的统计性质</h3>
+<figure>
+<img src="../images/image-20220112203357885.png" alt="image-20220112203357885" /><figcaption aria-hidden="true">image-20220112203357885</figcaption>
+</figure>
+<h3 id="arma模型的相关性特征">ARMA模型的相关性特征</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>模型</th>
 <th>自相关系数</th>
 <th>偏自相关系数</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>AR（p）</td>
 <td>拖尾</td>
 <td>p阶截尾</td>
 </tr>
-<tr>
+<tr class="even">
 <td>MA（q）</td>
 <td>q阶截尾</td>
 <td>拖尾</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ARMA（p，q）</td>
 <td>拖尾</td>
 <td>拖尾</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="ARMA模型的建模步骤"><a href="#ARMA模型的建模步骤" class="headerlink" title="ARMA模型的建模步骤"></a>ARMA模型的建模步骤</h3><p><img src="../images/image-20220112203703973.png" alt="image-20220112203703973"></p>
-<h3 id="ARMA模型判断平稳性的方法"><a href="#ARMA模型判断平稳性的方法" class="headerlink" title="ARMA模型判断平稳性的方法"></a>ARMA模型判断平稳性的方法</h3><p>单位根检验</p>
+<h3 id="arma模型的建模步骤">ARMA模型的建模步骤</h3>
+<figure>
+<img src="../images/image-20220112203703973.png" alt="image-20220112203703973" /><figcaption aria-hidden="true">image-20220112203703973</figcaption>
+</figure>
+<h3 id="arma模型判断平稳性的方法">ARMA模型判断平稳性的方法</h3>
+<p>单位根检验</p>
 <p>计算样本相关系数（自相关、偏自相关）</p>
-<h3 id="ARMA模型的参数估计方法"><a href="#ARMA模型的参数估计方法" class="headerlink" title="ARMA模型的参数估计方法"></a>ARMA模型的参数估计方法</h3><p><img src="../images/image-20220112204714695.png" alt="image-20220112204714695"></p>
+<h3 id="arma模型的参数估计方法">ARMA模型的参数估计方法</h3>
+<figure>
+<img src="../images/image-20220112204714695.png" alt="image-20220112204714695" /><figcaption aria-hidden="true">image-20220112204714695</figcaption>
+</figure>
 <p>常用估计方法</p>
 <ul>
 <li>矩估计</li>
 <li>极大似然估计</li>
 <li>最小二乘估计</li>
 </ul>
-<h4 id="矩估计"><a href="#矩估计" class="headerlink" title="矩估计"></a>矩估计</h4><p><img src="../images/image-20220112204853031.png" alt="image-20220112204853031"></p>
+<h4 id="矩估计">矩估计</h4>
+<figure>
+<img src="../images/image-20220112204853031.png" alt="image-20220112204853031" /><figcaption aria-hidden="true">image-20220112204853031</figcaption>
+</figure>
 <p>优点</p>
 <ul>
 <li>估计思想简单直观</li>
@@ -637,7 +700,10 @@
 <li>估计精度差</li>
 </ul>
 <p>通常矩估计方法被用作极大似然估计和最小二乘估计迭代计算的初始值</p>
-<h4 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h4><p><img src="../images/image-20220112205320988.png" alt="image-20220112205320988"></p>
+<h4 id="极大似然估计">极大似然估计</h4>
+<figure>
+<img src="../images/image-20220112205320988.png" alt="image-20220112205320988" /><figcaption aria-hidden="true">image-20220112205320988</figcaption>
+</figure>
 <p>优点</p>
 <ul>
 <li>极大似然估计充分应用了每一个观察值所提供的信息，因而它的估计精度高</li>
@@ -647,7 +713,8 @@
 <ul>
 <li>需要假定总体分布</li>
 </ul>
-<h4 id="最小二乘估计"><a href="#最小二乘估计" class="headerlink" title="最小二乘估计"></a>最小二乘估计</h4><p><img src="../images/image-20220112221513307.png" alt="image-20220112221513307" style="zoom: 80%;" /></p>
+<h4 id="最小二乘估计">最小二乘估计</h4>
+<p><img src="../images/image-20220112221513307.png" alt="image-20220112221513307" style="zoom: 80%;" /></p>
 <p><img src="../images/image-20220112221603425.png" alt="image-20220112221603425" style="zoom:80%;" /></p>
 <p>优点</p>
 <ul>
@@ -655,22 +722,30 @@
 <li>方法普适</li>
 <li>估计精度高</li>
 </ul>
-<h3 id="ARMA模型的显著性检验"><a href="#ARMA模型的显著性检验" class="headerlink" title="ARMA模型的显著性检验"></a>ARMA模型的显著性检验</h3><p>目的：检验拟合模型的有效性（对相关信息的提取是否充分）</p>
+<h3 id="arma模型的显著性检验">ARMA模型的显著性检验</h3>
+<p>目的：检验拟合模型的有效性（对相关信息的提取是否充分）</p>
 <p>检验对象：残差序列</p>
 <p>判定原则：一个好的拟合模型应该能够提取观察值序列中几乎所有的样本相关信息，即残差序列应该为白噪声序列。反之，如果残差序列为非白噪声序列，那就意味着残差序列中还残留着相关信息未被提取，这就说明拟合模型不够有效。</p>
 <p><img src="../images/image-20220112222109937.png" alt="image-20220112222109937" style="zoom:80%;" /></p>
-<h2 id="ARIMA模型"><a href="#ARIMA模型" class="headerlink" title="ARIMA模型"></a>ARIMA模型</h2><p>ARIMA模型中的I（ integrated ）的意思</p>
+<h2 id="arima模型">ARIMA模型</h2>
+<p>ARIMA模型中的I（ integrated ）的意思</p>
 <p><img src="../images/image-20220113002722535.png" alt="image-20220113002722535" style="zoom: 67%;" /></p>
 <p>ARIMA(0,1,0)就是随机漫步（random walk）模型，又称醉汉模型</p>
-<h3 id="ARIMA模型的性质"><a href="#ARIMA模型的性质" class="headerlink" title="ARIMA模型的性质"></a>ARIMA模型的性质</h3><ul>
+<h3 id="arima模型的性质">ARIMA模型的性质</h3>
+<ul>
 <li>非平稳性</li>
 <li>异质方差性（方差非齐性）</li>
 </ul>
-<h3 id="ARIMA模型的建模流程"><a href="#ARIMA模型的建模流程" class="headerlink" title="ARIMA模型的建模流程"></a>ARIMA模型的建模流程</h3><p><img src="../images/image-20220113003959060.png" alt="image-20220113003959060" style="zoom:67%;" /></p>
-<h2 id="SARIMA模型"><a href="#SARIMA模型" class="headerlink" title="SARIMA模型"></a>SARIMA模型</h2><p><img src="../images/image-20220113004643096.png" alt="image-20220113004643096" style="zoom:67%;" /></p>
+<h3 id="arima模型的建模流程">ARIMA模型的建模流程</h3>
+<p><img src="../images/image-20220113003959060.png" alt="image-20220113003959060" style="zoom:67%;" /></p>
+<h2 id="sarima模型">SARIMA模型</h2>
+<p><img src="../images/image-20220113004643096.png" alt="image-20220113004643096" style="zoom:67%;" /></p>
 <p><img src="../images/image-20220113004659743.png" alt="image-20220113004659743" style="zoom:67%;" /></p>
-<h3 id="SARIMA模型的建模流程"><a href="#SARIMA模型的建模流程" class="headerlink" title="SARIMA模型的建模流程"></a>SARIMA模型的建模流程</h3><p><img src="../images/image-20220113004737244.png" alt="image-20220113004737244" style="zoom:67%;" /></p>
-<h2 id="移动平均"><a href="#移动平均" class="headerlink" title="移动平均"></a>移动平均</h2><h3 id="简单中心移动平均"><a href="#简单中心移动平均" class="headerlink" title="简单中心移动平均"></a>简单中心移动平均</h3><p><img src="../images/image-20220113005142478.png" alt=""></p>
+<h3 id="sarima模型的建模流程">SARIMA模型的建模流程</h3>
+<p><img src="../images/image-20220113004737244.png" alt="image-20220113004737244" style="zoom:67%;" /></p>
+<h2 id="移动平均">移动平均</h2>
+<h3 id="简单中心移动平均">简单中心移动平均</h3>
+<p><img src="../images/image-20220113005142478.png" /></p>
 <p>优点：</p>
 <ul>
 <li>能够提取低阶趋势（线性、二项）</li>
@@ -682,17 +757,30 @@
 <li>尾部少掉 s/2 的预测值</li>
 <li>s 的确定</li>
 </ul>
-<h3 id="Henderson加权移动平均"><a href="#Henderson加权移动平均" class="headerlink" title="Henderson加权移动平均"></a>Henderson加权移动平均</h3><h3 id="Musgrave非对称移动平均"><a href="#Musgrave非对称移动平均" class="headerlink" title="Musgrave非对称移动平均"></a>Musgrave非对称移动平均</h3><h2 id="指数平滑"><a href="#指数平滑" class="headerlink" title="指数平滑"></a>指数平滑</h2><h2 id="多元自回归模型"><a href="#多元自回归模型" class="headerlink" title="多元自回归模型"></a>多元自回归模型</h2><h3 id="互相关函数"><a href="#互相关函数" class="headerlink" title="互相关函数"></a>互相关函数</h3><h4 id="互协方差"><a href="#互协方差" class="headerlink" title="互协方差"></a>互协方差</h4><p><img src="../images/image-20220113010214698.png" alt="image-20220113010214698" style="zoom:67%;" /></p>
-<h4 id="互相关系数"><a href="#互相关系数" class="headerlink" title="互相关系数"></a>互相关系数</h4><p><img src="../images/image-20220113010225345.png" alt="image-20220113010225345" style="zoom:67%;" /></p>
-<h3 id="Granger因果检验"><a href="#Granger因果检验" class="headerlink" title="Granger因果检验"></a>Granger因果检验</h3><p>考察序列 {$x_t$} 是否为序列 {$y_t$} 的原因。如果序列 {$x_t$} 是序列 {$y_t$} 的原因，则 {$x_t$} 将有助于预测 {$y_t$} ，而 {$y_t$} 不能有助于预测 {$x_t$} 。</p>
-<h3 id="单整"><a href="#单整" class="headerlink" title="单整"></a>单整</h3><p>序列 {$x_t$} 经过 <em>d</em> 阶差分达到平稳，称 {$x_t$} 为 <em>d</em> 阶单整的(integration)。</p>
-<h3 id="协整"><a href="#协整" class="headerlink" title="协整"></a>协整</h3><p><img src="../images/image-20220113010626258.png" alt="image-20220113010626258" style="zoom: 80%;" /></p>
+<h3 id="henderson加权移动平均">Henderson加权移动平均</h3>
+<h3 id="musgrave非对称移动平均">Musgrave非对称移动平均</h3>
+<h2 id="指数平滑">指数平滑</h2>
+<h2 id="多元自回归模型">多元自回归模型</h2>
+<h3 id="互相关函数">互相关函数</h3>
+<h4 id="互协方差">互协方差</h4>
+<p><img src="../images/image-20220113010214698.png" alt="image-20220113010214698" style="zoom:67%;" /></p>
+<h4 id="互相关系数">互相关系数</h4>
+<p><img src="../images/image-20220113010225345.png" alt="image-20220113010225345" style="zoom:67%;" /></p>
+<h3 id="granger因果检验">Granger因果检验</h3>
+<p>考察序列 {<span class="math inline">\(x_t\)</span>} 是否为序列 {<span class="math inline">\(y_t\)</span>} 的原因。如果序列 {<span class="math inline">\(x_t\)</span>} 是序列 {<span class="math inline">\(y_t\)</span>} 的原因，则 {<span class="math inline">\(x_t\)</span>} 将有助于预测 {<span class="math inline">\(y_t\)</span>} ，而 {<span class="math inline">\(y_t\)</span>} 不能有助于预测 {<span class="math inline">\(x_t\)</span>} 。</p>
+<h3 id="单整">单整</h3>
+<p>序列 {<span class="math inline">\(x_t\)</span>} 经过 <em>d</em> 阶差分达到平稳，称 {<span class="math inline">\(x_t\)</span>} 为 <em>d</em> 阶单整的(integration)。</p>
+<h3 id="协整">协整</h3>
+<p><img src="../images/image-20220113010626258.png" alt="image-20220113010626258" style="zoom: 80%;" /></p>
 <p>EG 检验是 DF 检验的扩展(augmented Dickey–Fuller test for unit roots).</p>
 <p><img src="../images/image-20220113010754134.png" alt="image-20220113010754134" style="zoom:80%;" /></p>
-<h3 id="ARIMAX模型"><a href="#ARIMAX模型" class="headerlink" title="ARIMAX模型"></a>ARIMAX模型</h3><p><img src="../images/image-20220113010909122.png" alt="image-20220113010909122" style="zoom:80%;" /></p>
-<h3 id="VAR模型"><a href="#VAR模型" class="headerlink" title="VAR模型"></a>VAR模型</h3><p>多元自回归/向量自回归模型（Vector auto-regression model）</p>
+<h3 id="arimax模型">ARIMAX模型</h3>
+<p><img src="../images/image-20220113010909122.png" alt="image-20220113010909122" style="zoom:80%;" /></p>
+<h3 id="var模型">VAR模型</h3>
+<p>多元自回归/向量自回归模型（Vector auto-regression model）</p>
 <p>向量自回归模型把系统中每一个内生变量作为系统中所有内生变量的滞后值的函数来构造模型，从而将单变量自回归模型推广到由多元时间序列变量组成的“向量”自回归模型。简而言之，VAR模型就是把所有变量看成一个向量，然后做其对其滞后项的回归。</p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>含有趋势性序列的建模</p>
+<h2 id="案例">案例</h2>
+<p>含有趋势性序列的建模</p>
 <p>含有干扰点序列的建模</p>
 <p>含有转折点序列的建模</p>
 <p>含有缺失数据序列的建模</p>
@@ -790,7 +878,7 @@
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/%E8%AF%95%E9%A2%98/">试题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
     </div>
   </div>
 
@@ -800,7 +888,7 @@
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/" rel="tag">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA/" rel="tag">知识表示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/KR/" rel="tag">KR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">计算机,数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机,数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%BD%91%E7%BB%9C/" rel="tag">计算机,网络</a></li></ul>
     </div>
   </div>
 

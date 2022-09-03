@@ -194,7 +194,7 @@
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">数据库,Neo4j</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机,数据库,Neo4j</a></li></ul>
             </div>
             
 
@@ -203,22 +203,22 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h2 id="0-写在最开始"><a href="#0-写在最开始" class="headerlink" title="0. 写在最开始"></a>0. 写在最开始</h2><p>本教程写于 2021.11.3 ，采用的Neo4j版本为 4.3.6 社区版，采用的教程为官方文档 v4.3 ，学习本教程请注意时效性。若与您学习时版本内容出现冲突，请以您学习版本的官网文档内容为准！</p>
+            <h2 id="写在最开始">0. 写在最开始</h2>
+<p>本教程写于 2021.11.3 ，采用的Neo4j版本为 4.3.6 社区版，采用的教程为官方文档 v4.3 ，学习本教程请注意时效性。若与您学习时版本内容出现冲突，请以您学习版本的官网文档内容为准！</p>
 <p>以下Neo4j相关的所有内容皆来自neo4j官方网站，本快速入门教程只截取了部分内容，完整内容请根据需求前往官网自行学习。下面列出部分常用网址，供快速访问：</p>
-<p>Neo4j官网：<a target="_blank" rel="noopener" href="https://neo4j.com/">https://neo4j.com/</a></p>
+<p>Neo4j官网：https://neo4j.com/</p>
 <ul>
-<li><p>Neo4j Download (community)：<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/#community">https://neo4j.com/download-center/#community</a></p>
-</li>
-<li><p>Neo4j Documentation：<a target="_blank" rel="noopener" href="https://neo4j.com/docs/">https://neo4j.com/docs/</a></p>
+<li><p>Neo4j Download (community)：https://neo4j.com/download-center/#community</p></li>
+<li><p>Neo4j Documentation：https://neo4j.com/docs/</p>
 <ul>
-<li>Getting Started Guide：<a target="_blank" rel="noopener" href="https://neo4j.com/docs/getting-started/current/">https://neo4j.com/docs/getting-started/current/</a></li>
-<li>Operations Manual：<a target="_blank" rel="noopener" href="https://neo4j.com/docs/operations-manual/current/">https://neo4j.com/docs/operations-manual/current/</a></li>
-<li>Cypher Manual：<a target="_blank" rel="noopener" href="https://neo4j.com/docs/cypher-manual/current/">https://neo4j.com/docs/cypher-manual/current/</a></li>
-<li>Cypher Refcard：<a target="_blank" rel="noopener" href="https://neo4j.com/docs/cypher-refcard/current/">https://neo4j.com/docs/cypher-refcard/current/</a></li>
+<li>Getting Started Guide：https://neo4j.com/docs/getting-started/current/</li>
+<li>Operations Manual：https://neo4j.com/docs/operations-manual/current/</li>
+<li>Cypher Manual：https://neo4j.com/docs/cypher-manual/current/</li>
+<li>Cypher Refcard：https://neo4j.com/docs/cypher-refcard/current/</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>随着社交、电商、金融、零售、物联网等行业的快速发展，现实社会织起了了一张庞大而复杂的关系网，传统数据库很难处理关系运算。大数据行业需要处理的数据之间的关系随数据量呈几何级数增长，亟需一种支持海量复杂数据关系运算的数据库，图数据库应运而生。</p>
+<h2 id="简介">1. 简介</h2>
+<p>随着社交、电商、金融、零售、物联网等行业的快速发展，现实社会织起了了一张庞大而复杂的关系网，传统数据库很难处理关系运算。大数据行业需要处理的数据之间的关系随数据量呈几何级数增长，亟需一种支持海量复杂数据关系运算的数据库，图数据库应运而生。</p>
 <p>世界上很多著名的公司都在使用图数据库。比如：</p>
 <ul>
 <li><strong>社交领域</strong>：Facebook, Twitter，Linkedin用它来管理社交关系，实现好友推荐</li>
@@ -228,11 +228,15 @@
 <li><strong>电信领域</strong>：Verizon, Orange和AT&amp;T 等电信公司依靠图数据库来管理网络，控制访问并支持客户360</li>
 <li><strong>酒店领域</strong>：万豪和雅高酒店等顶级酒店公司依使用图数据库来管理复杂且快速变化的库存</li>
 </ul>
-<h3 id="1-1-Graph-database-concepts-图数据库概念"><a href="#1-1-Graph-database-concepts-图数据库概念" class="headerlink" title="1.1. Graph database concepts 图数据库概念"></a>1.1. Graph database concepts 图数据库概念</h3><p>Neo4j uses a <em>property graph</em> database model.</p>
+<h3 id="graph-database-concepts-图数据库概念">1.1. Graph database concepts 图数据库概念</h3>
+<p>Neo4j uses a <em>property graph</em> database model.</p>
 <p>A graph data structure consists of <strong>nodes</strong> (discrete objects) that can be connected by <strong>relationships</strong>.</p>
 <blockquote>
-<h6 id="Example-1-Concept-of-a-graph-structure"><a href="#Example-1-Concept-of-a-graph-structure" class="headerlink" title="Example 1. Concept of a graph structure"></a>Example 1. Concept of a graph structure</h6><p>A graph with three nodes (the circles) and three relationships (the arrows).</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/graph_concept_three_nodes.svg" alt="graph concept three nodes"></p>
+<h6 id="example-1.-concept-of-a-graph-structure">Example 1. Concept of a graph structure</h6>
+<p>A graph with three nodes (the circles) and three relationships (the arrows).</p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graph_concept_three_nodes.svg" alt="graph concept three nodes" /><figcaption aria-hidden="true">graph concept three nodes</figcaption>
+</figure>
 </blockquote>
 <p>The Neo4j property graph database model consists of:</p>
 <ul>
@@ -251,19 +255,27 @@
 <li>Relationships are also refered to as edges, links, or lines.</li>
 </ul>
 </blockquote>
-<h4 id="1-1-1-Example-graph-示例图"><a href="#1-1-1-Example-graph-示例图" class="headerlink" title="1.1.1. Example graph 示例图"></a>1.1.1. Example graph 示例图</h4><p>The example graph shown below, introduces the basic concepts of the property graph:</p>
+<h4 id="example-graph-示例图">1.1.1. Example graph 示例图</h4>
+<p>The example graph shown below, introduces the basic concepts of the property graph:</p>
 <blockquote>
 <p>Example 2. Example graph.</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/graph_simple.svg" alt="graph simple"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graph_simple.svg" alt="graph simple" /><figcaption aria-hidden="true">graph simple</figcaption>
+</figure>
+</blockquote>
+<blockquote>
 <p>Example 3. Cypher.</p>
 <p>To create the example graph, use the Cypher clause <code>CREATE</code>.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (:Person:Actor &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;)-[:ACTED_IN &#123;roles: [&#x27;Forrest&#x27;]&#125;]-&gt;(:Movie &#123;title: &#x27;Forrest Gump&#x27;&#125;)&lt;-[:DIRECTED]-(:Person &#123;name: &#x27;Robert Zemeckis&#x27;, born: 1951&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (:Person:Actor &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;)-[:ACTED_IN &#123;roles: [&#39;Forrest&#39;]&#125;]-&gt;(:Movie &#123;title: &#39;Forrest Gump&#39;&#125;)&lt;-[:DIRECTED]-(:Person &#123;name: &#39;Robert Zemeckis&#39;, born: 1951&#125;)</code></pre>
 </blockquote>
-<h4 id="1-1-2-Node-节点"><a href="#1-1-2-Node-节点" class="headerlink" title="1.1.2. Node 节点"></a>1.1.2. Node 节点</h4><p>Nodes are used to represent <em>entities</em> (discrete objects) of a domain.</p>
+<h4 id="node-节点">1.1.2. Node 节点</h4>
+<p>Nodes are used to represent <em>entities</em> (discrete objects) of a domain.</p>
 <p>The simplest possible graph is a single node with no relationships. Consider the following graph, consisting of a single node.</p>
 <blockquote>
 <p>Example 4. Node.</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/graph_single_node.svg" alt="graph single node"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graph_single_node.svg" alt="graph single node" /><figcaption aria-hidden="true">graph single node</figcaption>
+</figure>
 <p>The node labels are:</p>
 <ul>
 <li><code>Person</code></li>
@@ -275,18 +287,23 @@
 <li><code>born: 1956</code></li>
 </ul>
 <p>The node can be created with Cypher using the query:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (:Person:Actor &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (:Person:Actor &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;)</code></pre>
 </blockquote>
-<h4 id="1-1-3-Node-labels-节点标签"><a href="#1-1-3-Node-labels-节点标签" class="headerlink" title="1.1.3. Node labels 节点标签"></a>1.1.3. Node labels 节点标签</h4><p>Labels shape the domain by grouping (classifying) nodes into sets where all nodes with a certain label belong to the same set.</p>
+<h4 id="node-labels-节点标签">1.1.3. Node labels 节点标签</h4>
+<p>Labels shape the domain by grouping (classifying) nodes into sets where all nodes with a certain label belong to the same set.</p>
 <p>For example, all nodes representing users could be labeled with the label <code>User</code>. With that in place, you can ask Neo4j to perform operations only on your user nodes, such as finding all users with a given name.</p>
 <p>Since labels can be added and removed during runtime, they can also be used to mark temporary states for nodes. A <code>Suspended</code> label could be used to denote bank accounts that are suspended, and a <code>Seasonal</code> label can denote vegetables that are currently in season.</p>
 <p>A node can have zero to many labels.</p>
 <p>In the example graph, the node labels, <code>Person</code>, <code>Actor</code>, and <code>Movie</code>, are used to describe (classify) the nodes. More labels can be added to express different dimensions of the data.</p>
 <p>The following graph shows the use of multiple labels.</p>
 <blockquote>
-<h6 id="Example-5-Multiple-labels"><a href="#Example-5-Multiple-labels" class="headerlink" title="Example 5. Multiple labels."></a>Example 5. Multiple labels.</h6><p><img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-simple-labels-multi.svg" alt="graphdb simple labels multi"></p>
+<h6 id="example-5.-multiple-labels.">Example 5. Multiple labels.</h6>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-simple-labels-multi.svg" alt="graphdb simple labels multi" /><figcaption aria-hidden="true">graphdb simple labels multi</figcaption>
+</figure>
 </blockquote>
-<h4 id="1-1-4-Relationship-关系"><a href="#1-1-4-Relationship-关系" class="headerlink" title="1.1.4. Relationship 关系"></a>1.1.4. Relationship 关系</h4><p>A relationship describes how a connection between a <em>source node</em> and a <em>target node</em> are related. It is possible for a node to have a relationship to itself.</p>
+<h4 id="relationship-关系">1.1.4. Relationship 关系</h4>
+<p>A relationship describes how a connection between a <em>source node</em> and a <em>target node</em> are related. It is possible for a node to have a relationship to itself.</p>
 <p>A relationship:</p>
 <ul>
 <li>Connects a <em>source node</em> and a <em>target node</em>.</li>
@@ -294,333 +311,408 @@
 <li>Must have a <strong>type</strong> (one type) to define (classify) what type of relationship it is.</li>
 <li>Can have properties (key-value pairs), which further describe the relationship.</li>
 </ul>
-<p>Relationships organize nodes into structures, allowing a graph to  resemble a list, a tree, a map, or a compound entity — any of which may  be combined into yet more complex, richly inter-connected structures.</p>
+<p>Relationships organize nodes into structures, allowing a graph to resemble a list, a tree, a map, or a compound entity — any of which may be combined into yet more complex, richly inter-connected structures.</p>
 <blockquote>
-<h6 id="Example-6-Relationship"><a href="#Example-6-Relationship" class="headerlink" title="Example 6. Relationship."></a>Example 6. Relationship.</h6><p><img src="https://neo4j.com/docs/getting-started/current/_images/graph_example_relationship.svg" alt="graph example relationship"></p>
+<h6 id="example-6.-relationship.">Example 6. Relationship.</h6>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graph_example_relationship.svg" alt="graph example relationship" /><figcaption aria-hidden="true">graph example relationship</figcaption>
+</figure>
 </blockquote>
 <p>The node type: <code>ACTED_IN</code></p>
 <p>The properties are:</p>
 <ul>
-<li><code>roles: [&#39;Forrest&#39;]</code></li>
+<li><code>roles: ['Forrest']</code></li>
 <li><code>performance: 5</code></li>
 </ul>
-<p>The <code>roles</code> property has an array value with a single item (<code>&#39;Forrest&#39;</code>) in it.</p>
+<p>The <code>roles</code> property has an array value with a single item (<code>'Forrest'</code>) in it.</p>
 <p>The relationship can be created with Cypher using the query:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE ()-[:ACTED_IN &#123;roles: [&#x27;Forrest&#x27;], performance: 5&#125;]-&gt;()</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE ()-[:ACTED_IN &#123;roles: [&#39;Forrest&#39;], performance: 5&#125;]-&gt;()</code></pre>
 <p>You must create or reference a <em>source node</em> and a <em>target node</em> to be able to create a relationship.</p>
-<p>Relationships always have a direction. However, the direction can be disregarded where it is not useful. This means that there is no need to add duplicate relationships in the  opposite direction unless it is needed to describe the data model  properly.</p>
+<p>Relationships always have a direction. However, the direction can be disregarded where it is not useful. This means that there is no need to add duplicate relationships in the opposite direction unless it is needed to describe the data model properly.</p>
 <p>A node can have relationships to itself. To express that <code>Tom Hanks</code> <code>KNOWS</code> himself would be expressed as:</p>
 <blockquote>
-<h6 id="Example-7-Relationship-to-a-single-node"><a href="#Example-7-Relationship-to-a-single-node" class="headerlink" title="Example 7. Relationship to a single node."></a>Example 7. Relationship to a single node.</h6><p><img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-nodes-and-rel-self.svg" alt="graphdb nodes and rel self"></p>
+<h6 id="example-7.-relationship-to-a-single-node.">Example 7. Relationship to a single node.</h6>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-nodes-and-rel-self.svg" alt="graphdb nodes and rel self" /><figcaption aria-hidden="true">graphdb nodes and rel self</figcaption>
+</figure>
 </blockquote>
-<h4 id="1-1-5-Relationship-type-关系类型"><a href="#1-1-5-Relationship-type-关系类型" class="headerlink" title="1.1.5. Relationship type 关系类型"></a>1.1.5. Relationship type 关系类型</h4><p>A relationship must have exactly one relationship type.</p>
+<h4 id="relationship-type-关系类型">1.1.5. Relationship type 关系类型</h4>
+<p>A relationship must have exactly one relationship type.</p>
 <p>Below is an <code>ACTED_IN</code> relationship, with the <code>Tom Hanks</code> node as the <em>source node</em> and <code>Forrest Gump</code> as the <em>target node</em>.</p>
 <blockquote>
-<h6 id="Example-8-Relationship-type"><a href="#Example-8-Relationship-type" class="headerlink" title="Example 8. Relationship type."></a>Example 8. Relationship type.</h6><p><img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-nodes-and-rel.svg" alt="graphdb nodes and rel"></p>
+<h6 id="example-8.-relationship-type.">Example 8. Relationship type.</h6>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-nodes-and-rel.svg" alt="graphdb nodes and rel" /><figcaption aria-hidden="true">graphdb nodes and rel</figcaption>
+</figure>
 </blockquote>
 <p>Observe that the <code>Tom Hanks</code> node has an <em>outgoing</em> relationship, while the <code>Forrest Gump</code> node has an <em>incoming</em> relationship.</p>
-<h4 id="1-1-6-Properties-属性"><a href="#1-1-6-Properties-属性" class="headerlink" title="1.1.6. Properties 属性"></a>1.1.6. Properties 属性</h4><p>Properties are key-value pairs that are used for storing data on nodes and relationships.</p>
+<h4 id="properties-属性">1.1.6. Properties 属性</h4>
+<p>Properties are key-value pairs that are used for storing data on nodes and relationships.</p>
 <p>The value part of a property:</p>
 <ul>
 <li>Can hold different data types, such as <code>number</code>, <code>string</code>, or <code>boolean</code>.</li>
 <li>Can hold a homogeneous list (array) containing, for example, strings, numbers, or boolean values.</li>
 </ul>
 <blockquote>
-<h6 id="Example-9-Number"><a href="#Example-9-Number" class="headerlink" title="Example 9. Number"></a>Example 9. Number</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (:Example &#123;a: 1, b: 3.14&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="example-9.-number">Example 9. Number</h6>
+<pre class="cypher"><code>CREATE (:Example &#123;a: 1, b: 3.14&#125;)</code></pre>
 <ul>
 <li>The property <code>a</code> has the type <code>integer</code> with the value <code>1</code>.</li>
 <li>The property <code>b</code> has the type <code>float</code> with the value <code>3.14</code>.</li>
 </ul>
-<h6 id="Example-10-String-and-boolean"><a href="#Example-10-String-and-boolean" class="headerlink" title="Example 10. String and boolean"></a>Example 10. String and boolean</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (:Example &#123;c: &#x27;This is an example string&#x27;, d: true, e: false&#125;)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h6 id="example-10.-string-and-boolean">Example 10. String and boolean</h6>
+<pre class="cypher"><code>CREATE (:Example &#123;c: &#39;This is an example string&#39;, d: true, e: false&#125;)</code></pre>
 <ul>
-<li>The property <code>c</code> has the type <code>string</code> with the value <code>&#39;This is an example string&#39;</code>.</li>
+<li>The property <code>c</code> has the type <code>string</code> with the value <code>'This is an example string'</code>.</li>
 <li>The property <code>d</code> has the type <code>boolean</code> with the value <code>true</code>.</li>
 <li>The property <code>e</code> has the type <code>boolean</code> with the value <code>false</code>.</li>
 </ul>
-<h6 id="Example-11-Lists"><a href="#Example-11-Lists" class="headerlink" title="Example 11. Lists"></a>Example 11. Lists</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (:Example &#123;f: [1, 2, 3], g: [2.71, 3.14], h: [&#x27;abc&#x27;, &#x27;example&#x27;], i: [true, true, false]&#125;)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h6 id="example-11.-lists">Example 11. Lists</h6>
+<pre class="cypher"><code>CREATE (:Example &#123;f: [1, 2, 3], g: [2.71, 3.14], h: [&#39;abc&#39;, &#39;example&#39;], i: [true, true, false]&#125;)</code></pre>
 <ul>
 <li>The property <code>f</code> contains an array with the value <code>[1, 2, 3]</code>.</li>
 <li>The property <code>g</code> contains an array with the value <code>[2.71, 3.14]</code>.</li>
-<li>The property <code>h</code> contains an array with the value <code>[&#39;abc&#39;, &#39;example&#39;]</code>.</li>
+<li>The property <code>h</code> contains an array with the value <code>['abc', 'example']</code>.</li>
 <li>The property <code>i</code> contains an array with the value <code>[true, true, false]</code>.</li>
 </ul>
 </blockquote>
-<h4 id="1-1-7-Traversals-and-paths-遍历和路径"><a href="#1-1-7-Traversals-and-paths-遍历和路径" class="headerlink" title="1.1.7. Traversals and paths 遍历和路径"></a>1.1.7. Traversals and paths 遍历和路径</h4><p>A traversal is how you query a graph in order to find answers to  questions, for example: “What music do my friends like that I don’t yet  own?”, or “What web services are affected if this power supply goes down?”.</p>
+<h4 id="traversals-and-paths-遍历和路径">1.1.7. Traversals and paths 遍历和路径</h4>
+<p>A traversal is how you query a graph in order to find answers to questions, for example: "What music do my friends like that I don’t yet own?", or "What web services are affected if this power supply goes down?".</p>
 <p>Traversing a graph means visiting nodes by following relationships according to some rules. In most cases only a subset of the graph is visited.</p>
 <blockquote>
-<h6 id="Example-12-Path-matching"><a href="#Example-12-Path-matching" class="headerlink" title="Example 12. Path matching."></a>Example 12. Path matching.</h6><p>To find out which movies Tom Hanks acted in according to the tiny example database, the traversal would start from the <code>Tom Hanks</code> node, follow any <code>ACTED_IN</code> relationships connected to the node, and end up with <code>Forrest Gump</code> as the result (see the dashed lines):</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-traversal.svg" alt="graphdb traversal"></p>
+<h6 id="example-12.-path-matching.">Example 12. Path matching.</h6>
+<p>To find out which movies Tom Hanks acted in according to the tiny example database, the traversal would start from the <code>Tom Hanks</code> node, follow any <code>ACTED_IN</code> relationships connected to the node, and end up with <code>Forrest Gump</code> as the result (see the dashed lines):</p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-traversal.svg" alt="graphdb traversal" /><figcaption aria-hidden="true">graphdb traversal</figcaption>
+</figure>
 <p>The traversal result could be returned as a path with the length <code>1</code>:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-path.svg" alt="graphdb path"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-path.svg" alt="graphdb path" /><figcaption aria-hidden="true">graphdb path</figcaption>
+</figure>
 </blockquote>
 <p>The shortest possible path has length zero. It contains a single node and no relationships.</p>
 <blockquote>
-<h6 id="Example-13-Path-of-length-zero"><a href="#Example-13-Path-of-length-zero" class="headerlink" title="Example 13. Path of length zero."></a>Example 13. Path of length zero.</h6><p>A path containing only a single node has the length of <code>0</code>.</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-path-zero.svg" alt="graphdb path zero"></p>
-<h6 id="Example-14-Path-of-length-one"><a href="#Example-14-Path-of-length-one" class="headerlink" title="Example 14. Path of length one."></a>Example 14. Path of length one.</h6><p>A path containing one relationship has the length of <code>1</code>.</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-path-example-loop.svg" alt="graphdb path example loop"></p>
+<h6 id="example-13.-path-of-length-zero.">Example 13. Path of length zero.</h6>
+<p>A path containing only a single node has the length of <code>0</code>.</p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-path-zero.svg" alt="graphdb path zero" /><figcaption aria-hidden="true">graphdb path zero</figcaption>
+</figure>
 </blockquote>
-<h4 id="1-1-8-Schema-架构"><a href="#1-1-8-Schema-架构" class="headerlink" title="1.1.8. Schema 架构"></a>1.1.8. Schema 架构</h4><p>A <em>schema</em> in Neo4j refers to indexes and constraints.</p>
+<blockquote>
+<h6 id="example-14.-path-of-length-one.">Example 14. Path of length one.</h6>
+<p>A path containing one relationship has the length of <code>1</code>.</p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/graphdb-path-example-loop.svg" alt="graphdb path example loop" /><figcaption aria-hidden="true">graphdb path example loop</figcaption>
+</figure>
+</blockquote>
+<h4 id="schema-架构">1.1.8. Schema 架构</h4>
+<p>A <em>schema</em> in Neo4j refers to indexes and constraints.</p>
 <p>Neo4j is often described as <em>schema optional</em>, meaning that it is not necessary to create indexes and constraints. You can create data — nodes, relationships and properties — without defining a schema up front. Indexes and constraints can be introduced when desired, in order to gain performance or modeling benefits.</p>
-<h4 id="1-1-9-Indexes-索引"><a href="#1-1-9-Indexes-索引" class="headerlink" title="1.1.9. Indexes 索引"></a>1.1.9. Indexes 索引</h4><p>Indexes are used to increase performance. </p>
-<h4 id="1-1-10-Constraints-约束"><a href="#1-1-10-Constraints-约束" class="headerlink" title="1.1.10. Constraints 约束"></a>1.1.10. Constraints 约束</h4><p>Constraints are used to make sure that the data adheres to the rules of the domain. </p>
-<h4 id="1-1-11-Naming-conventions-命名规范"><a href="#1-1-11-Naming-conventions-命名规范" class="headerlink" title="1.1.11. Naming conventions 命名规范"></a>1.1.11. Naming conventions 命名规范</h4><p>Node labels, relationship types, and properties (the key part) are case sensitive, meaning, for example, that the property <code>name</code> is different from the property <code>Name</code>.</p>
+<h4 id="indexes-索引">1.1.9. Indexes 索引</h4>
+<p>Indexes are used to increase performance.</p>
+<h4 id="constraints-约束">1.1.10. Constraints 约束</h4>
+<p>Constraints are used to make sure that the data adheres to the rules of the domain.</p>
+<h4 id="naming-conventions-命名规范">1.1.11. Naming conventions 命名规范</h4>
+<p>Node labels, relationship types, and properties (the key part) are case sensitive, meaning, for example, that the property <code>name</code> is different from the property <code>Name</code>.</p>
 <p>The following naming conventions are recommended:</p>
-<div class="table-container">
 <table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 47%" />
+<col style="width: 37%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Graph entity</th>
 <th>Recommended style</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Node label</td>
 <td>Camel case, beginning with an upper-case character</td>
 <td><code>:VehicleOwner</code> rather than <code>:vehice_owner</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Relationship type</td>
 <td>Upper case, using underscore to separate words</td>
 <td><code>:OWNS_VEHICLE</code> rather than <code>:ownsVehicle</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Property</td>
 <td>Lower camel case, beginning with a lower-case character</td>
 <td><code>firstName</code> rather than <code>first_name</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="1-2-图数据库的横纵对比"><a href="#1-2-图数据库的横纵对比" class="headerlink" title="1.2. 图数据库的横纵对比"></a>1.2. 图数据库的横纵对比</h3><p>我们为什么要选择图数据库？它和其它数据库相比，优势在哪，劣势又在哪？通过《Neo4j IN ACTION》中的一个例子来了解一下。</p>
-<h4 id="1-2-1-对比关系型数据库"><a href="#1-2-1-对比关系型数据库" class="headerlink" title="1.2.1. 对比关系型数据库"></a>1.2.1. 对比关系型数据库</h4><p>The example we’re going to explore is a social network—a set of users who can be friends with each other. Figure 1.1 illustrates the social network, where users connected with arrows are friends.</p>
+<h3 id="图数据库的横纵对比">1.2. 图数据库的横纵对比</h3>
+<p>我们为什么要选择图数据库？它和其它数据库相比，优势在哪，劣势又在哪？通过《Neo4j IN ACTION》中的一个例子来了解一下。</p>
+<h4 id="对比关系型数据库">1.2.1. 对比关系型数据库</h4>
+<p>The example we’re going to explore is a social network—a set of users who can be friends with each other. Figure 1.1 illustrates the social network, where users connected with arrows are friends.</p>
 <blockquote>
-<h6 id="Figure-Users-and-their-friends-represented-as-a-graph-data-structure"><a href="#Figure-Users-and-their-friends-represented-as-a-graph-data-structure" class="headerlink" title="Figure: Users and their friends represented as a graph data structure"></a>Figure: Users and their friends represented as a graph data structure</h6><p><img src="\f1.png" alt="f1" style="zoom: 80%;" /></p>
+<h6 id="figure-users-and-their-friends-represented-as-a-graph-data-structure">Figure: Users and their friends represented as a graph data structure</h6>
+<p><img src="\f1.png" alt="f1" style="zoom: 80%;" /></p>
 </blockquote>
-<h5 id="1-2-1-1-Graph-data-in-a-relational-database"><a href="#1-2-1-1-Graph-data-in-a-relational-database" class="headerlink" title="1.2.1.1. Graph data in a relational database"></a>1.2.1.1. Graph data in a relational database</h5><p>In a relational database, you’d typically have two relational tables for storing social network data: one for user information, and another for the relationships between users.</p>
+<h5 id="graph-data-in-a-relational-database">1.2.1.1. Graph data in a relational database</h5>
+<p>In a relational database, you’d typically have two relational tables for storing social network data: one for user information, and another for the relationships between users.</p>
 <blockquote>
 <p>Figure: SQL diagram of tables representing user and friend data</p>
 <p><img src="\f2.png" alt="f2" style="zoom:80%;" /></p>
 </blockquote>
 <p>The following listing shows the SQL script for creating tables using a MySQL database.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_user ( </span><br><span class="line"> id <span class="type">bigint</span> <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"> name <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"> <span class="keyword">primary</span> key (id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> t_user ( </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">id</span> bigint <span class="kw">not</span> <span class="kw">null</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a> name <span class="dt">varchar</span>(<span class="dv">255</span>) <span class="kw">not</span> <span class="kw">null</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">primary</span> <span class="kw">key</span> (<span class="kw">id</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
 <p>Table definition for storing friendship relations</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_user_friend ( </span><br><span class="line"> id <span class="type">bigint</span> <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"> user_1 <span class="type">bigint</span> <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"> user_2 <span class="type">bigint</span> <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"> <span class="keyword">primary</span> key (id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> t_user_friend ( </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">id</span> bigint <span class="kw">not</span> <span class="kw">null</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> user_1 bigint <span class="kw">not</span> <span class="kw">null</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> user_2 bigint <span class="kw">not</span> <span class="kw">null</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">primary</span> <span class="kw">key</span> (<span class="kw">id</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
 <p>Foreign key constraints</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t_user_friend </span><br><span class="line"> <span class="keyword">add</span> index FK416055ABC6132571 (user_1), </span><br><span class="line"> <span class="keyword">add</span> <span class="keyword">constraint</span> FK416055ABC6132571 </span><br><span class="line"> <span class="keyword">foreign</span> key (user_1) <span class="keyword">references</span> t_user (id); </span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t_user_friend </span><br><span class="line"> <span class="keyword">add</span> index FK416055ABC6132572 (user_2), </span><br><span class="line"> <span class="keyword">add</span> <span class="keyword">constraint</span> FK416055ABC6132572 </span><br><span class="line"> <span class="keyword">foreign</span> key (user_2) <span class="keyword">references</span> t_user (id); </span><br></pre></td></tr></table></figure>
-<p>Table t_user contains columns with user information, while table t_user_friend simply has two columns referencing table t_user using a foreign key relation. The primary key and foreign key columns have indexes for quicker lookup operations, a strategy typically employed when modeling relational databases. </p>
-<h5 id="1-2-1-2-Querying-graph-data-using-MySQL"><a href="#1-2-1-2-Querying-graph-data-using-MySQL" class="headerlink" title="1.2.1.2. Querying graph data using MySQL"></a>1.2.1.2. Querying graph data using MySQL</h5><p>How would you go about querying relational data? Getting the count for direct friends of a particular user is quite straightforward. A basic select query such as the following would do the trick:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> uf.<span class="operator">*</span>) <span class="keyword">from</span> t_user_friend uf <span class="keyword">where</span> uf.user_1 <span class="operator">=</span> ?</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="kw">table</span> t_user_friend </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">add</span> <span class="kw">index</span> FK416055ABC6132571 (user_1), </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">add</span> <span class="kw">constraint</span> FK416055ABC6132571 </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">foreign</span> <span class="kw">key</span> (user_1) <span class="kw">references</span> t_user (<span class="kw">id</span>); </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="kw">table</span> t_user_friend </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">add</span> <span class="kw">index</span> FK416055ABC6132572 (user_2), </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a> <span class="kw">add</span> <span class="kw">constraint</span> FK416055ABC6132572 </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a> <span class="kw">foreign</span> <span class="kw">key</span> (user_2) <span class="kw">references</span> t_user (<span class="kw">id</span>); </span></code></pre></div>
+<p>Table t_user contains columns with user information, while table t_user_friend simply has two columns referencing table t_user using a foreign key relation. The primary key and foreign key columns have indexes for quicker lookup operations, a strategy typically employed when modeling relational databases.</p>
+<h5 id="querying-graph-data-using-mysql">1.2.1.2. Querying graph data using MySQL</h5>
+<p>How would you go about querying relational data? Getting the count for direct friends of a particular user is quite straightforward. A basic select query such as the following would do the trick:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="fu">count</span>(<span class="kw">distinct</span> uf.<span class="op">*</span>) <span class="kw">from</span> t_user_friend uf <span class="kw">where</span> uf.user_1 <span class="op">=</span> ?</span></code></pre></div>
 <p>How about finding all friends of a user’s friends? This time you’d typically join the t_user_friend table with itself before querying:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> uf2.<span class="operator">*</span>) <span class="keyword">from</span> t_user_friend uf1</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> t_user_friend uf2 <span class="keyword">on</span> uf1.user_1 <span class="operator">=</span> uf2.user_2</span><br><span class="line"><span class="keyword">where</span> uf1.user_1 <span class="operator">=</span> ?</span><br></pre></td></tr></table></figure>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="fu">count</span>(<span class="kw">distinct</span> uf2.<span class="op">*</span>) <span class="kw">from</span> t_user_friend uf1</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">inner</span> <span class="kw">join</span> t_user_friend uf2 <span class="kw">on</span> uf1.user_1 <span class="op">=</span> uf2.user_2</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> uf1.user_1 <span class="op">=</span> ?</span></code></pre></div>
 <p>Popular social networks usually have a feature where they suggest people from your friendship network as potential friends or contacts, up to a certain degree of separation, or depth. If you wanted to do something similar to find friends of friends of friends of a user, you’d need another join operation:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> uf3.<span class="operator">*</span>) <span class="keyword">from</span> t_user_friend uf1</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> t_user_friend uf2 <span class="keyword">on</span> uf1.user_1 <span class="operator">=</span> uf2.user_2</span><br><span class="line"><span class="keyword">inner</span> <span class="keyword">join</span> t_user_friend uf3 <span class="keyword">on</span> uf2.user_1 <span class="operator">=</span> uf3.user_2</span><br><span class="line"><span class="keyword">where</span> uf1.user_1 <span class="operator">=</span> ?</span><br></pre></td></tr></table></figure>
-<p>Similarly, to iterate through a fourth level of friendship, you’d need four joins. To get all connections for the famous six degrees of separation problem, six joins would be required. </p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="fu">count</span>(<span class="kw">distinct</span> uf3.<span class="op">*</span>) <span class="kw">from</span> t_user_friend uf1</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">inner</span> <span class="kw">join</span> t_user_friend uf2 <span class="kw">on</span> uf1.user_1 <span class="op">=</span> uf2.user_2</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">inner</span> <span class="kw">join</span> t_user_friend uf3 <span class="kw">on</span> uf2.user_1 <span class="op">=</span> uf3.user_2</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> uf1.user_1 <span class="op">=</span> ?</span></code></pre></div>
+<p>Similarly, to iterate through a fourth level of friendship, you’d need four joins. To get all connections for the famous six degrees of separation problem, six joins would be required.</p>
 <p>There’s nothing unusual about this approach, but there’s one potential problem: although you’re only interested in friends of friends of a single user, you have to perform a join of all data in the t_user_friend table, and then discard all rows that you’re not interested in. On a small data set, this wouldn’t be a big concern, but if your social network grows large, you could start running into serious performance problems. As you’ll see, this can put a huge strain on your relational database engine.</p>
 <p>To illustrate the performance of such queries, we ran the friends-of-friends query a few times against a small data set of 1,000 users, but increased the depth of the search with each invocation and recorded the results each time. On a small data set of 1,000 users, where each user has on average 50 friends, table t_user contains 1,000 records, whereas table t_user_friend contains 1,000 u 50 = 50,000 records.</p>
 <p>At each depth, we ran the query 10 times—this was simply to warm up any caches that could help with performance. The fastest execution time for each depth was recorded. No additional database performance tuning was performed, apart from column indexes defined in the SQL script from above. Table below shows the results of the experiment.</p>
 <blockquote>
-<h6 id="Table-Execution-times-for-multiple-join-queries-using-a-MySQL-database-engine-on-a-data-set-of-1-000-users"><a href="#Table-Execution-times-for-multiple-join-queries-using-a-MySQL-database-engine-on-a-data-set-of-1-000-users" class="headerlink" title="Table: Execution times for multiple join queries using a MySQL database engine on a data set of 1,000 users"></a>Table: Execution times for multiple join queries using a MySQL database engine on a data set of 1,000 users</h6><div class="table-container">
+<h6 id="table-execution-times-for-multiple-join-queries-using-a-mysql-database-engine-on-a-data-set-of-1000-users">Table: Execution times for multiple join queries using a MySQL database engine on a data set of 1,000 users</h6>
 <table>
 <thead>
-<tr>
-<th style="text-align:left">Depth</th>
+<tr class="header">
+<th style="text-align: left;">Depth</th>
 <th>Execution time (seconds) for 1,000 users</th>
 <th>Count result</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left">2</td>
+<tr class="odd">
+<td style="text-align: left;">2</td>
 <td>0.028</td>
 <td>~900</td>
 </tr>
-<tr>
-<td style="text-align:left">3</td>
+<tr class="even">
+<td style="text-align: left;">3</td>
 <td>0.213</td>
 <td>~999</td>
 </tr>
-<tr>
-<td style="text-align:left">4</td>
+<tr class="odd">
+<td style="text-align: left;">4</td>
 <td>10.273</td>
 <td>~999</td>
 </tr>
-<tr>
-<td style="text-align:left">5</td>
+<tr class="even">
+<td style="text-align: left;">5</td>
 <td>92.613</td>
 <td>~999</td>
 </tr>
 </tbody>
 </table>
-</div>
 </blockquote>
-<p>As you can see, MySQL handles queries to depths 2 and 3 quite well. That’s not unexpected—<code>join</code> operations are common in the relational world, so most database engines are designed and tuned with this in mind. The use of database indexes on the relevant columns also helped the relational database to maximize its performance of these <code>join</code> queries. </p>
+<p>As you can see, MySQL handles queries to depths 2 and 3 quite well. That’s not unexpected—<code>join</code> operations are common in the relational world, so most database engines are designed and tuned with this in mind. The use of database indexes on the relevant columns also helped the relational database to maximize its performance of these <code>join</code> queries.</p>
 <p>At depths 4 and 5, however, you see a significant degradation of performance: a query involving 4 joins takes over 10 seconds to execute, while at depth 5, execution takes way too long—over a minute and a half, although the count result doesn’t change. This illustrates the limitation of MySQL when modeling graph data: deep graphs require multiple joins, which relational databases typically don’t handle too well.</p>
 <p>In a word, relational databases are not so great for modeling many-to-many relationships, especially in large data sets. Neo4j, on the other hand, excels at many-to-many relationships, so let’s take a look at how it performs with the same data set. Instead of tables, columns, and foreign keys, you’re going to model users as nodes, and friendships as relationships between nodes.</p>
-<h5 id="1-2-1-3-Graph-data-in-Neo4j"><a href="#1-2-1-3-Graph-data-in-Neo4j" class="headerlink" title="1.2.1.3. Graph data in Neo4j"></a>1.2.1.3. Graph data in Neo4j</h5><p>跳过怎么在Neo4j中储存这些数据，之后会提到</p>
+<h5 id="graph-data-in-neo4j">1.2.1.3. Graph data in Neo4j</h5>
+<p>跳过怎么在Neo4j中储存这些数据，之后会提到</p>
 <p>Neo4j stores data as vertices and edges, or, in Neo4j terminology, <em>nodes</em> and <em>relationships</em>. Users will be represented as nodes, and friendships will be represented as relationships between user nodes. If you take another look at the social network in figure in 1.2.1, you’ll see that it represents nothing more than a graph, with users as nodes and friendship arrows as relationships.</p>
-<p>There’s one key difference between relational and Neo4j databases, which you’ll come across right away: data querying. There are no tables and columns in Neo4j, nor are there any SQL-based <code>select</code> and <code>join</code> commands. So how do you query a graph database? </p>
+<p>There’s one key difference between relational and Neo4j databases, which you’ll come across right away: data querying. There are no tables and columns in Neo4j, nor are there any SQL-based <code>select</code> and <code>join</code> commands. So how do you query a graph database?</p>
 <p>The answer is not “write a distributed MapReduce function.” Neo4j, like all graph databases, takes a powerful mathematical concept from graph theory and uses it as a powerful and efficient engine for querying data. This concept is <em>graph traversal</em>, and it’s one of the main tools that makes Neo4j so powerful for dealing with large-scale graph data.</p>
-<h5 id="1-2-1-4-Traversing-the-graph"><a href="#1-2-1-4-Traversing-the-graph" class="headerlink" title="1.2.1.4. Traversing the graph"></a>1.2.1.4. Traversing the graph</h5><p>跳过怎么查询的，之后会提到，直接看查询结果</p>
+<h5 id="traversing-the-graph">1.2.1.4. Traversing the graph</h5>
+<p>跳过怎么查询的，之后会提到，直接看查询结果</p>
 <blockquote>
-<h6 id="Table-The-execution-times-for-graph-traversal-using-Neo4j-on-a-data-set-of-1-000-users"><a href="#Table-The-execution-times-for-graph-traversal-using-Neo4j-on-a-data-set-of-1-000-users" class="headerlink" title="Table: The execution times for graph traversal using Neo4j on a data set of 1,000 users"></a>Table: The execution times for graph traversal using Neo4j on a data set of 1,000 users</h6><div class="table-container">
+<h6 id="table-the-execution-times-for-graph-traversal-using-neo4j-on-a-data-set-of-1000-users">Table: The execution times for graph traversal using Neo4j on a data set of 1,000 users</h6>
 <table>
 <thead>
-<tr>
-<th style="text-align:left">Depth</th>
+<tr class="header">
+<th style="text-align: left;">Depth</th>
 <th>Execution time (seconds) for 1,000 users</th>
 <th>Count result</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left">2</td>
+<tr class="odd">
+<td style="text-align: left;">2</td>
 <td>0.04</td>
 <td>~900</td>
 </tr>
-<tr>
-<td style="text-align:left">3</td>
+<tr class="even">
+<td style="text-align: left;">3</td>
 <td>0.06</td>
 <td>~999</td>
 </tr>
-<tr>
-<td style="text-align:left">4</td>
+<tr class="odd">
+<td style="text-align: left;">4</td>
 <td>0.07</td>
 <td>~999</td>
 </tr>
-<tr>
-<td style="text-align:left">5</td>
+<tr class="even">
+<td style="text-align: left;">5</td>
 <td>0.07</td>
 <td>~999</td>
 </tr>
 </tbody>
 </table>
-</div>
 </blockquote>
-<p>The first thing to notice is that the Neo4j performance is significantly better for all queries, except the simplest one. Only when looking for friends of friends (at depth 2) is the MySQL performance comparable to the performance of a Neo4j traversal. The traversal of friends at depth 3 is four times faster than the MySQL counterpart. When performing a traversal at depth 4, the results are five orders of magnitude better. The depth 5 results are 10 million times faster for the Neo4j traversal compared to the MySQL query! </p>
-<p>Another conclusion is that the performance of the query degrades only slightly with the depth of the traversal when the count of nodes returned remains the same. The MySQL query performance degrades with the depth of the query because of the Cartesian product operations that are executed before most of the results are discarded. Neo4j keeps track of the nodes visited, so it can skip nodes it’s visited before and therefore significantly improve performance. </p>
+<p>The first thing to notice is that the Neo4j performance is significantly better for all queries, except the simplest one. Only when looking for friends of friends (at depth 2) is the MySQL performance comparable to the performance of a Neo4j traversal. The traversal of friends at depth 3 is four times faster than the MySQL counterpart. When performing a traversal at depth 4, the results are five orders of magnitude better. The depth 5 results are 10 million times faster for the Neo4j traversal compared to the MySQL query!</p>
+<p>Another conclusion is that the performance of the query degrades only slightly with the depth of the traversal when the count of nodes returned remains the same. The MySQL query performance degrades with the depth of the query because of the Cartesian product operations that are executed before most of the results are discarded. Neo4j keeps track of the nodes visited, so it can skip nodes it’s visited before and therefore significantly improve performance.</p>
 <p>To find all friends at depth 5, MySQL will perform a Cartesian product on the t_user_friend table five times, resulting in 50,0005 records, out of which all but 1,000 are discarded. Neo4j will simply visit nodes in the database, and when there are no more nodes to visit, it will stop the traversal. That is why Neo4j can maintain constant performance as long as the number of nodes returned remains the same, whereas there’s a significant degradation in performance when using MySQL queries.</p>
-<h5 id="1-2-1-5-SQL-joins-versus-graph-traversal-on-a-large-scale"><a href="#1-2-1-5-SQL-joins-versus-graph-traversal-on-a-large-scale" class="headerlink" title="1.2.1.5.  SQL joins versus graph traversal on a large scale"></a>1.2.1.5.  SQL joins versus graph traversal on a large scale</h5><p>But how does this graphing approach scale? To get the answer, let’s repeat the experiment with a data set of 1 million users.</p>
+<h5 id="sql-joins-versus-graph-traversal-on-a-large-scale">1.2.1.5. SQL joins versus graph traversal on a large scale</h5>
+<p>But how does this graphing approach scale? To get the answer, let’s repeat the experiment with a data set of 1 million users.</p>
 <p>In MySQL we had 1,000,000 records in the t_user table, and approximately 1,000,000 × 50 = 50,000,000 records in the t_user_friend table. We ran the same four queries against this data set (friends at depths 2, 3, 4, and 5). Table below shows the collected results for the performance of SQL queries in this case.</p>
 <blockquote>
-<h6 id="Table-The-execution-times-for-multiple-join-queries-using-a-MySQL-database-engine-on-a-data-set-of-1-million-users"><a href="#Table-The-execution-times-for-multiple-join-queries-using-a-MySQL-database-engine-on-a-data-set-of-1-million-users" class="headerlink" title="Table:  The execution times for multiple join queries using a MySQL database engine on a data set of 1 million users"></a>Table:  The execution times for multiple join queries using a MySQL database engine on a data set of 1 million users</h6><div class="table-container">
+<h6 id="table-the-execution-times-for-multiple-join-queries-using-a-mysql-database-engine-on-a-data-set-of-1-million-users">Table: The execution times for multiple join queries using a MySQL database engine on a data set of 1 million users</h6>
 <table>
 <thead>
-<tr>
-<th style="text-align:left">Depth</th>
+<tr class="header">
+<th style="text-align: left;">Depth</th>
 <th>Execution time (seconds) for 1 million users</th>
 <th>Count result</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left">2</td>
+<tr class="odd">
+<td style="text-align: left;">2</td>
 <td>0.016</td>
 <td>~2,500</td>
 </tr>
-<tr>
-<td style="text-align:left">3</td>
+<tr class="even">
+<td style="text-align: left;">3</td>
 <td>30.267</td>
 <td>~125,000</td>
 </tr>
-<tr>
-<td style="text-align:left">4</td>
+<tr class="odd">
+<td style="text-align: left;">4</td>
 <td>1,543.505</td>
 <td>~600,000</td>
 </tr>
-<tr>
-<td style="text-align:left">5</td>
+<tr class="even">
+<td style="text-align: left;">5</td>
 <td>Not finished</td>
 <td>—</td>
 </tr>
 </tbody>
 </table>
-</div>
 </blockquote>
 <p>Comparing these results to the MySQL results for a data set of 1,000 users, you can see that the performance of the depth 2 query has stayed the same, which can be explained by the design of the MySQL engine handling table joins efficiently using indexes. Queries at depths 3 and 4 (which use 3 and 4 <code>join</code> operations, respectively) demonstrate much worse results, by at least two orders of magnitude. The SQL query for all friends at depth 5 did not finish in the hour we ran the script.</p>
 <p>These results clearly show that the MySQL relational database is optimized for single <code>join</code> queries, even on large data sets. The performance of multiple <code>join</code> queries on large data sets degrades significantly, to the point that some queries are not even executable (for example, friends at depth 5 for a data set of 1 million users).</p>
 <blockquote>
-<h6 id="Why-are-relational-database-queries-so-slow"><a href="#Why-are-relational-database-queries-so-slow" class="headerlink" title="Why are relational database queries so slow?"></a>Why are relational database queries so slow?</h6><p>The results in table 1.3 are somewhat expected, given the way <code>join</code> operations work. As we discussed earlier, each <code>join</code> creates a Cartesian product of all potential combinations of rows, then filters out those that don’t match the <code>where</code> clause. With 1 million users, the Cartesian product of 5 joins (equivalent to a query at depth 5) contains a huge number of rows—billions. Way too many zeros to be readable. Filtering out all the records that don’t match the query is too expensive, such that the SQL query at depth 5 never finishes in a reasonable time.</p>
+<h6 id="why-are-relational-database-queries-so-slow">Why are relational database queries so slow?</h6>
+<p>The results in table 1.3 are somewhat expected, given the way <code>join</code> operations work. As we discussed earlier, each <code>join</code> creates a Cartesian product of all potential combinations of rows, then filters out those that don’t match the <code>where</code> clause. With 1 million users, the Cartesian product of 5 joins (equivalent to a query at depth 5) contains a huge number of rows—billions. Way too many zeros to be readable. Filtering out all the records that don’t match the query is too expensive, such that the SQL query at depth 5 never finishes in a reasonable time.</p>
 </blockquote>
 <p>We repeated the same experiment with Neo4j traversals. We had 1 million nodes representing users, and approximately 50 million relationships stored in Neo4j. We ran the same four traversals as in the previous example, and we got the performance results in table below.</p>
 <blockquote>
-<h6 id="Table-The-execution-times-for-graph-traversal-using-Neo4j-on-a-data-set-of-1-million-users"><a href="#Table-The-execution-times-for-graph-traversal-using-Neo4j-on-a-data-set-of-1-million-users" class="headerlink" title="Table:  The execution times for graph traversal using Neo4j on a data set of 1 million users"></a>Table:  The execution times for graph traversal using Neo4j on a data set of 1 million users</h6><div class="table-container">
+<h6 id="table-the-execution-times-for-graph-traversal-using-neo4j-on-a-data-set-of-1-million-users">Table: The execution times for graph traversal using Neo4j on a data set of 1 million users</h6>
 <table>
 <thead>
-<tr>
-<th style="text-align:left">Depth</th>
+<tr class="header">
+<th style="text-align: left;">Depth</th>
 <th>Execution time (seconds) for 1 million users</th>
 <th>Count result</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left">2</td>
+<tr class="odd">
+<td style="text-align: left;">2</td>
 <td>0.01</td>
 <td>~2,500</td>
 </tr>
-<tr>
-<td style="text-align:left">3</td>
+<tr class="even">
+<td style="text-align: left;">3</td>
 <td>0.168</td>
 <td>~125,000</td>
 </tr>
-<tr>
-<td style="text-align:left">4</td>
+<tr class="odd">
+<td style="text-align: left;">4</td>
 <td>1.359</td>
 <td>~600,000</td>
 </tr>
-<tr>
-<td style="text-align:left">5</td>
+<tr class="even">
+<td style="text-align: left;">5</td>
 <td>2.132</td>
 <td>~800,000</td>
 </tr>
 </tbody>
 </table>
-</div>
 </blockquote>
-<p>As you can see, the increase in data by a thousand times didn’t significantly affect Neo4j’s performance. The traversal does get slower as you increase the depth, but the main reason for that is the increased number of results that are returned. The performance slows linearly with the increase of the result size, and it’s predictable even with a larger data set and depth level. In addition, this is at least a hundred times better than the corresponding MySQL performance. </p>
-<p>The main reason for Neo4j’s predictability is the localized nature of the graph traversal; irrespective of how many nodes and relationships are in the graph, the traversal will only visit ones that are connected to the starting node, according to the traversal rules. Remember, relational join operations compute the Cartesian product before discarding irrelevant results, affecting performance exponentially with the growth of the data set. Neo4j, however, only visits nodes that are relevant to the traversal, so it’s able to maintain predictable performance regardless of the total data set size. The more nodes the traversal has to visit, the slower the traversal, as you’ve seen while increasing the traversal depth. But this increase is linear and is still independent<br>of the total graph size. </p>
-<p>These experiments demonstrate that the Neo4j graph database is significantly faster in querying graph data than using a relational database. In addition, a single Neo4j instance can handle data sets of three orders of magnitude without performance penalties. The independence of traversal performance on graph size is one of the key aspects that make Neo4j an ideal candidate for solving graph problems, even when data sets are very large. </p>
-<h4 id="1-2-2-对比其它非关系型数据库"><a href="#1-2-2-对比其它非关系型数据库" class="headerlink" title="1.2.2. 对比其它非关系型数据库"></a>1.2.2. 对比其它非关系型数据库</h4><p><img src="\f3.png" alt="f3" style="zoom:50%;" /></p>
-<div class="table-container">
+<p>As you can see, the increase in data by a thousand times didn’t significantly affect Neo4j’s performance. The traversal does get slower as you increase the depth, but the main reason for that is the increased number of results that are returned. The performance slows linearly with the increase of the result size, and it’s predictable even with a larger data set and depth level. In addition, this is at least a hundred times better than the corresponding MySQL performance.</p>
+<p>The main reason for Neo4j’s predictability is the localized nature of the graph traversal; irrespective of how many nodes and relationships are in the graph, the traversal will only visit ones that are connected to the starting node, according to the traversal rules. Remember, relational join operations compute the Cartesian product before discarding irrelevant results, affecting performance exponentially with the growth of the data set. Neo4j, however, only visits nodes that are relevant to the traversal, so it’s able to maintain predictable performance regardless of the total data set size. The more nodes the traversal has to visit, the slower the traversal, as you’ve seen while increasing the traversal depth. But this increase is linear and is still independent of the total graph size.</p>
+<p>These experiments demonstrate that the Neo4j graph database is significantly faster in querying graph data than using a relational database. In addition, a single Neo4j instance can handle data sets of three orders of magnitude without performance penalties. The independence of traversal performance on graph size is one of the key aspects that make Neo4j an ideal candidate for solving graph problems, even when data sets are very large.</p>
+<h4 id="对比其它非关系型数据库">1.2.2. 对比其它非关系型数据库</h4>
+<p><img src="\f3.png" alt="f3" style="zoom:50%;" /></p>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 42%" />
+<col style="width: 37%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>NoSQL category</th>
 <th>Typical use cases</th>
 <th>Best-known technologies</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Key-value stores</td>
 <td>■ Caches<br/>■ Simple domain with fast read access<br/>■ Massively concurrent systems</td>
 <td>■ Redis<br/>■ Memcached<br/>■ Tokyo Cabinet</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Column-family stores</td>
 <td>■ Write on a big scale <br/>■ Collocated data access (for reading and writing)</td>
 <td>■ Cassandra <br/>■ Google BigTable<br/>■ Apache HBase</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Document-oriented databases</td>
 <td>■ When domain model is a document by nature<br/>■ To simplify development using natural document data structures<br/>■ Highly scalable systems (although on a lower level than the key-value and column family stores)</td>
 <td>■ MongoDB<br/>■ CouchDB</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Graph databases</td>
 <td>■ With interconnected data<br/>■ Domain can be represented with nodes and relationships naturally<br/>■ Social networks<br/>■ Recommendation engines<br/>■ Access control lists</td>
 <td>■ Neo4j<br/>■ AllegroGraph<br/>■ OrientDB</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="table-container">
 <table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 35%" />
+<col style="width: 31%" />
+<col style="width: 11%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>分类</th>
 <th>数据模型</th>
 <th>优势</th>
@@ -629,28 +721,28 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>键值数据库</td>
 <td>哈希表</td>
 <td>查找速度快</td>
 <td>数据无结构化，通常只被当作字符串或者二进制数据</td>
 <td>Redis</td>
 </tr>
-<tr>
+<tr class="even">
 <td>列存储数据库</td>
 <td>列式数据存储</td>
 <td>查找速度快；支持分布横向扩展；数据压缩率高</td>
 <td>功能相对受限</td>
 <td>HBase</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>文档型数据库</td>
 <td>键值对扩展</td>
 <td>数据结构要求不严格；表结构可变；不需要预先定义表结构</td>
 <td>查询性能不高，缺乏统一的查询语法</td>
 <td>MongoDB</td>
 </tr>
-<tr>
+<tr class="even">
 <td>图数据库</td>
 <td>节点和关系组成的图</td>
 <td>利用图结构相关算法(最短路径、节点度关系查找等)</td>
@@ -659,15 +751,15 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="1-2-3-总结"><a href="#1-2-3-总结" class="headerlink" title="1.2.3. 总结"></a>1.2.3. 总结</h4><p>优点：</p>
-<ol>
+<h4 id="总结">1.2.3. 总结</h4>
+<p>优点：</p>
+<ol type="1">
 <li>数据的插入，查询操作很直观，不用再像之前要考虑各个表之间的关系。</li>
 <li>提供的图搜索和图遍历方法很方便，速度也是比较快的。</li>
 <li>更快的数据库操作。当然，有一个前提条件，那就是数据量较大，在MySql中存储的话需要许多表，并且表之间联系较多（即有不少的操作需要join表）。</li>
 </ol>
 <p>缺点：</p>
-<ol>
+<ol type="1">
 <li>当数据过大时插入速度可能会越来越慢。.</li>
 <li>超大节点。当有一个节点的边非常多时（常见于大V），有关这个节点的操作的速度将大大下降。这个问题很早就有了，官方也说过会处理，然而现在仍然不能让人满意。</li>
 <li>提高数据库速度的常用方法就是多分配内存，然而看了官方操作手册，貌似无法直接设置数据库内存占用量，而是需要计算后为其”预留“内存…</li>
@@ -675,15 +767,20 @@
 <blockquote>
 <p>鉴于其明显的优缺点，Neo4j适合存储“修改较少，查询较多，没有超大节点”的图数据。</p>
 </blockquote>
-<h2 id="2-安装-amp-配置-amp-运行"><a href="#2-安装-amp-配置-amp-运行" class="headerlink" title="2. 安装&amp;配置&amp;运行"></a>2. 安装&amp;配置&amp;运行</h2><h3 id="2-1-安装"><a href="#2-1-安装" class="headerlink" title="2.1. 安装"></a>2.1. 安装</h3><p>Download the latest release from <a target="_blank" rel="noopener" href="https://neo4j.com/download-center/">Neo4j Download Center</a>.</p>
+<h2 id="安装配置运行">2. 安装&amp;配置&amp;运行</h2>
+<h3 id="安装">2.1. 安装</h3>
+<p>Download the latest release from <a target="_blank" rel="noopener" href="https://neo4j.com/download-center/">Neo4j Download Center</a>.</p>
 <p>Select the appropriate ZIP distribution.</p>
 <p>下载社区版（Community）</p>
 <p>Right-click the downloaded file, click Extract All.</p>
-<h3 id="2-2-配置"><a href="#2-2-配置" class="headerlink" title="2.2. 配置"></a>2.2. 配置</h3><p>添加环境变量Path：%你的解压路径%\neo4j-community-4.3.6\bin</p>
-<p>用文本编辑器打开目录 %你的解压路径%\neo4j-community-4.3.6\conf中的neo4j.conf，找到下方所示的两行代码，去掉第二行开头的#，修改参数能够切换不同的数据库（社区版不能在Neo4j Browser中切换数据库，只能通过修改配置文件完成切换）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># The name of the default database</span><br><span class="line">dbms.default_database=&lt;your database name&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-运行"><a href="#2-3-运行" class="headerlink" title="2.3. 运行"></a>2.3. 运行</h3><p>由于我们已经配置了环境变量，直接在cmd中输入neo4j console，输出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Neo4j is already running.</span><br></pre></td></tr></table></figure>
+<h3 id="配置">2.2. 配置</h3>
+<p>添加环境变量Path：%你的解压路径%4j-community-4.3.6</p>
+<p>用文本编辑器打开目录 %你的解压路径%4j-community-4.3.64j.conf，找到下方所示的两行代码，去掉第二行开头的#，修改参数能够切换不同的数据库（社区版不能在Neo4j Browser中切换数据库，只能通过修改配置文件完成切换）</p>
+<pre><code># The name of the default database
+dbms.default_database=&lt;your database name&gt;</code></pre>
+<h3 id="运行">2.3. 运行</h3>
+<p>由于我们已经配置了环境变量，直接在cmd中输入neo4j console，输出</p>
+<pre><code>Neo4j is already running.</code></pre>
 <blockquote>
 <p>Stop the server by typing <code>Ctrl-C</code> in the console.</p>
 </blockquote>
@@ -692,7 +789,9 @@
 <p>The default user name is <code>neo4j</code> and password <code>neo4j</code>.</p>
 </blockquote>
 <p>若修改了配置文件，需要通过重启应用来使配置生效，在cmd中输入neo4j restart，并刷新浏览器</p>
-<h2 id="3-Cypher介绍"><a href="#3-Cypher介绍" class="headerlink" title="3. Cypher介绍"></a>3. Cypher介绍</h2><h3 id="3-1-什么是Cypher"><a href="#3-1-什么是Cypher" class="headerlink" title="3.1. 什么是Cypher"></a>3.1. 什么是Cypher</h3><p>Cypher is a declarative graph query language that allows for expressive and efficient <a target="_blank" rel="noopener" href="https://neo4j.com/docs/cypher-manual/4.1/introduction/quering-updating-administering/">querying, updating and administering</a> of the graph. It is designed to be suitable for both developers and operations  professionals. Cypher is designed to be simple, yet powerful; highly complicated  database queries can be easily expressed, enabling you to focus on your  domain, instead of getting lost in database access.</p>
+<h2 id="cypher介绍">3. Cypher介绍</h2>
+<h3 id="什么是cypher">3.1. 什么是Cypher</h3>
+<p>Cypher is a declarative graph query language that allows for expressive and efficient <a target="_blank" rel="noopener" href="https://neo4j.com/docs/cypher-manual/4.1/introduction/quering-updating-administering/">querying, updating and administering</a> of the graph. It is designed to be suitable for both developers and operations professionals. Cypher is designed to be simple, yet powerful; highly complicated database queries can be easily expressed, enabling you to focus on your domain, instead of getting lost in database access.</p>
 <p>Cypher is inspired by a number of different approaches and builds on established practices for expressive querying. Many of the keywords, such as <code>WHERE</code> and <code>ORDER BY</code>, are inspired by <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/SQL">SQL</a>. Pattern matching borrows expression approaches from <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/SPARQL">SPARQL</a>. Some of the list semantics are borrowed from languages such as Haskell and Python. Cypher’s constructs, based on English prose and neat iconography, make queries easy, both to write and to read.</p>
 <p><strong>Structure</strong></p>
 <p>Cypher borrows its structure from SQL — queries are built up using various clauses.</p>
@@ -706,199 +805,425 @@
 </ul>
 <p>Let’s see <code>MATCH</code> and <code>RETURN</code> in action.</p>
 <p>Let’s create a simple example graph with the following query:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE (john:Person &#123;name: &#x27;John&#x27;&#125;)</span><br><span class="line">CREATE (joe:Person &#123;name: &#x27;Joe&#x27;&#125;)</span><br><span class="line">CREATE (steve:Person &#123;name: &#x27;Steve&#x27;&#125;)</span><br><span class="line">CREATE (sara:Person &#123;name: &#x27;Sara&#x27;&#125;)</span><br><span class="line">CREATE (maria:Person &#123;name: &#x27;Maria&#x27;&#125;)</span><br><span class="line">CREATE (john)-[:FRIEND]-&gt;(joe)-[:FRIEND]-&gt;(steve)</span><br><span class="line">CREATE (john)-[:FRIEND]-&gt;(sara)-[:FRIEND]-&gt;(maria)</span><br></pre></td></tr></table></figure>
-<p><img src="https://kroki.io/graphviz/svg/eNqtj8EKgkAQhu89xWAHT0G60iXsVEFREnV0PWztlMK2K6sFYb57q0WUBHbwNMzsfjPfz5OTZmkMKyhAKo4QZjFL0dd4UJpDlt-EadRFcuTRuAcQDCE0BUCwPQrwwSo2qDMl75Kd0fTUXqpYUpuK0jIfoyczmEBAXuRBCaUrsu8i8cjIqqdHJfPfL-9L8-1iFkypbOx1Ot_r_JERvyM6tYrbuYrbqrLL8dqQIe0Q06zJVAG8zgN4rS5rppNPmfIBKVKtCA==" alt="Diagram"></p>
-<p>For example, here is a query which finds a user called <strong>‘John’</strong> and <strong>‘John’s’</strong> friends (though not his direct friends) before returning both <strong>‘John’</strong> and any friends-of-friends that are found.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (john &#123;name: &#x27;John&#x27;&#125;)-[:FRIEND]-&gt;()-[:FRIEND]-&gt;(fof)</span><br><span class="line">RETURN john.name, fof.name</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (john:Person &#123;name: &#39;John&#39;&#125;)
+CREATE (joe:Person &#123;name: &#39;Joe&#39;&#125;)
+CREATE (steve:Person &#123;name: &#39;Steve&#39;&#125;)
+CREATE (sara:Person &#123;name: &#39;Sara&#39;&#125;)
+CREATE (maria:Person &#123;name: &#39;Maria&#39;&#125;)
+CREATE (john)-[:FRIEND]-&gt;(joe)-[:FRIEND]-&gt;(steve)
+CREATE (john)-[:FRIEND]-&gt;(sara)-[:FRIEND]-&gt;(maria)</code></pre>
+<figure>
+<img src="https://kroki.io/graphviz/svg/eNqtj8EKgkAQhu89xWAHT0G60iXsVEFREnV0PWztlMK2K6sFYb57q0WUBHbwNMzsfjPfz5OTZmkMKyhAKo4QZjFL0dd4UJpDlt-EadRFcuTRuAcQDCE0BUCwPQrwwSo2qDMl75Kd0fTUXqpYUpuK0jIfoyczmEBAXuRBCaUrsu8i8cjIqqdHJfPfL-9L8-1iFkypbOx1Ot_r_JERvyM6tYrbuYrbqrLL8dqQIe0Q06zJVAG8zgN4rS5rppNPmfIBKVKtCA==" alt="Diagram" /><figcaption aria-hidden="true">Diagram</figcaption>
+</figure>
+<p>For example, here is a query which finds a user called <strong>'John'</strong> and <strong>'John’s'</strong> friends (though not his direct friends) before returning both <strong>'John'</strong> and any friends-of-friends that are found.</p>
+<pre class="cypher"><code>MATCH (john &#123;name: &#39;John&#39;&#125;)-[:FRIEND]-&gt;()-[:FRIEND]-&gt;(fof)
+RETURN john.name, fof.name</code></pre>
 <p>Resulting in:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+----------------------+</span><br><span class="line">| john.name | fof.name |</span><br><span class="line">+----------------------+</span><br><span class="line">| &quot;John&quot;    | &quot;Maria&quot;  |</span><br><span class="line">| &quot;John&quot;    | &quot;Steve&quot;  |</span><br><span class="line">+----------------------+</span><br><span class="line">2 rows</span><br></pre></td></tr></table></figure>
+<pre><code>+----------------------+
+| john.name | fof.name |
++----------------------+
+| &quot;John&quot;    | &quot;Maria&quot;  |
+| &quot;John&quot;    | &quot;Steve&quot;  |
++----------------------+
+2 rows</code></pre>
 <p>Next up we will add filtering to set more parts in motion:</p>
-<p>We take a list of user names and find all nodes with names from this  list, match their friends and return only those followed users who have a <strong>‘name’</strong> property starting with <strong>‘S’</strong>.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MATCH (user)-[:FRIEND]-&gt;(follower)</span><br><span class="line">WHERE user.name IN [&#x27;Joe&#x27;, &#x27;John&#x27;, &#x27;Sara&#x27;, &#x27;Maria&#x27;, &#x27;Steve&#x27;] AND follower.name =~ &#x27;S.*&#x27;</span><br><span class="line">RETURN user.name, follower.name</span><br></pre></td></tr></table></figure>
+<p>We take a list of user names and find all nodes with names from this list, match their friends and return only those followed users who have a <strong>'name'</strong> property starting with <strong>'S'</strong>.</p>
+<pre class="cypher"><code>MATCH (user)-[:FRIEND]-&gt;(follower)
+WHERE user.name IN [&#39;Joe&#39;, &#39;John&#39;, &#39;Sara&#39;, &#39;Maria&#39;, &#39;Steve&#39;] AND follower.name =~ &#39;S.*&#39;
+RETURN user.name, follower.name</code></pre>
 <p>Resulting in:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+---------------------------+</span><br><span class="line">| user.name | follower.name |</span><br><span class="line">+---------------------------+</span><br><span class="line">| &quot;Joe&quot;     | &quot;Steve&quot;       |</span><br><span class="line">| &quot;John&quot;    | &quot;Sara&quot;        |</span><br><span class="line">+---------------------------+</span><br><span class="line">2 rows</span><br></pre></td></tr></table></figure>
+<pre><code>+---------------------------+
+| user.name | follower.name |
++---------------------------+
+| &quot;Joe&quot;     | &quot;Steve&quot;       |
+| &quot;John&quot;    | &quot;Sara&quot;        |
++---------------------------+
+2 rows</code></pre>
 <p>And these are examples of clauses that are used to update the graph:</p>
 <ul>
 <li><code>CREATE</code> (and <code>DELETE</code>): Create (and delete) nodes and relationships.</li>
 <li><code>SET</code> (and <code>REMOVE</code>): Set values to properties and add labels on nodes using <code>SET</code> and use <code>REMOVE</code> to remove them.</li>
 <li><code>MERGE</code>: Match existing or create new nodes and patterns. This is especially useful together with unique constraints.</li>
 </ul>
-<h3 id="3-2-Patterns-句法结构"><a href="#3-2-Patterns-句法结构" class="headerlink" title="3.2. Patterns 句法结构"></a>3.2. Patterns 句法结构</h3><p>Neo4j’s Property Graphs are composed of nodes and relationships, either of which may have properties. Nodes represent entities, for example concepts, events, places and things. Relationships connect pairs of nodes.</p>
+<h3 id="patterns-句法结构">3.2. Patterns 句法结构</h3>
+<p>Neo4j’s Property Graphs are composed of nodes and relationships, either of which may have properties. Nodes represent entities, for example concepts, events, places and things. Relationships connect pairs of nodes.</p>
 <p>However, nodes and relationships can be considered as low-level building blocks. The real strength of the property graph lies in its ability to encode <em>patterns</em> of connected nodes and relationships. A single node or relationship typically encodes very little information, but a pattern of nodes and relationships can encode arbitrarily complex ideas.</p>
 <p>Cypher, Neo4j’s query language, is strongly based on patterns. Specifically, patterns are used to match desired graph structures. Once a matching structure has been found or created, Neo4j can use it for further processing.</p>
 <p>A simple pattern, which has only a single relationship, connects a pair of nodes (or, occasionally, a node to itself). For example, <em>a Person</em> <code>LIVES_IN</code> <em>a City</em> or <em>a City is</em> <code>PART_OF</code> <em>a Country</em>.</p>
-<p>Complex patterns, using multiple relationships, can express  arbitrarily complex concepts and support a variety of interesting use  cases. For example, we might want to match instances where <em>a Person</em>  <code>LIVES_IN</code> <em>a Country</em>. The following Cypher code combines two simple patterns into a slightly more complex pattern which performs this match:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(:Person) -[:LIVES_IN]-&gt; (:City) -[:PART_OF]-&gt; (:Country)</span><br></pre></td></tr></table></figure>
+<p>Complex patterns, using multiple relationships, can express arbitrarily complex concepts and support a variety of interesting use cases. For example, we might want to match instances where <em>a Person</em> <code>LIVES_IN</code> <em>a Country</em>. The following Cypher code combines two simple patterns into a slightly more complex pattern which performs this match:</p>
+<pre class="cypher"><code>(:Person) -[:LIVES_IN]-&gt; (:City) -[:PART_OF]-&gt; (:Country)</code></pre>
 <p>Diagrams made up of icons and arrows are commonly used to visualize graphs. Textual annotations provide labels, define properties etc.</p>
-<h4 id="3-2-1-Node-syntax-节点语法"><a href="#3-2-1-Node-syntax-节点语法" class="headerlink" title="3.2.1. Node syntax 节点语法"></a>3.2.1. Node syntax 节点语法</h4><p>Cypher uses a pair of parentheses to represent a node: <code>()</code>. This is reminiscent of a circle or a rectangle with rounded end caps. Below are some examples of nodes, providing varying types and amounts of detail:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">()</span><br><span class="line">(matrix)</span><br><span class="line">(:Movie)</span><br><span class="line">(matrix:Movie)</span><br><span class="line">(matrix:Movie &#123;title: &#x27;The Matrix&#x27;&#125;)</span><br><span class="line">(matrix:Movie &#123;title: &#x27;The Matrix&#x27;, released: 1997&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="node-syntax-节点语法">3.2.1. Node syntax 节点语法</h4>
+<p>Cypher uses a pair of parentheses to represent a node: <code>()</code>. This is reminiscent of a circle or a rectangle with rounded end caps. Below are some examples of nodes, providing varying types and amounts of detail:</p>
+<pre class="cypher"><code>()
+(matrix)
+(:Movie)
+(matrix:Movie)
+(matrix:Movie &#123;title: &#39;The Matrix&#39;&#125;)
+(matrix:Movie &#123;title: &#39;The Matrix&#39;, released: 1997&#125;)</code></pre>
 <p>The simplest form, <code>()</code>, represents an anonymous, uncharacterized node. If we want to refer to the node elsewhere, we can add a variable, for example: <code>(matrix)</code>. A variable is restricted to a single statement. It may have different or no meaning in another statement.</p>
 <p>The <code>:Movie</code> pattern declares a label of the node. This allows us to restricts the pattern, keeping it from matching (say) a structure with an <code>Actor</code> node in this position.</p>
-<p>The node’s properties, for example <code>title</code>, are represented as a list of key-value pairs, enclosed within a pair of braces, for example: <code>&#123;name: &#39;Keanu Reeves&#39;&#125;</code>. Properties can be used to store information and/or restrict patterns.</p>
-<h4 id="3-2-2-Relationship-syntax-关系语法"><a href="#3-2-2-Relationship-syntax-关系语法" class="headerlink" title="3.2.2. Relationship syntax 关系语法"></a>3.2.2. Relationship syntax 关系语法</h4><p>Cypher uses a pair of dashes (<code>--</code>) to represent an undirected relationship. Directed relationships have an arrowhead at one end (<code>&lt;--</code>, <code>--&gt;</code>). Bracketed expressions (<code>[...]</code>) can be used to add details. This may include variables, properties, and type information:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--&gt;</span><br><span class="line">-[role]-&gt;</span><br><span class="line">-[:ACTED_IN]-&gt;</span><br><span class="line">-[role:ACTED_IN]-&gt;</span><br><span class="line">-[role:ACTED_IN &#123;roles: [&#x27;Neo&#x27;]&#125;]-&gt;</span><br></pre></td></tr></table></figure>
+<p>The node’s properties, for example <code>title</code>, are represented as a list of key-value pairs, enclosed within a pair of braces, for example: <code>&#123;name: 'Keanu Reeves'&#125;</code>. Properties can be used to store information and/or restrict patterns.</p>
+<h4 id="relationship-syntax-关系语法">3.2.2. Relationship syntax 关系语法</h4>
+<p>Cypher uses a pair of dashes (<code>--</code>) to represent an undirected relationship. Directed relationships have an arrowhead at one end (<code>&lt;--</code>, <code>--&gt;</code>). Bracketed expressions (<code>[...]</code>) can be used to add details. This may include variables, properties, and type information:</p>
+<pre class="cypher"><code>--&gt;
+-[role]-&gt;
+-[:ACTED_IN]-&gt;
+-[role:ACTED_IN]-&gt;
+-[role:ACTED_IN &#123;roles: [&#39;Neo&#39;]&#125;]-&gt;</code></pre>
 <p>The syntax and semantics found within a relationship’s bracket pair are very similar to those used between a node’s parentheses. A variable (e.g., <code>role</code>) can be defined, to be used elsewhere in the statement. The relationship’s type (e.g., <code>:ACTED_IN</code>) is analogous to the node’s label. The properties (e.g., <code>roles</code>) are entirely equivalent to node properties.</p>
-<h4 id="3-2-3-Pattern-syntax-完整语法"><a href="#3-2-3-Pattern-syntax-完整语法" class="headerlink" title="3.2.3. Pattern syntax 完整语法"></a>3.2.3. Pattern syntax 完整语法</h4><p>Combining the syntax for nodes and relationships, we can express patterns. The following could be a simple pattern (or fact) in this domain:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(keanu:Person:Actor &#123;name: &#x27;Keanu Reeves&#x27;&#125;)-[role:ACTED_IN &#123;roles: [&#x27;Neo&#x27;]&#125;]-&gt;(matrix:Movie &#123;title: &#x27;The Matrix&#x27;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="pattern-syntax-完整语法">3.2.3. Pattern syntax 完整语法</h4>
+<p>Combining the syntax for nodes and relationships, we can express patterns. The following could be a simple pattern (or fact) in this domain:</p>
+<pre class="cypher"><code>(keanu:Person:Actor &#123;name: &#39;Keanu Reeves&#39;&#125;)-[role:ACTED_IN &#123;roles: [&#39;Neo&#39;]&#125;]-&gt;(matrix:Movie &#123;title: &#39;The Matrix&#39;&#125;)</code></pre>
 <p>Equivalent to node labels, the <code>:ACTED_IN</code> pattern declares the relationship type of the relationship. Variables (e.g., <code>role</code>) can be used elsewhere in the statement to refer to the relationship.</p>
-<p>As with node properties, relationship properties are represented as a list of key/value pairs enclosed within a pair of braces, for example: <code>&#123;roles: [&#39;Neo&#39;]&#125;</code>. In this case, we used an array property for the <code>roles</code>, allowing multiple roles to be specified. Properties can be used to store information and/or restrict patterns.</p>
-<h4 id="3-2-4-Pattern-variables-命名变量"><a href="#3-2-4-Pattern-variables-命名变量" class="headerlink" title="3.2.4. Pattern variables 命名变量"></a>3.2.4. Pattern variables 命名变量</h4><p>To increase modularity and reduce repetition, Cypher allows patterns to be assigned to variables. This allows the matching paths to be inspected, used in other expressions, etc.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acted_in = (:Person)-[:ACTED_IN]-&gt;(:Movie)</span><br></pre></td></tr></table></figure>
+<p>As with node properties, relationship properties are represented as a list of key/value pairs enclosed within a pair of braces, for example: <code>&#123;roles: ['Neo']&#125;</code>. In this case, we used an array property for the <code>roles</code>, allowing multiple roles to be specified. Properties can be used to store information and/or restrict patterns.</p>
+<h4 id="pattern-variables-命名变量">3.2.4. Pattern variables 命名变量</h4>
+<p>To increase modularity and reduce repetition, Cypher allows patterns to be assigned to variables. This allows the matching paths to be inspected, used in other expressions, etc.</p>
+<pre class="cypher"><code>acted_in = (:Person)-[:ACTED_IN]-&gt;(:Movie)</code></pre>
 <p>The <code>acted_in</code> variable would contain two nodes and the connecting relationship for each path that was found or created. There are a number of functions to access details of a path, for example: <code>nodes(path)</code>, <code>relationships(path)</code>, and <code>length(path)</code>.</p>
-<h4 id="3-2-5-Clauses-分句"><a href="#3-2-5-Clauses-分句" class="headerlink" title="3.2.5. Clauses 分句"></a>3.2.5. Clauses 分句</h4><p>Cypher statements typically have multiple <em>clauses</em>, each of which performs a specific task, for example:</p>
+<h4 id="clauses-分句">3.2.5. Clauses 分句</h4>
+<p>Cypher statements typically have multiple <em>clauses</em>, each of which performs a specific task, for example:</p>
 <ul>
 <li>create and match patterns in the graph</li>
 <li>filter, project, sort, or paginate results</li>
 <li>compose partial statements</li>
 </ul>
 <p>By combining Cypher clauses, we can compose more complex statements that express what we want to know or create.</p>
-<h3 id="3-3-Patterns-in-practice-模式实例练习"><a href="#3-3-Patterns-in-practice-模式实例练习" class="headerlink" title="3.3. Patterns in practice 模式实例练习"></a>3.3. Patterns in practice 模式实例练习</h3><h4 id="3-3-1-Creating-data-创建节点"><a href="#3-3-1-Creating-data-创建节点" class="headerlink" title="3.3.1. Creating data 创建节点"></a>3.3.1. Creating data 创建节点</h4><p>We’ll start by looking into the clauses that allow us to create data.</p>
+<h3 id="patterns-in-practice-模式实例练习">3.3. Patterns in practice 模式实例练习</h3>
+<h4 id="creating-data-创建节点">3.3.1. Creating data 创建节点</h4>
+<p>We’ll start by looking into the clauses that allow us to create data.</p>
 <p>To add data, we just use the patterns we already know. By providing patterns we can specify what graph structures, labels and properties we would like to make part of our graph.</p>
 <p>Obviously the simplest clause is called <code>CREATE</code>. It will just go ahead and directly create the patterns that you specify.</p>
 <p>For the patterns we have looked at so far this could look like the following:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (:Movie &#123;title: &#x27;The Matrix&#x27;, released: 1997&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (:Movie &#123;title: &#39;The Matrix&#39;, released: 1997&#125;)</code></pre>
 <p>If we execute this statement, Cypher returns the number of changes, in this case adding 1 node, 1 label and 2 properties.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Created Nodes: 1</span><br><span class="line">Added Labels: 1</span><br><span class="line">Set Properties: 2</span><br><span class="line">Rows: 0</span><br></pre></td></tr></table></figure>
+<pre><code>Created Nodes: 1
+Added Labels: 1
+Set Properties: 2
+Rows: 0</code></pre>
 <p>As we started out with an empty database, we now have a database with a single node in it:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice01.svg" alt="cypher intro patterns in practice01"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice01.svg" alt="cypher intro patterns in practice01" /><figcaption aria-hidden="true">cypher intro patterns in practice01</figcaption>
+</figure>
 <p>If case we also want to return the created data we can add a <code>RETURN</code> clause, which refers to the variable we have assigned to our pattern elements.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CREATE (p:Person &#123;name: &#x27;Keanu Reeves&#x27;, born: 1964&#125;)</span><br><span class="line">RETURN p</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (p:Person &#123;name: &#39;Keanu Reeves&#39;, born: 1964&#125;)
+RETURN p</code></pre>
 <p>This is what gets returned:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Created Nodes: 1</span><br><span class="line">Added Labels: 1</span><br><span class="line">Set Properties: 2</span><br><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+----------------------------------------------+</span><br><span class="line">| p                                            |</span><br><span class="line">+----------------------------------------------+</span><br><span class="line">| (:Person &#123;name: &#x27;Keanu Reeves&#x27;, born: 1964&#125;) |</span><br><span class="line">+----------------------------------------------+</span><br></pre></td></tr></table></figure>
+<pre><code>Created Nodes: 1
+Added Labels: 1
+Set Properties: 2
+Rows: 1
+
++----------------------------------------------+
+| p                                            |
++----------------------------------------------+
+| (:Person &#123;name: &#39;Keanu Reeves&#39;, born: 1964&#125;) |
++----------------------------------------------+</code></pre>
 <p>If we want to create more than one element, we can separate the elements with commas or use multiple <code>CREATE</code> statements.</p>
 <p>We can of course also create more complex structures, like an <code>ACTED_IN</code> relationship with information about the character, or <code>DIRECTED</code> ones for the director.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE (a:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;)-[r:ACTED_IN &#123;roles: [&#x27;Forrest&#x27;]&#125;]-&gt;(m:Movie &#123;title: &#x27;Forrest Gump&#x27;, released: 1994&#125;)</span><br><span class="line">CREATE (d:Person &#123;name: &#x27;Robert Zemeckis&#x27;, born: 1951&#125;)-[:DIRECTED]-&gt;(m)</span><br><span class="line">RETURN a, d, r, m</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (a:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;)-[r:ACTED_IN &#123;roles: [&#39;Forrest&#39;]&#125;]-&gt;(m:Movie &#123;title: &#39;Forrest Gump&#39;, released: 1994&#125;)
+CREATE (d:Person &#123;name: &#39;Robert Zemeckis&#39;, born: 1951&#125;)-[:DIRECTED]-&gt;(m)
+RETURN a, d, r, m</code></pre>
 <p>This is the part of the graph we just updated:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice02.svg" alt="cypher intro patterns in practice02"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice02.svg" alt="cypher intro patterns in practice02" /><figcaption aria-hidden="true">cypher intro patterns in practice02</figcaption>
+</figure>
 <p>In most cases, we want to connect new data to existing structures. This requires that we know how to find existing patterns in our graph data, which we will look at next.</p>
-<h4 id="3-3-2-Matching-patterns-查询"><a href="#3-3-2-Matching-patterns-查询" class="headerlink" title="3.3.2. Matching patterns 查询"></a>3.3.2. Matching patterns 查询</h4><p>Matching patterns is a task for the <code>MATCH</code> statement. We pass the same kind of patterns we’ve used so far to <code>MATCH</code> to describe what we’re looking for. It is similar to <em>query by example</em>, only that our examples also include the structures.</p>
+<h4 id="matching-patterns-查询">3.3.2. Matching patterns 查询</h4>
+<p>Matching patterns is a task for the <code>MATCH</code> statement. We pass the same kind of patterns we’ve used so far to <code>MATCH</code> to describe what we’re looking for. It is similar to <em>query by example</em>, only that our examples also include the structures.</p>
 <blockquote>
 <p>A <code>MATCH</code> statement will search for the patterns we specify and return <em>one row per successful pattern match</em>.</p>
 </blockquote>
 <p>To find the data we have created so far, we can start looking for all nodes labeled with the <code>Movie</code> label.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (m:Movie)</span><br><span class="line">RETURN m</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (m:Movie)
+RETURN m</code></pre>
 <p>Here’s the result:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice03.svg" alt="cypher intro patterns in practice03"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice03.svg" alt="cypher intro patterns in practice03" /><figcaption aria-hidden="true">cypher intro patterns in practice03</figcaption>
+</figure>
 <p>This should show both <em>The Matrix</em> and <em>Forrest Gump</em>.</p>
 <p>We can also look for a specific person, like <em>Keanu Reeves</em>.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (p:Person &#123;name: &#x27;Keanu Reeves&#x27;&#125;)</span><br><span class="line">RETURN p</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (p:Person &#123;name: &#39;Keanu Reeves&#39;&#125;)
+RETURN p</code></pre>
 <p>This query returns the matching node:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice04.svg" alt="cypher intro patterns in practice04"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice04.svg" alt="cypher intro patterns in practice04" /><figcaption aria-hidden="true">cypher intro patterns in practice04</figcaption>
+</figure>
 <p>Note that we only provide enough information to find the nodes, not all properties are required. In most cases you have key-properties like SSN, ISBN, emails, logins, geolocation or product codes to look for.</p>
 <p>We can also find more interesting connections, like for instance the movies titles that <em>Tom Hanks</em> acted in and the roles he played.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MATCH (p:Person &#123;name: &#x27;Tom Hanks&#x27;&#125;)-[r:ACTED_IN]-&gt;(m:Movie)</span><br><span class="line">RETURN m.title, r.roles</span><br><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+------------------------------+</span><br><span class="line">| m.title        | r.roles     |</span><br><span class="line">+------------------------------+</span><br><span class="line">| &#x27;Forrest Gump&#x27; | [&#x27;Forrest&#x27;] |</span><br><span class="line">+------------------------------+</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (p:Person &#123;name: &#39;Tom Hanks&#39;&#125;)-[r:ACTED_IN]-&gt;(m:Movie)
+RETURN m.title, r.roles
+Rows: 1
+
++------------------------------+
+| m.title        | r.roles     |
++------------------------------+
+| &#39;Forrest Gump&#39; | [&#39;Forrest&#39;] |
++------------------------------+</code></pre>
 <p>In this case we only returned the properties of the nodes and relationships that we were interested in. You can access them everywhere via a dot notation <code>identifer.property</code>.</p>
 <p>Of course this only lists his role as <em>Forrest</em> in <em>Forrest Gump</em> because that’s all data that we have added.</p>
 <p>Now we know enough to connect new nodes to existing ones and can combine <code>MATCH</code> and <code>CREATE</code> to attach structures to the graph.</p>
-<h4 id="3-3-3-Attaching-structures-创建关系"><a href="#3-3-3-Attaching-structures-创建关系" class="headerlink" title="3.3.3. Attaching structures 创建关系"></a>3.3.3. Attaching structures 创建关系</h4><p>To extend the graph with new information, we first match the existing connection points and then attach the newly created nodes to them with  relationships. Adding <em>Cloud Atlas</em> as a new movie for <em>Tom Hanks</em> could be achieved like this:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MATCH (p:Person &#123;name: &#x27;Tom Hanks&#x27;&#125;)</span><br><span class="line">CREATE (m:Movie &#123;title: &#x27;Cloud Atlas&#x27;, released: 2012&#125;)</span><br><span class="line">CREATE (p)-[r:ACTED_IN &#123;roles: [&#x27;Zachry&#x27;]&#125;]-&gt;(m)</span><br><span class="line">RETURN p, r, m</span><br></pre></td></tr></table></figure>
+<h4 id="attaching-structures-创建关系">3.3.3. Attaching structures 创建关系</h4>
+<p>To extend the graph with new information, we first match the existing connection points and then attach the newly created nodes to them with relationships. Adding <em>Cloud Atlas</em> as a new movie for <em>Tom Hanks</em> could be achieved like this:</p>
+<pre class="cypher"><code>MATCH (p:Person &#123;name: &#39;Tom Hanks&#39;&#125;)
+CREATE (m:Movie &#123;title: &#39;Cloud Atlas&#39;, released: 2012&#125;)
+CREATE (p)-[r:ACTED_IN &#123;roles: [&#39;Zachry&#39;]&#125;]-&gt;(m)
+RETURN p, r, m</code></pre>
 <p>Here’s what the structure looks like in the database:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice05.svg" alt="cypher intro patterns in practice05"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice05.svg" alt="cypher intro patterns in practice05" /><figcaption aria-hidden="true">cypher intro patterns in practice05</figcaption>
+</figure>
 <blockquote>
-<p>It is important to remember that we can assign variables to both  nodes and relationships and use them later on, no matter if they were  created or matched.</p>
+<p>It is important to remember that we can assign variables to both nodes and relationships and use them later on, no matter if they were created or matched.</p>
 </blockquote>
 <p>It is possible to attach both node and relationship in a single <code>CREATE</code> clause. For readability it helps to split them up though.</p>
 <blockquote>
 <p>A tricky aspect of the combination of <code>MATCH</code> and <code>CREATE</code> is that we get <em>one row per matched pattern</em>. This causes subsequent <code>CREATE</code> statements to be executed once for each row. In many cases this is what you want. If that’s not intended, please move the <code>CREATE</code> statement before the <code>MATCH</code>, or change the cardinality of the query with means discussed later or use the <em>get or create</em> semantics of the next clause: <code>MERGE</code>.</p>
 </blockquote>
-<h4 id="3-3-4-Completing-patterns-合并"><a href="#3-3-4-Completing-patterns-合并" class="headerlink" title="3.3.4. Completing patterns 合并"></a>3.3.4. Completing patterns 合并</h4><p>Whenever we get data from external systems or are not sure if certain information already exists in the graph, we want to be able to express a repeatable (idempotent) update operation. In Cypher <code>MERGE</code> has this function. It acts like a combination of <code>MATCH</code> <em>or</em> <code>CREATE</code>, which checks for the existence of data first before creating it. With <code>MERGE</code> you define a pattern to be found or created. Usually, as with <code>MATCH</code> you only want to include the key property to look for in your core pattern. <code>MERGE</code> allows you to provide additional properties you want to set <code>ON CREATE</code>.</p>
+<h4 id="completing-patterns-合并">3.3.4. Completing patterns 合并</h4>
+<p>Whenever we get data from external systems or are not sure if certain information already exists in the graph, we want to be able to express a repeatable (idempotent) update operation. In Cypher <code>MERGE</code> has this function. It acts like a combination of <code>MATCH</code> <em>or</em> <code>CREATE</code>, which checks for the existence of data first before creating it. With <code>MERGE</code> you define a pattern to be found or created. Usually, as with <code>MATCH</code> you only want to include the key property to look for in your core pattern. <code>MERGE</code> allows you to provide additional properties you want to set <code>ON CREATE</code>.</p>
 <p>If we would not know if our graph already contained <em>Cloud Atlas</em> we could merge it in again.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">MERGE (m:Movie &#123;title: &#x27;Cloud Atlas&#x27;&#125;)</span><br><span class="line">ON CREATE SET m.released = 2012</span><br><span class="line">RETURN m</span><br><span class="line">Created Nodes: 1</span><br><span class="line">Added Labels: 1</span><br><span class="line">Set Properties: 2</span><br><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+-------------------------------------------------+</span><br><span class="line">| m                                               |</span><br><span class="line">+-------------------------------------------------+</span><br><span class="line">| (:Movie &#123;title: &#x27;Cloud Atlas&#x27;, released: 2012&#125;) |</span><br><span class="line">+-------------------------------------------------+</span><br></pre></td></tr></table></figure>
-<p>We get a result in any both cases: either the data (potentially more  than one row) that was already in the graph or a single, newly created <code>Movie</code> node.</p>
+<pre class="cypher"><code>MERGE (m:Movie &#123;title: &#39;Cloud Atlas&#39;&#125;)
+ON CREATE SET m.released = 2012
+RETURN m
+Created Nodes: 1
+Added Labels: 1
+Set Properties: 2
+Rows: 1
+
++-------------------------------------------------+
+| m                                               |
++-------------------------------------------------+
+| (:Movie &#123;title: &#39;Cloud Atlas&#39;, released: 2012&#125;) |
++-------------------------------------------------+</code></pre>
+<p>We get a result in any both cases: either the data (potentially more than one row) that was already in the graph or a single, newly created <code>Movie</code> node.</p>
 <blockquote>
 <p>A <code>MERGE</code> clause without any previously assigned variables in it either matches the full pattern or creates the full pattern. It never produces a partial mix of matching and creating within a pattern. To achieve a partial match/create, make sure to use already defined variables for the parts that shouldn’t be affected.</p>
 </blockquote>
-<p>So foremost <code>MERGE</code> makes sure that you can’t create  duplicate information or structures, but it comes with the cost of  needing to check for existing matches first. Especially on large graphs it can be costly to scan a large set of  labeled nodes for a certain property. You can alleviate some of that by creating supporting indexes or  constraints, which we will discuss later. But it’s still not for free, so whenever you’re sure to not create  duplicate data use <code>CREATE</code> over <code>MERGE</code>.</p>
+<p>So foremost <code>MERGE</code> makes sure that you can’t create duplicate information or structures, but it comes with the cost of needing to check for existing matches first. Especially on large graphs it can be costly to scan a large set of labeled nodes for a certain property. You can alleviate some of that by creating supporting indexes or constraints, which we will discuss later. But it’s still not for free, so whenever you’re sure to not create duplicate data use <code>CREATE</code> over <code>MERGE</code>.</p>
 <blockquote>
 <p><code>MERGE</code> can also assert that a relationship is only created once. For that to work you <em>have to pass in</em> both nodes from a previous pattern match.</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MATCH (m:Movie &#123;title: &#x27;Cloud Atlas&#x27;&#125;)</span><br><span class="line">MATCH (p:Person &#123;name: &#x27;Tom Hanks&#x27;&#125;)</span><br><span class="line">MERGE (p)-[r:ACTED_IN]-&gt;(m)</span><br><span class="line">ON CREATE SET r.roles =[&#x27;Zachry&#x27;]</span><br><span class="line">RETURN p, r, m</span><br></pre></td></tr></table></figure>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice06.svg" alt="cypher intro patterns in practice06"></p>
-<p>In case the direction of a relationship is arbitrary, you can leave off the arrowhead. <code>MERGE</code> will then check for the relationship in either  direction, and create a new directed relationship if no matching  relationship was found.</p>
+<pre class="cypher"><code>MATCH (m:Movie &#123;title: &#39;Cloud Atlas&#39;&#125;)
+MATCH (p:Person &#123;name: &#39;Tom Hanks&#39;&#125;)
+MERGE (p)-[r:ACTED_IN]-&gt;(m)
+ON CREATE SET r.roles =[&#39;Zachry&#39;]
+RETURN p, r, m</code></pre>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice06.svg" alt="cypher intro patterns in practice06" /><figcaption aria-hidden="true">cypher intro patterns in practice06</figcaption>
+</figure>
+<p>In case the direction of a relationship is arbitrary, you can leave off the arrowhead. <code>MERGE</code> will then check for the relationship in either direction, and create a new directed relationship if no matching relationship was found.</p>
 <p>If you choose to pass in only one node from a preceding clause, <code>MERGE</code> offers an interesting functionality. It will then only match within the direct neighborhood of the provided node for the given pattern, and, if not found create it. This can come in very handy for creating for example tree structures.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE (y:Year &#123;year: 2014&#125;)</span><br><span class="line">MERGE (y)&lt;-[:IN_YEAR]-(m10:Month &#123;month: 10&#125;)</span><br><span class="line">MERGE (y)&lt;-[:IN_YEAR]-(m11:Month &#123;month: 11&#125;)</span><br><span class="line">RETURN y, m10, m11</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (y:Year &#123;year: 2014&#125;)
+MERGE (y)&lt;-[:IN_YEAR]-(m10:Month &#123;month: 10&#125;)
+MERGE (y)&lt;-[:IN_YEAR]-(m11:Month &#123;month: 11&#125;)
+RETURN y, m10, m11</code></pre>
 <p>This is the graph structure that gets created:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice07.svg" alt="cypher intro patterns in practice07"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-patterns-in-practice07.svg" alt="cypher intro patterns in practice07" /><figcaption aria-hidden="true">cypher intro patterns in practice07</figcaption>
+</figure>
 <p>Here there is no global search for the two <code>Month</code> nodes; they are only searched for in the context of the <em>2014</em> <code>Year</code> node.</p>
-<h3 id="3-4-Getting-the-correct-results-高级查询"><a href="#3-4-Getting-the-correct-results-高级查询" class="headerlink" title="3.4. Getting the correct results 高级查询"></a>3.4. Getting the correct results 高级查询</h3><p>First we create some data to use for our examples:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE (matrix:Movie &#123;title: &#x27;The Matrix&#x27;, released: 1997&#125;)</span><br><span class="line">CREATE (cloudAtlas:Movie &#123;title: &#x27;Cloud Atlas&#x27;, released: 2012&#125;)</span><br><span class="line">CREATE (forrestGump:Movie &#123;title: &#x27;Forrest Gump&#x27;, released: 1994&#125;)</span><br><span class="line">CREATE (keanu:Person &#123;name: &#x27;Keanu Reeves&#x27;, born: 1964&#125;)</span><br><span class="line">CREATE (robert:Person &#123;name: &#x27;Robert Zemeckis&#x27;, born: 1951&#125;)</span><br><span class="line">CREATE (tom:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;)</span><br><span class="line">CREATE (tom)-[:ACTED_IN &#123;roles: [&#x27;Forrest&#x27;]&#125;]-&gt;(forrestGump)</span><br><span class="line">CREATE (tom)-[:ACTED_IN &#123;roles: [&#x27;Zachry&#x27;]&#125;]-&gt;(cloudAtlas)</span><br><span class="line">CREATE (robert)-[:DIRECTED]-&gt;(forrestGump)</span><br></pre></td></tr></table></figure>
+<h3 id="getting-the-correct-results-高级查询">3.4. Getting the correct results 高级查询</h3>
+<p>First we create some data to use for our examples:</p>
+<pre class="cypher"><code>CREATE (matrix:Movie &#123;title: &#39;The Matrix&#39;, released: 1997&#125;)
+CREATE (cloudAtlas:Movie &#123;title: &#39;Cloud Atlas&#39;, released: 2012&#125;)
+CREATE (forrestGump:Movie &#123;title: &#39;Forrest Gump&#39;, released: 1994&#125;)
+CREATE (keanu:Person &#123;name: &#39;Keanu Reeves&#39;, born: 1964&#125;)
+CREATE (robert:Person &#123;name: &#39;Robert Zemeckis&#39;, born: 1951&#125;)
+CREATE (tom:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;)
+CREATE (tom)-[:ACTED_IN &#123;roles: [&#39;Forrest&#39;]&#125;]-&gt;(forrestGump)
+CREATE (tom)-[:ACTED_IN &#123;roles: [&#39;Zachry&#39;]&#125;]-&gt;(cloudAtlas)
+CREATE (robert)-[:DIRECTED]-&gt;(forrestGump)</code></pre>
 <p>This is the resulting graph:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-results01.svg" alt="cypher intro results01"></p>
-<h4 id="3-4-1-Filtering-results-添加筛选条件"><a href="#3-4-1-Filtering-results-添加筛选条件" class="headerlink" title="3.4.1. Filtering results 添加筛选条件"></a>3.4.1. Filtering results 添加筛选条件</h4><p>So far we have matched patterns in the graph and always returned all results we found. Now we will look into options for filtering the results and only return the subset of data that we are interested in. Those filter conditions are expressed using the <code>WHERE</code> clause. This clause allows to use any number of boolean expressions, <em>predicates</em>, combined with <code>AND</code>, <code>OR</code>, <code>XOR</code> and <code>NOT</code>. The simplest predicates are comparisons; especially equality.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MATCH (m:Movie)</span><br><span class="line">WHERE m.title = &#x27;The Matrix&#x27;</span><br><span class="line">RETURN m</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+------------------------------------------------+</span><br><span class="line">| m                                              |</span><br><span class="line">+------------------------------------------------+</span><br><span class="line">| (:Movie &#123;title: &#x27;The Matrix&#x27;, released: 1997&#125;) |</span><br><span class="line">+------------------------------------------------+</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-results01.svg" alt="cypher intro results01" /><figcaption aria-hidden="true">cypher intro results01</figcaption>
+</figure>
+<h4 id="filtering-results-添加筛选条件">3.4.1. Filtering results 添加筛选条件</h4>
+<p>So far we have matched patterns in the graph and always returned all results we found. Now we will look into options for filtering the results and only return the subset of data that we are interested in. Those filter conditions are expressed using the <code>WHERE</code> clause. This clause allows to use any number of boolean expressions, <em>predicates</em>, combined with <code>AND</code>, <code>OR</code>, <code>XOR</code> and <code>NOT</code>. The simplest predicates are comparisons; especially equality.</p>
+<pre class="cypher"><code>MATCH (m:Movie)
+WHERE m.title = &#39;The Matrix&#39;
+RETURN m</code></pre>
+<pre><code>Rows: 1
+
++------------------------------------------------+
+| m                                              |
++------------------------------------------------+
+| (:Movie &#123;title: &#39;The Matrix&#39;, released: 1997&#125;) |
++------------------------------------------------+</code></pre>
 <blockquote>
-<p>The query above, using the <code>WHERE</code> clause, is equivalent to this query which includes the condition in the pattern matching:  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (m:Movie &#123;title: &#x27;The Matrix&#x27;&#125;) RETURN m</span><br></pre></td></tr></table></figure>
+<p>The query above, using the <code>WHERE</code> clause, is equivalent to this query which includes the condition in the pattern matching:</p>
+<pre class="cypher"><code>MATCH (m:Movie &#123;title: &#39;The Matrix&#39;&#125;) RETURN m</code></pre>
 </blockquote>
 <p>Other options are numeric comparisons, matching regular expressions, and checking the existence of values within a list.</p>
-<p>The <code>WHERE</code> clause in the following example includes a  regular expression match, a greater-than comparison, and a test to see  if a value exists in a list:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MATCH (p:Person)-[r:ACTED_IN]-&gt;(m:Movie)</span><br><span class="line">WHERE p.name =~ &#x27;K.+&#x27; OR m.released &gt; 2000 OR &#x27;Neo&#x27; IN r.roles</span><br><span class="line">RETURN p, r, m</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+------------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| p                                         | r                               | m                                              |</span><br><span class="line">+------------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| (:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;) | [:ACTED_IN &#123;roles: [&#x27;Zachry&#x27;]&#125;] | (:Movie &#123;title: &#x27;Cloud Atlas&#x27;, released: 2012&#125;)|</span><br><span class="line">+------------------------------------------------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+<p>The <code>WHERE</code> clause in the following example includes a regular expression match, a greater-than comparison, and a test to see if a value exists in a list:</p>
+<pre class="cypher"><code>MATCH (p:Person)-[r:ACTED_IN]-&gt;(m:Movie)
+WHERE p.name =~ &#39;K.+&#39; OR m.released &gt; 2000 OR &#39;Neo&#39; IN r.roles
+RETURN p, r, m</code></pre>
+<pre><code>Rows: 1
+
++------------------------------------------------------------------------------------------------------------------------------+
+| p                                         | r                               | m                                              |
++------------------------------------------------------------------------------------------------------------------------------+
+| (:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;) | [:ACTED_IN &#123;roles: [&#39;Zachry&#39;]&#125;] | (:Movie &#123;title: &#39;Cloud Atlas&#39;, released: 2012&#125;)|
++------------------------------------------------------------------------------------------------------------------------------+</code></pre>
 <p>An advanced aspect is that patterns can be used as predicates. Where <code>MATCH</code> expands the number and shape of patterns matched, a pattern predicate restricts the current result set. It only allows the paths to pass that satisfy the specified pattern. As we can expect, the use of <code>NOT</code> only allows the paths to pass that do <em>not</em> satisfy the specified pattern.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MATCH (p:Person)-[:ACTED_IN]-&gt;(m)</span><br><span class="line">WHERE NOT (p)-[:DIRECTED]-&gt;()</span><br><span class="line">RETURN p, m</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Rows: 2</span><br><span class="line"></span><br><span class="line">+----------------------------------------------------------------------------------------------+</span><br><span class="line">| p                                         | m                                                |</span><br><span class="line">+----------------------------------------------------------------------------------------------+</span><br><span class="line">| (:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;) | (:Movie &#123;title: &#x27;Cloud Atlas&#x27;, released: 2012&#125;)  |</span><br><span class="line">| (:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;) | (:Movie &#123;title: &#x27;Forrest Gump&#x27;, released: 1994&#125;) |</span><br><span class="line">+----------------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (p:Person)-[:ACTED_IN]-&gt;(m)
+WHERE NOT (p)-[:DIRECTED]-&gt;()
+RETURN p, m</code></pre>
+<pre><code>Rows: 2
+
++----------------------------------------------------------------------------------------------+
+| p                                         | m                                                |
++----------------------------------------------------------------------------------------------+
+| (:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;) | (:Movie &#123;title: &#39;Cloud Atlas&#39;, released: 2012&#125;)  |
+| (:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;) | (:Movie &#123;title: &#39;Forrest Gump&#39;, released: 1994&#125;) |
++----------------------------------------------------------------------------------------------+</code></pre>
 <p>Here we find actors, because they sport an <code>ACTED_IN</code> relationship but then skip those that ever <code>DIRECTED</code> any movie.</p>
 <p>There are more advanced ways of filtering, for example <em>list predicates</em>, which we will discuss later in this section.</p>
-<h4 id="3-4-2-Returning-results-指定返回结果"><a href="#3-4-2-Returning-results-指定返回结果" class="headerlink" title="3.4.2. Returning results 指定返回结果"></a>3.4.2. Returning results 指定返回结果</h4><p>So far, we have returned nodes, relationships and paths directly via their variables. However, the <code>RETURN</code> clause can return any number of expressions. But what are expressions in Cypher?</p>
-<p>The simplest expressions are literal values. Examples of literal values are: numbers, strings, arrays (for example: <code>[1,2,3]</code>), and maps (for example: <code>&#123;name: &#39;Tom Hanks&#39;, born:1964, movies: [&#39;Forrest Gump&#39;, ...], count: 13&#125;</code>). Individual properties of any node, relationship or map can be accessed using the <em>dot syntax</em>, for example: <code>n.name</code>. Individual elements or slices of arrays can be retrieved with subscripts, for example: <code>names[0]</code> and <code>movies[1..-1]</code>. Each function evaluation, for example: <code>length(array)</code>, <code>toInteger(&#39;12&#39;)</code>, <code>substring(&#39;2014-07-01&#39;, 0, 4)</code> and <code>coalesce(p.nickname, &#39;n/a&#39;)</code>, is also an expression.</p>
+<h4 id="returning-results-指定返回结果">3.4.2. Returning results 指定返回结果</h4>
+<p>So far, we have returned nodes, relationships and paths directly via their variables. However, the <code>RETURN</code> clause can return any number of expressions. But what are expressions in Cypher?</p>
+<p>The simplest expressions are literal values. Examples of literal values are: numbers, strings, arrays (for example: <code>[1,2,3]</code>), and maps (for example: <code>&#123;name: 'Tom Hanks', born:1964, movies: ['Forrest Gump', ...], count: 13&#125;</code>). Individual properties of any node, relationship or map can be accessed using the <em>dot syntax</em>, for example: <code>n.name</code>. Individual elements or slices of arrays can be retrieved with subscripts, for example: <code>names[0]</code> and <code>movies[1..-1]</code>. Each function evaluation, for example: <code>length(array)</code>, <code>toInteger('12')</code>, <code>substring('2014-07-01', 0, 4)</code> and <code>coalesce(p.nickname, 'n/a')</code>, is also an expression.</p>
 <p>Predicates used in <code>WHERE</code> clauses count as <em>boolean expressions</em>.</p>
 <p>Simple expressions can be composed and concatenated to form more complex expressions.</p>
-<p>By default the expression itself will be used as label for the  column, in many cases you want to alias that with a more understandable  name using <code>expression AS alias</code>. The alias can be used subsequently to refer to that column.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MATCH (p:Person)</span><br><span class="line">RETURN</span><br><span class="line">  p.name AS name,</span><br><span class="line">  toUpper(p.name),</span><br><span class="line">  coalesce(p.nickname, &#x27;n/a&#x27;) AS nickname,</span><br><span class="line">  &#123;name: p.name, label: head(labels(p))&#125; AS person</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Rows: 3</span><br><span class="line"></span><br><span class="line">+-----------------------------------------------------------------------------------------------+</span><br><span class="line">| name              | toUpper(p.name)   | nickname | person                                     |</span><br><span class="line">+-----------------------------------------------------------------------------------------------+</span><br><span class="line">| &#x27;Keanu Reeves&#x27;    | &#x27;KEANU REEVES&#x27;    | &#x27;n/a&#x27;    | &#123;name: &#x27;Keanu Reeves&#x27;, label: &#x27;Person&#x27;&#125;    |</span><br><span class="line">| &#x27;Robert Zemeckis&#x27; | &#x27;ROBERT ZEMECKIS&#x27; | &#x27;n/a&#x27;    | &#123;name: &#x27;Robert Zemeckis&#x27;, label: &#x27;Person&#x27;&#125; |</span><br><span class="line">| &#x27;Tom Hanks&#x27;       | &#x27;TOM HANKS&#x27;       | &#x27;n/a&#x27;    | &#123;name: &#x27;Tom Hanks&#x27;, label: &#x27;Person&#x27;&#125;       |</span><br><span class="line">+-----------------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+<p>By default the expression itself will be used as label for the column, in many cases you want to alias that with a more understandable name using <code>expression AS alias</code>. The alias can be used subsequently to refer to that column.</p>
+<pre class="cypher"><code>MATCH (p:Person)
+RETURN
+  p.name AS name,
+  toUpper(p.name),
+  coalesce(p.nickname, &#39;n/a&#39;) AS nickname,
+  &#123;name: p.name, label: head(labels(p))&#125; AS person
+</code></pre>
+<pre><code>Rows: 3
+
++-----------------------------------------------------------------------------------------------+
+| name              | toUpper(p.name)   | nickname | person                                     |
++-----------------------------------------------------------------------------------------------+
+| &#39;Keanu Reeves&#39;    | &#39;KEANU REEVES&#39;    | &#39;n/a&#39;    | &#123;name: &#39;Keanu Reeves&#39;, label: &#39;Person&#39;&#125;    |
+| &#39;Robert Zemeckis&#39; | &#39;ROBERT ZEMECKIS&#39; | &#39;n/a&#39;    | &#123;name: &#39;Robert Zemeckis&#39;, label: &#39;Person&#39;&#125; |
+| &#39;Tom Hanks&#39;       | &#39;TOM HANKS&#39;       | &#39;n/a&#39;    | &#123;name: &#39;Tom Hanks&#39;, label: &#39;Person&#39;&#125;       |
++-----------------------------------------------------------------------------------------------+</code></pre>
 <p>If we wish to display only unique results we can use the <code>DISTINCT</code> keyword after <code>RETURN</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (n)</span><br><span class="line">RETURN DISTINCT labels(n) AS Labels</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Rows: 2</span><br><span class="line"></span><br><span class="line">+------------+</span><br><span class="line">| Labels     |</span><br><span class="line">+------------+</span><br><span class="line">| [&#x27;Movie&#x27;]  |</span><br><span class="line">| [&#x27;Person&#x27;] |</span><br><span class="line">+------------+</span><br></pre></td></tr></table></figure>
-<h4 id="3-4-3-Aggregating-information-信息聚合"><a href="#3-4-3-Aggregating-information-信息聚合" class="headerlink" title="3.4.3. Aggregating information 信息聚合"></a>3.4.3. Aggregating information 信息聚合</h4><p>In many cases we wish to aggregate or group the data encountered while traversing patterns in our graph. In Cypher, aggregation happens in the <code>RETURN</code> clause while computing the final results. Many common aggregation functions are supported, e.g. <code>count</code>, <code>sum</code>, <code>avg</code>, <code>min</code>, and <code>max</code>, but there are several more.</p>
+<pre class="cypher"><code>MATCH (n)
+RETURN DISTINCT labels(n) AS Labels</code></pre>
+<pre><code>Rows: 2
+
++------------+
+| Labels     |
++------------+
+| [&#39;Movie&#39;]  |
+| [&#39;Person&#39;] |
++------------+</code></pre>
+<h4 id="aggregating-information-信息聚合">3.4.3. Aggregating information 信息聚合</h4>
+<p>In many cases we wish to aggregate or group the data encountered while traversing patterns in our graph. In Cypher, aggregation happens in the <code>RETURN</code> clause while computing the final results. Many common aggregation functions are supported, e.g. <code>count</code>, <code>sum</code>, <code>avg</code>, <code>min</code>, and <code>max</code>, but there are several more.</p>
 <p>Counting the number of people in your database could be achieved by this:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (:Person)</span><br><span class="line">RETURN count(*) AS people</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+--------+</span><br><span class="line">| people |</span><br><span class="line">+--------+</span><br><span class="line">| 3      |</span><br><span class="line">+--------+</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (:Person)
+RETURN count(*) AS people</code></pre>
+<pre><code>Rows: 1
+
++--------+
+| people |
++--------+
+| 3      |
++--------+</code></pre>
 <p>Note that <code>NULL</code> values are skipped during aggregation. For aggregating only unique values use <code>DISTINCT</code>, for example: <code>count(DISTINCT role)</code>.</p>
 <p>Aggregation works implicitly in Cypher. We specify which result columns we wish to aggregate. Cypher will use all non-aggregated columns as grouping keys.</p>
 <p>Aggregation affects which data is still visible in ordering or later query parts.</p>
 <p>The following statement finds out how often an actor and director have worked together:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (actor:Person)-[:ACTED_IN]-&gt;(movie:Movie)&lt;-[:DIRECTED]-(director:Person)</span><br><span class="line">RETURN actor, director, count(*) AS collaborations</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+--------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| actor                                     | director                                        | collaborations |</span><br><span class="line">+--------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| (:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;) | (:Person &#123;name: &#x27;Robert Zemeckis&#x27;, born: 1951&#125;) | 1              |</span><br><span class="line">+--------------------------------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
-<h4 id="3-4-4-Ordering-and-pagination-排序和分页"><a href="#3-4-4-Ordering-and-pagination-排序和分页" class="headerlink" title="3.4.4. Ordering and pagination 排序和分页"></a>3.4.4. Ordering and pagination 排序和分页</h4><p>It is common to sort and paginate after aggregating using <code>count(x)</code>.</p>
+<pre class="cypher"><code>MATCH (actor:Person)-[:ACTED_IN]-&gt;(movie:Movie)&lt;-[:DIRECTED]-(director:Person)
+RETURN actor, director, count(*) AS collaborations</code></pre>
+<pre><code>Rows: 1
+
++--------------------------------------------------------------------------------------------------------------+
+| actor                                     | director                                        | collaborations |
++--------------------------------------------------------------------------------------------------------------+
+| (:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;) | (:Person &#123;name: &#39;Robert Zemeckis&#39;, born: 1951&#125;) | 1              |
++--------------------------------------------------------------------------------------------------------------+</code></pre>
+<h4 id="ordering-and-pagination-排序和分页">3.4.4. Ordering and pagination 排序和分页</h4>
+<p>It is common to sort and paginate after aggregating using <code>count(x)</code>.</p>
 <p>Ordering is done using the <code>ORDER BY expression [ASC|DESC]</code> clause. The expression can be any expression, as long as it is computable from the returned information.</p>
 <p>For instance, if we return <code>person.name</code> we can still <code>ORDER BY person.age</code> since both are accessible from the <code>person</code> reference. We cannot order by things that are not returned. This is especially important with aggregation and <code>DISTINCT</code> return values, since both remove the visibility of data that is aggregated.</p>
 <p>Pagination is done using the <code>SKIP &#123;offset&#125;</code> and <code>LIMIT &#123;count&#125;</code> clauses.</p>
 <p>A common pattern is to aggregate for a count (<em>score</em> or <em>frequency</em>), order by it, and only return the top-n entries.</p>
 <p>For instance to find the most prolific actors we could do:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MATCH (a:Person)-[:ACTED_IN]-&gt;(m:Movie)</span><br><span class="line">RETURN a, count(*) AS appearances</span><br><span class="line">ORDER BY appearances DESC LIMIT 10</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+---------------------------------------------------------+</span><br><span class="line">| a                                         | appearances |</span><br><span class="line">+---------------------------------------------------------+</span><br><span class="line">| (:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;) | 2           |</span><br><span class="line">+---------------------------------------------------------+</span><br></pre></td></tr></table></figure>
-<h4 id="3-4-5-Collecting-aggregation-聚合为集合"><a href="#3-4-5-Collecting-aggregation-聚合为集合" class="headerlink" title="3.4.5. Collecting aggregation 聚合为集合"></a>3.4.5. Collecting aggregation 聚合为集合</h4><p>A very helpful aggregation function is <code>collect()</code>, which collects all the aggregated values into a list. This is very useful in many situations, since no information of details is lost while aggregating.</p>
+<pre class="cypher"><code>MATCH (a:Person)-[:ACTED_IN]-&gt;(m:Movie)
+RETURN a, count(*) AS appearances
+ORDER BY appearances DESC LIMIT 10</code></pre>
+<pre><code>Rows: 1
+
++---------------------------------------------------------+
+| a                                         | appearances |
++---------------------------------------------------------+
+| (:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;) | 2           |
++---------------------------------------------------------+</code></pre>
+<h4 id="collecting-aggregation-聚合为集合">3.4.5. Collecting aggregation 聚合为集合</h4>
+<p>A very helpful aggregation function is <code>collect()</code>, which collects all the aggregated values into a list. This is very useful in many situations, since no information of details is lost while aggregating.</p>
 <p><code>collect()</code> is well-suited for retrieving typical parent-child structures, where one core entity (<em>parent</em>, <em>root</em> or <em>head</em>) is returned per row with all its dependent information in associated lists created with <code>collect()</code>. This means that there is no need to repeat the parent information for each child row, or running <code>n+1</code> statements to retrieve the parent and its children individually.</p>
 <p>The following statement could be used to retrieve the cast of each movie in our database:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (m:Movie)&lt;-[:ACTED_IN]-(a:Person)</span><br><span class="line">RETURN m.title AS movie, collect(a.name) AS cast, count(*) AS actors</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Rows: 2</span><br><span class="line"></span><br><span class="line">+-----------------------------------------+</span><br><span class="line">| movie          | cast          | actors |</span><br><span class="line">+-----------------------------------------+</span><br><span class="line">| &#x27;Forrest Gump&#x27; | [&#x27;Tom Hanks&#x27;] | 1      |</span><br><span class="line">| &#x27;Cloud Atlas&#x27;  | [&#x27;Tom Hanks&#x27;] | 1      |</span><br><span class="line">+-----------------------------------------+</span><br></pre></td></tr></table></figure>
-<p>The lists created by <code>collect()</code> can either be used from  the client consuming the Cypher results, or directly within a statement  with any of the list functions or predicates.</p>
-<h3 id="3-5-Defining-a-schema-定义架构"><a href="#3-5-Defining-a-schema-定义架构" class="headerlink" title="3.5. Defining a schema 定义架构"></a>3.5. Defining a schema 定义架构</h3><p>First we create some data to use for our examples:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE (matrix:Movie &#123;title: &#x27;The Matrix&#x27;, released: 1997&#125;)</span><br><span class="line">CREATE (cloudAtlas:Movie &#123;title: &#x27;Cloud Atlas&#x27;, released: 2012&#125;)</span><br><span class="line">CREATE (forrestGump:Movie &#123;title: &#x27;Forrest Gump&#x27;, released: 1994&#125;)</span><br><span class="line">CREATE (keanu:Person &#123;name: &#x27;Keanu Reeves&#x27;&#125;)</span><br><span class="line">CREATE (robert:Person &#123;name: &#x27;Robert Zemeckis&#x27;, born: 1951&#125;)</span><br><span class="line">CREATE (tom:Person &#123;name: &#x27;Tom Hanks&#x27;, born: 1956&#125;)</span><br><span class="line">CREATE (tom)-[:ACTED_IN &#123;roles: [&#x27;Forrest&#x27;]&#125;]-&gt;(forrestGump)</span><br><span class="line">CREATE (tom)-[:ACTED_IN &#123;roles: [&#x27;Zachry&#x27;]&#125;]-&gt;(cloudAtlas)</span><br><span class="line">CREATE (robert)-[:DIRECTED]-&gt;(forrestGump)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (m:Movie)&lt;-[:ACTED_IN]-(a:Person)
+RETURN m.title AS movie, collect(a.name) AS cast, count(*) AS actors</code></pre>
+<pre><code>Rows: 2
+
++-----------------------------------------+
+| movie          | cast          | actors |
++-----------------------------------------+
+| &#39;Forrest Gump&#39; | [&#39;Tom Hanks&#39;] | 1      |
+| &#39;Cloud Atlas&#39;  | [&#39;Tom Hanks&#39;] | 1      |
++-----------------------------------------+</code></pre>
+<p>The lists created by <code>collect()</code> can either be used from the client consuming the Cypher results, or directly within a statement with any of the list functions or predicates.</p>
+<h3 id="defining-a-schema-定义架构">3.5. Defining a schema 定义架构</h3>
+<p>First we create some data to use for our examples:</p>
+<pre class="cypher"><code>CREATE (matrix:Movie &#123;title: &#39;The Matrix&#39;, released: 1997&#125;)
+CREATE (cloudAtlas:Movie &#123;title: &#39;Cloud Atlas&#39;, released: 2012&#125;)
+CREATE (forrestGump:Movie &#123;title: &#39;Forrest Gump&#39;, released: 1994&#125;)
+CREATE (keanu:Person &#123;name: &#39;Keanu Reeves&#39;&#125;)
+CREATE (robert:Person &#123;name: &#39;Robert Zemeckis&#39;, born: 1951&#125;)
+CREATE (tom:Person &#123;name: &#39;Tom Hanks&#39;, born: 1956&#125;)
+CREATE (tom)-[:ACTED_IN &#123;roles: [&#39;Forrest&#39;]&#125;]-&gt;(forrestGump)
+CREATE (tom)-[:ACTED_IN &#123;roles: [&#39;Zachry&#39;]&#125;]-&gt;(cloudAtlas)
+CREATE (robert)-[:DIRECTED]-&gt;(forrestGump)</code></pre>
 <p>This is the resulting graph:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-schema01.svg" alt="cypher intro schema01"></p>
-<h4 id="3-5-1-Using-indexes-索引"><a href="#3-5-1-Using-indexes-索引" class="headerlink" title="3.5.1. Using indexes 索引"></a>3.5.1. Using indexes 索引</h4><p>The main reason for using indexes in a graph database is to find the starting point of a graph traversal. Once that starting point is found, the traversal relies on in-graph structures to achieve high performance.</p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/cypher-intro-schema01.svg" alt="cypher intro schema01" /><figcaption aria-hidden="true">cypher intro schema01</figcaption>
+</figure>
+<h4 id="using-indexes-索引">3.5.1. Using indexes 索引</h4>
+<p>The main reason for using indexes in a graph database is to find the starting point of a graph traversal. Once that starting point is found, the traversal relies on in-graph structures to achieve high performance.</p>
 <p>Indexes can be added at any time. Note, however, that if there is existing data in the database, it will take some time for an index to come online.</p>
 <p>In this case we want to create an index to speed up finding actors by name in the database:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX FOR (a:Actor) ON (a.name)</span><br></pre></td></tr></table></figure>
-<p>In most cases it is not necessary to specify indexes when querying  for data, as the appropriate indexes will be used automatically. For example, the following query will automatically use the index  defined above:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (actor:Actor &#123;name: &#x27;Tom Hanks&#x27;&#125;)</span><br><span class="line">RETURN actor</span><br></pre></td></tr></table></figure>
-<p>A <em>composite index</em> is an index on multiple properties for all nodes that have a particular label. For example, the following statement will create a composite index on all nodes labeled with <code>Actor</code> and which have both a <code>name</code> and a <code>born</code> property. Note that since the node with the <code>Actor</code> label that has a <code>name</code> of “Keanu Reeves” does not have the <code>born</code> property. Therefore that node will not be added to the index.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX FOR (a:Actor) ON (a.name, a.born)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE INDEX FOR (a:Actor) ON (a.name)</code></pre>
+<p>In most cases it is not necessary to specify indexes when querying for data, as the appropriate indexes will be used automatically. For example, the following query will automatically use the index defined above:</p>
+<pre class="cypher"><code>MATCH (actor:Actor &#123;name: &#39;Tom Hanks&#39;&#125;)
+RETURN actor</code></pre>
+<p>A <em>composite index</em> is an index on multiple properties for all nodes that have a particular label. For example, the following statement will create a composite index on all nodes labeled with <code>Actor</code> and which have both a <code>name</code> and a <code>born</code> property. Note that since the node with the <code>Actor</code> label that has a <code>name</code> of "Keanu Reeves" does not have the <code>born</code> property. Therefore that node will not be added to the index.</p>
+<pre class="cypher"><code>CREATE INDEX FOR (a:Actor) ON (a.name, a.born)</code></pre>
 <p>We can inspect our database to find out what indexes are defined. We do this by calling the built-in procedure <code>db.indexes</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CALL db.indexes</span><br><span class="line">YIELD description, tokenNames, properties, type;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Rows: 2</span><br><span class="line"></span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| description                   | tokenNames | properties       | type                  |</span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br><span class="line">| &#x27;INDEX ON :Actor(name)&#x27;       | [&#x27;Actor&#x27;]  | [&#x27;name&#x27;]         | &#x27;node_label_property&#x27; |</span><br><span class="line">| &#x27;INDEX ON :Actor(name, born)&#x27; | [&#x27;Actor&#x27;]  | [&#x27;name&#x27;, &#x27;born&#x27;] | &#x27;node_label_property&#x27; |</span><br><span class="line">+---------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
-<h4 id="3-5-2-Using-constraints-约束"><a href="#3-5-2-Using-constraints-约束" class="headerlink" title="3.5.2. Using constraints 约束"></a>3.5.2. Using constraints 约束</h4><p>Constraints are used to make sure that the data adheres to the rules of the domain. For example: “If a node has a label of <code>Actor</code> and a property of <code>name</code>, then the value of <code>name</code> must be unique among all nodes that have the <code>Actor</code> label”.</p>
+<pre class="cypher"><code>CALL db.indexes
+YIELD description, tokenNames, properties, type;</code></pre>
+<pre><code>Rows: 2
+
++---------------------------------------------------------------------------------------+
+| description                   | tokenNames | properties       | type                  |
++---------------------------------------------------------------------------------------+
+| &#39;INDEX ON :Actor(name)&#39;       | [&#39;Actor&#39;]  | [&#39;name&#39;]         | &#39;node_label_property&#39; |
+| &#39;INDEX ON :Actor(name, born)&#39; | [&#39;Actor&#39;]  | [&#39;name&#39;, &#39;born&#39;] | &#39;node_label_property&#39; |
++---------------------------------------------------------------------------------------+</code></pre>
+<h4 id="using-constraints-约束">3.5.2. Using constraints 约束</h4>
+<p>Constraints are used to make sure that the data adheres to the rules of the domain. For example: "If a node has a label of <code>Actor</code> and a property of <code>name</code>, then the value of <code>name</code> must be unique among all nodes that have the <code>Actor</code> label".</p>
 <p>To create a constraint that makes sure that our database will never contain more than one node with the label <code>Movie</code> and the property <code>title</code>, we use the IS UNIQUE syntax:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE CONSTRAINT ON (movie:Movie) ASSERT movie.title IS UNIQUE</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE CONSTRAINT ON (movie:Movie) ASSERT movie.title IS UNIQUE</code></pre>
 <p>Adding the unique constraint will implicitly add an index on that property. If the constraint is dropped, but the index is still needed, the index will have to be created explicitly.</p>
 <p>Constraints can be added to database that already has data in it. This requires that the existing data complies with the constraint that is being added.</p>
 <p>We can inspect our database to find out what constraints are defined. We do this by calling the built-in procedure <code>db.constraints</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CALL db.constraints</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rows: 1</span><br><span class="line"></span><br><span class="line">+------------------------------------------------------------+</span><br><span class="line">| description                                                |</span><br><span class="line">+------------------------------------------------------------+</span><br><span class="line">| &#x27;CONSTRAINT ON (movie:Movie) ASSERT movie.title IS UNIQUE&#x27; |</span><br><span class="line">+------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CALL db.constraints</code></pre>
+<pre><code>Rows: 1
+
++------------------------------------------------------------+
+| description                                                |
++------------------------------------------------------------+
+| &#39;CONSTRAINT ON (movie:Movie) ASSERT movie.title IS UNIQUE&#39; |
++------------------------------------------------------------+</code></pre>
 <p>The constraint described above is available for all editions of Neo4j. Additional constraints are available for Neo4j Enterprise Edition.</p>
-<h3 id="3-6-Import-data-导入外部数据"><a href="#3-6-Import-data-导入外部数据" class="headerlink" title="3.6. Import data 导入外部数据"></a>3.6. Import data 导入外部数据</h3><p>With the combination of the Cypher clauses <code>LOAD CSV</code>, <code>MERGE</code>, and <code>CREATE</code> you can conveniently import data into Neo4j. <code>LOAD CSV</code> allows you to access the data values and perform actions on them.</p>
+<h3 id="import-data-导入外部数据">3.6. Import data 导入外部数据</h3>
+<p>With the combination of the Cypher clauses <code>LOAD CSV</code>, <code>MERGE</code>, and <code>CREATE</code> you can conveniently import data into Neo4j. <code>LOAD CSV</code> allows you to access the data values and perform actions on them.</p>
 <p>In this tutorial, you import data from the following CSV files:</p>
 <ul>
 <li><em>persons.csv</em></li>
@@ -907,65 +1232,111 @@
 </ul>
 <p>The content of the <em>persons.csv</em> file:</p>
 <p>persons.csv</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">id,name</span><br><span class="line">1,Charlie Sheen</span><br><span class="line">2,Michael Douglas</span><br><span class="line">3,Martin Sheen</span><br><span class="line">4,Morgan Freeman</span><br></pre></td></tr></table></figure>
+<pre><code>id,name
+1,Charlie Sheen
+2,Michael Douglas
+3,Martin Sheen
+4,Morgan Freeman</code></pre>
 <p>The <em>persons.csv</em> file contains two columns <code>id</code> and <code>name</code>. Each row represents one person that has a unique <code>id</code> and a <code>name</code>.</p>
 <p>The content of the <em>movies.csv</em> file:</p>
 <p>movies.csv</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id,title,country,year</span><br><span class="line">1,Wall Street,USA,1987</span><br><span class="line">2,The American President,USA,1995</span><br><span class="line">3,The Shawshank Redemption,USA,1994</span><br></pre></td></tr></table></figure>
+<pre><code>id,title,country,year
+1,Wall Street,USA,1987
+2,The American President,USA,1995
+3,The Shawshank Redemption,USA,1994</code></pre>
 <p>The <em>movies.csv</em> file contains the columns <code>id</code>, <code>title</code>, <code>country</code>, and <code>year</code>. Each row represents one movie that has a unique <code>id</code>, a <code>title</code>, a <code>country</code> of origin, and a release <code>year</code>.</p>
 <p>The content of the <em>roles.csv</em> file:</p>
 <p>roles.csv</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">personId,movieId,role</span><br><span class="line">1,1,Bud Fox</span><br><span class="line">4,1,Carl Fox</span><br><span class="line">3,1,Gordon Gekko</span><br><span class="line">4,2,A.J. MacInerney</span><br><span class="line">3,2,President Andrew Shepherd</span><br><span class="line">5,3,Ellis Boyd &#x27;Red&#x27; Redding</span><br></pre></td></tr></table></figure>
+<pre><code>personId,movieId,role
+1,1,Bud Fox
+4,1,Carl Fox
+3,1,Gordon Gekko
+4,2,A.J. MacInerney
+3,2,President Andrew Shepherd
+5,3,Ellis Boyd &#39;Red&#39; Redding</code></pre>
 <p>The <em>roles.csv</em> file contains the columns <code>personId</code>, <code>movieId</code>, and <code>role</code>. Each row represents one role with relationship data about the person <code>id</code> (from the <em>persons.csv</em> file) and the movie <code>id</code> (from the <em>movies.csv</em> file).</p>
 <p>The following simple data model shows what a graph model for this data set could look like:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/getting-started-load-csv01.svg" alt="getting started load csv01"></p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/getting-started-load-csv01.svg" alt="getting started load csv01" /><figcaption aria-hidden="true">getting started load csv01</figcaption>
+</figure>
 <p>This is the resulting graph, based on the data from the CSV files:</p>
-<p><img src="https://neo4j.com/docs/getting-started/current/_images/getting-started-load-csv02.svg" alt="getting started load csv02"></p>
-<h4 id="3-6-1-Prerequisites-事前准备"><a href="#3-6-1-Prerequisites-事前准备" class="headerlink" title="3.6.1. Prerequisites 事前准备"></a>3.6.1. Prerequisites 事前准备</h4><p>It assumes that your current work directory is the <em><neo4j-home></em> directory of the tarball installation, and the CSV files are placed in the default <em>import</em> directory.</p>
-<h4 id="3-6-2-Prepare-the-database-构建数据库结构"><a href="#3-6-2-Prepare-the-database-构建数据库结构" class="headerlink" title="3.6.2. Prepare the database 构建数据库结构"></a>3.6.2. Prepare the database 构建数据库结构</h4><p>Before importing the data, you should prepare the database you want to use by creating indexes and constraints.</p>
+<figure>
+<img src="https://neo4j.com/docs/getting-started/current/_images/getting-started-load-csv02.svg" alt="getting started load csv02" /><figcaption aria-hidden="true">getting started load csv02</figcaption>
+</figure>
+<h4 id="prerequisites-事前准备">3.6.1. Prerequisites 事前准备</h4>
+<p>It assumes that your current work directory is the <em><neo4j-home></em> directory of the tarball installation, and the CSV files are placed in the default <em>import</em> directory.</p>
+<h4 id="prepare-the-database-构建数据库结构">3.6.2. Prepare the database 构建数据库结构</h4>
+<p>Before importing the data, you should prepare the database you want to use by creating indexes and constraints.</p>
 <p>You should ensure that the <code>Person</code> and <code>Movie</code> nodes have unique <code>id</code> properties by creating constraints on them.</p>
 <p>Creating a unique constraint also implicitly creates an index. By indexing the <code>id</code> property, node lookup (e.g. by <code>MATCH</code>) will be much faster.</p>
 <p>Additionally, it is a good idea to index the country <code>name</code> for a fast lookup.</p>
-<h5 id="3-6-2-1-Create-a-constraint-so-that-each-Person-node-has-a-unique-id-property"><a href="#3-6-2-1-Create-a-constraint-so-that-each-Person-node-has-a-unique-id-property" class="headerlink" title="3.6.2.1. Create a constraint so that each Person node has a unique id property."></a>3.6.2.1. Create a constraint so that each <code>Person</code> node has a unique <code>id</code> property.</h5><p>You create a constraint on the <code>id</code> property of <code>Person</code> nodes to ensure that nodes with the <code>Person</code> label will have a unique <code>id</code> property.</p>
+<h5 id="create-a-constraint-so-that-each-person-node-has-a-unique-id-property.">3.6.2.1. Create a constraint so that each <code>Person</code> node has a unique <code>id</code> property.</h5>
+<p>You create a constraint on the <code>id</code> property of <code>Person</code> nodes to ensure that nodes with the <code>Person</code> label will have a unique <code>id</code> property.</p>
 <p>Using <em>Neo4j Browser</em>, run the following Cypher:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE CONSTRAINT personIdConstraint ON (person:Person) ASSERT person.id IS UNIQUE</span><br></pre></td></tr></table></figure>
-<h5 id="3-6-2-2-Create-a-constraint-so-that-each-Movie-node-has-a-unique-id-propery"><a href="#3-6-2-2-Create-a-constraint-so-that-each-Movie-node-has-a-unique-id-propery" class="headerlink" title="3.6.2.2. Create a constraint so that each Movie node has a unique id propery."></a>3.6.2.2. Create a constraint so that each <code>Movie</code> node has a unique <code>id</code> propery.</h5><p>You create a constraint on the <code>id</code> property of <code>Movie</code> nodes to ensure that nodes with the <code>Movie</code> label will have a unique <code>id</code> property.</p>
+<pre class="cypher"><code>CREATE CONSTRAINT personIdConstraint ON (person:Person) ASSERT person.id IS UNIQUE</code></pre>
+<h5 id="create-a-constraint-so-that-each-movie-node-has-a-unique-id-propery.">3.6.2.2. Create a constraint so that each <code>Movie</code> node has a unique <code>id</code> propery.</h5>
+<p>You create a constraint on the <code>id</code> property of <code>Movie</code> nodes to ensure that nodes with the <code>Movie</code> label will have a unique <code>id</code> property.</p>
 <p>Using <em>Neo4j Browser</em>, run the following Cypher:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE CONSTRAINT movieIdConstraint ON (movie:Movie) ASSERT movie.id IS UNIQUE</span><br></pre></td></tr></table></figure>
-<h5 id="3-6-2-3-Create-an-index-for-Country-node-for-the-name-property"><a href="#3-6-2-3-Create-an-index-for-Country-node-for-the-name-property" class="headerlink" title="3.6.2.3. Create an index for Country node for the name property."></a>3.6.2.3. Create an index for <code>Country</code> node for the <code>name</code> property.</h5><p>Create an index on the <code>name</code> property of <code>Country</code> nodes to ensure fast lookups.</p>
+<pre class="cypher"><code>CREATE CONSTRAINT movieIdConstraint ON (movie:Movie) ASSERT movie.id IS UNIQUE</code></pre>
+<h5 id="create-an-index-for-country-node-for-the-name-property.">3.6.2.3. Create an index for <code>Country</code> node for the <code>name</code> property.</h5>
+<p>Create an index on the <code>name</code> property of <code>Country</code> nodes to ensure fast lookups.</p>
 <blockquote>
 <p>When using <code>MERGE</code> or <code>MATCH</code> with <code>LOAD CSV</code>, make sure you have an <a target="_blank" rel="noopener" href="https://neo4j.com/docs/getting-started/current/cypher-intro/schema/#cypher-intro-indexes">index</a> or a <a target="_blank" rel="noopener" href="https://neo4j.com/docs/getting-started/current/cypher-intro/schema/#cypher-intro-constraints">unique constraint</a> on the property that you are merging on. This will ensure that the query executes in a performant way.</p>
 </blockquote>
 <p>Using <em>Neo4j Browser</em>, run the following Cypher:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX FOR (c:Country) ON (c.name)</span><br></pre></td></tr></table></figure>
-<h4 id="3-6-3-Import-data-using-LOAD-CSV-导入数据"><a href="#3-6-3-Import-data-using-LOAD-CSV-导入数据" class="headerlink" title="3.6.3. Import data using LOAD CSV 导入数据"></a>3.6.3. Import data using <code>LOAD CSV</code> 导入数据</h4><h5 id="3-6-3-1-Load-the-data-from-the-persons-csv-file"><a href="#3-6-3-1-Load-the-data-from-the-persons-csv-file" class="headerlink" title="3.6.3.1. Load the data from the *persons.csv* file."></a>3.6.3.1. Load the data from the *persons.csv* file.</h5><p>You create nodes with the <code>Person</code> label and the the the properties <code>id</code> and <code>name</code>.</p>
+<pre class="cypher"><code>CREATE INDEX FOR (c:Country) ON (c.name)</code></pre>
+<h4 id="import-data-using-load-csv-导入数据">3.6.3. Import data using <code>LOAD CSV</code> 导入数据</h4>
+<h5 id="load-the-data-from-the-persons.csv-file.">3.6.3.1. Load the data from the *persons.csv* file.</h5>
+<p>You create nodes with the <code>Person</code> label and the the the properties <code>id</code> and <code>name</code>.</p>
 <p>Using <em>Neo4j Browser</em>, run the following Cypher:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LOAD CSV WITH HEADERS FROM &quot;file:///persons.csv&quot; AS csvLine</span><br><span class="line">CREATE (p:Person &#123;id: toInteger(csvLine.id), name: csvLine.name&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>LOAD CSV WITH HEADERS FROM &quot;file:///persons.csv&quot; AS csvLine
+CREATE (p:Person &#123;id: toInteger(csvLine.id), name: csvLine.name&#125;)</code></pre>
 <p>Output:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Added 4 nodes, Set 8 properties, Added 4 labels</span><br></pre></td></tr></table></figure>
-<h5 id="3-6-3-2-Load-the-data-from-the-movies-csv-file"><a href="#3-6-3-2-Load-the-data-from-the-movies-csv-file" class="headerlink" title="3.6.3.2. Load the data from the *movies.csv* file."></a>3.6.3.2. Load the data from the *movies.csv* file.</h5><p>You create nodes with the <code>Movie</code> label and the the the properties <code>id</code>, <code>title</code>, and <code>year</code>.</p>
+<pre><code>Added 4 nodes, Set 8 properties, Added 4 labels</code></pre>
+<h5 id="load-the-data-from-the-movies.csv-file.">3.6.3.2. Load the data from the *movies.csv* file.</h5>
+<p>You create nodes with the <code>Movie</code> label and the the the properties <code>id</code>, <code>title</code>, and <code>year</code>.</p>
 <p>Also you create nodes with the <code>Country</code> label. Using <code>MERGE</code> avoids creating duplicate <code>Country</code> nodes in the case where multiple movies have the same country of origin.</p>
 <p>The relationship with the type <code>ORIGIN</code> will connect the <code>Country</code> node and the <code>Movie</code> node.</p>
 <p>Using <em>Neo4j Browser</em>, run the following Cypher:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LOAD CSV WITH HEADERS FROM &quot;file:///movies.csv&quot; AS csvLine</span><br><span class="line">MERGE (country:Country &#123;name: csvLine.country&#125;)</span><br><span class="line">CREATE (movie:Movie &#123;id: toInteger(csvLine.id), title: csvLine.title, year:toInteger(csvLine.year)&#125;)</span><br><span class="line">CREATE (movie)-[:ORIGIN]-&gt;(country)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>LOAD CSV WITH HEADERS FROM &quot;file:///movies.csv&quot; AS csvLine
+MERGE (country:Country &#123;name: csvLine.country&#125;)
+CREATE (movie:Movie &#123;id: toInteger(csvLine.id), title: csvLine.title, year:toInteger(csvLine.year)&#125;)
+CREATE (movie)-[:ORIGIN]-&gt;(country)</code></pre>
 <p>Output:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Added 4 nodes, Created 3 relationships, Set 10 properties, Added 4 labels</span><br></pre></td></tr></table></figure>
-<h5 id="3-6-3-3-Load-the-data-from-the-roles-csv-file"><a href="#3-6-3-3-Load-the-data-from-the-roles-csv-file" class="headerlink" title="3.6.3.3. Load the data from the *roles.csv* file"></a>3.6.3.3. Load the data from the *roles.csv* file</h5><p>Importing the data from the <em>roles.csv</em> file is a matter of finding the <code>Person</code> node and <code>Movie</code> node and then creating relationships between them.</p>
+<pre><code>Added 4 nodes, Created 3 relationships, Set 10 properties, Added 4 labels</code></pre>
+<h5 id="load-the-data-from-the-roles.csv-file">3.6.3.3. Load the data from the *roles.csv* file</h5>
+<p>Importing the data from the <em>roles.csv</em> file is a matter of finding the <code>Person</code> node and <code>Movie</code> node and then creating relationships between them.</p>
 <blockquote>
-<p>For larger data files, it is useful to use the hint <code>USING PERIODIC COMMIT</code> clause of <code>LOAD CSV</code>. This hint tells Neo4j that the query might build up inordinate amounts  of transaction state, and thus needs to be periodically committed. </p>
+<p>For larger data files, it is useful to use the hint <code>USING PERIODIC COMMIT</code> clause of <code>LOAD CSV</code>. This hint tells Neo4j that the query might build up inordinate amounts of transaction state, and thus needs to be periodically committed.</p>
 <p>For more information, see <a target="_blank" rel="noopener" href="https://neo4j.com/docs/cypher-manual/4.3/query-tuning/using/#query-using-periodic-commit-hint">4.3@cypher-manual:ROOT:query-tuning/using/index.adoc#query-using-periodic-commit-hint</a>.</p>
 </blockquote>
 <p>Using <em>Neo4j Browser</em>, run the following Cypher:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">USING PERIODIC COMMIT 500</span><br><span class="line">LOAD CSV WITH HEADERS FROM &quot;file:///roles.csv&quot; AS csvLine</span><br><span class="line">MATCH (person:Person &#123;id: toInteger(csvLine.personId)&#125;), (movie:Movie &#123;id: toInteger(csvLine.movieId)&#125;)</span><br><span class="line">CREATE (person)-[:ACTED_IN &#123;role: csvLine.role&#125;]-&gt;(movie)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM &quot;file:///roles.csv&quot; AS csvLine
+MATCH (person:Person &#123;id: toInteger(csvLine.personId)&#125;), (movie:Movie &#123;id: toInteger(csvLine.movieId)&#125;)
+CREATE (person)-[:ACTED_IN &#123;role: csvLine.role&#125;]-&gt;(movie)</code></pre>
 <p>Output:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Created 5 relationships, Set 5 properties</span><br></pre></td></tr></table></figure>
-<h4 id="3-6-4-Validate-the-imported-data-验证导入效果"><a href="#3-6-4-Validate-the-imported-data-验证导入效果" class="headerlink" title="3.6.4. Validate the imported data 验证导入效果"></a>3.6.4. Validate the imported data 验证导入效果</h4><p>Check the resulting data set by finding all the nodes that have a relationship.</p>
+<pre><code>Created 5 relationships, Set 5 properties</code></pre>
+<h4 id="validate-the-imported-data-验证导入效果">3.6.4. Validate the imported data 验证导入效果</h4>
+<p>Check the resulting data set by finding all the nodes that have a relationship.</p>
 <p>Using <em>Neo4j Browser</em>, run the following Cypher:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (n)-[r]-&gt;(m) RETURN n, r, m</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (n)-[r]-&gt;(m) RETURN n, r, m</code></pre>
 <p>Output:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+------------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| n                                                               | r                                               | m        |</span><br><span class="line">+------------------------------------------------------------------------------------------------------------------------------+</span><br><span class="line">| (:Movie &#123;id: 3, title: &quot;The Shawshank Redemption&quot;, year: 1994&#125;) | [:ORIGIN]                                       | (:Country &#123;name: &quot;USA&quot;&#125;)                                      |</span><br><span class="line">| (:Movie &#123;id: 2, title: &quot;The American President&quot;, year: 1995&#125;)   | [:ORIGIN]                                       | (:Country &#123;name: &quot;USA&quot;&#125;)                                      |</span><br><span class="line">| (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)              | [:ORIGIN]                                       | (:Country &#123;name: &quot;USA&quot;&#125;)                                      |</span><br><span class="line">| (:Person &#123;name: &quot;Morgan Freeman&quot;, id: 4&#125;)                       | [:ACTED_IN &#123;role: &quot;Carl Fox&quot;&#125;]                  | (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)            |</span><br><span class="line">| (:Person &#123;name: &quot;Charlie Sheen&quot;, id: 1&#125;)                        | [:ACTED_IN &#123;role: &quot;Bud Fox&quot;&#125;]                   | (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)            |</span><br><span class="line">| (:Person &#123;name: &quot;Martin Sheen&quot;, id: 3&#125;)                         | [:ACTED_IN &#123;role: &quot;Gordon Gekko&quot;&#125;]              | (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)            |</span><br><span class="line">| (:Person &#123;name: &quot;Martin Sheen&quot;, id: 3&#125;)                         | [:ACTED_IN &#123;role: &quot;President Andrew Shepherd&quot;&#125;] | (:Movie &#123;id: 2, title: &quot;The American President&quot;, year: 1995&#125;) |</span><br><span class="line">| (:Person &#123;name: &quot;Morgan Freeman&quot;, id: 4&#125;)                       | [:ACTED_IN &#123;role: &quot;A.J. MacInerney&quot;&#125;]           | (:Movie &#123;id: 2, title: &quot;The American President&quot;, year: 1995&#125;) |</span><br><span class="line">+------------------------------------------------------------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
-<h2 id="4-后续"><a href="#4-后续" class="headerlink" title="4. 后续"></a>4. 后续</h2><p>恭喜您，已经入门了Neo4j，要想进一步精通，请前往官方文档学习。在此指出下一步的学习方向：</p>
-<ol>
+<pre><code>+------------------------------------------------------------------------------------------------------------------------------+
+| n                                                               | r                                               | m        |
++------------------------------------------------------------------------------------------------------------------------------+
+| (:Movie &#123;id: 3, title: &quot;The Shawshank Redemption&quot;, year: 1994&#125;) | [:ORIGIN]                                       | (:Country &#123;name: &quot;USA&quot;&#125;)                                      |
+| (:Movie &#123;id: 2, title: &quot;The American President&quot;, year: 1995&#125;)   | [:ORIGIN]                                       | (:Country &#123;name: &quot;USA&quot;&#125;)                                      |
+| (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)              | [:ORIGIN]                                       | (:Country &#123;name: &quot;USA&quot;&#125;)                                      |
+| (:Person &#123;name: &quot;Morgan Freeman&quot;, id: 4&#125;)                       | [:ACTED_IN &#123;role: &quot;Carl Fox&quot;&#125;]                  | (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)            |
+| (:Person &#123;name: &quot;Charlie Sheen&quot;, id: 1&#125;)                        | [:ACTED_IN &#123;role: &quot;Bud Fox&quot;&#125;]                   | (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)            |
+| (:Person &#123;name: &quot;Martin Sheen&quot;, id: 3&#125;)                         | [:ACTED_IN &#123;role: &quot;Gordon Gekko&quot;&#125;]              | (:Movie &#123;id: 1, title: &quot;Wall Street&quot;, year: 1987&#125;)            |
+| (:Person &#123;name: &quot;Martin Sheen&quot;, id: 3&#125;)                         | [:ACTED_IN &#123;role: &quot;President Andrew Shepherd&quot;&#125;] | (:Movie &#123;id: 2, title: &quot;The American President&quot;, year: 1995&#125;) |
+| (:Person &#123;name: &quot;Morgan Freeman&quot;, id: 4&#125;)                       | [:ACTED_IN &#123;role: &quot;A.J. MacInerney&quot;&#125;]           | (:Movie &#123;id: 2, title: &quot;The American President&quot;, year: 1995&#125;) |
++------------------------------------------------------------------------------------------------------------------------------+</code></pre>
+<h2 id="后续">4. 后续</h2>
+<p>恭喜您，已经入门了Neo4j，要想进一步精通，请前往官方文档学习。在此指出下一步的学习方向：</p>
+<ol type="1">
 <li>在Cypher Manual中学习Syntax，了解已学习的部分语法的详细用法，并接触更多高级语法的使用。</li>
 <li>在Cypher Manual中学习Clauses，了解已学习的部分分句的详细用法，并接触更多高级分句的用法。</li>
 <li>结合Cypher Refcard中众多参考样例，巩固各种分句的使用方法。</li>
@@ -1068,7 +1439,7 @@
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/%E8%AF%95%E9%A2%98/">试题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
     </div>
   </div>
 
@@ -1078,7 +1449,7 @@
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/" rel="tag">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA/" rel="tag">知识表示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/KR/" rel="tag">KR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">计算机,数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机,数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%BD%91%E7%BB%9C/" rel="tag">计算机,网络</a></li></ul>
     </div>
   </div>
 

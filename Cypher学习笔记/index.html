@@ -194,7 +194,7 @@
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">数据库,Neo4j</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机,数据库,Neo4j</a></li></ul>
             </div>
             
 
@@ -203,13 +203,30 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h3 id="1-Neo4j的安装-amp-配置-amp-运行"><a href="#1-Neo4j的安装-amp-配置-amp-运行" class="headerlink" title="1. Neo4j的安装&amp;配置&amp;运行"></a>1. Neo4j的安装&amp;配置&amp;运行</h3><h4 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1. 安装"></a>1.1. 安装</h4><p>从官网下载最新版v4.3.6 <a target="_blank" rel="noopener" href="https://neo4j.com/download-center/">Neo4j Download Center</a>，注意下载社区版（Community）的zip包。</p>
+            <h3 id="neo4j的安装配置运行">1. Neo4j的安装&amp;配置&amp;运行</h3>
+<h4 id="安装">1.1. 安装</h4>
+<p>从官网下载最新版v4.3.6 <a target="_blank" rel="noopener" href="https://neo4j.com/download-center/">Neo4j Download Center</a>，注意下载社区版（Community）的zip包。</p>
 <p>将下载的压缩包解压至合适的目录下。（Neo4j无繁琐的安装步骤，解压即可使用）</p>
-<h4 id="1-2-配置"><a href="#1-2-配置" class="headerlink" title="1.2. 配置"></a>1.2. 配置</h4><p>添加环境变量Path：%你的解压路径%\neo4j-community-4.3.6\bin</p>
-<p>用文本编辑器打开目录 %你的解压路径%\neo4j-community-4.3.6\conf中的neo4j.conf，找到下方所示的两行代码，去掉第二行开头的#，修改参数能够切换不同的数据库（社区版不能在Neo4j Browser中切换数据库，只能通过修改配置文件完成切换）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># The name of the default database</span><br><span class="line">dbms.default_database=&lt;your database name&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-运行"><a href="#1-3-运行" class="headerlink" title="1.3. 运行"></a>1.3. 运行</h4><p>由于我们已经配置了环境变量，直接在cmd中输入 <code>neo4j console</code>，输出为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Directories in use:</span><br><span class="line">home:         F:\neo4j-community-4.3.6</span><br><span class="line">config:       F:\neo4j-community-4.3.6\conf</span><br><span class="line">logs:         F:\neo4j-community-4.3.6\logs</span><br><span class="line">plugins:      F:\neo4j-community-4.3.6\plugins</span><br><span class="line">import:       F:\neo4j-community-4.3.6\import</span><br><span class="line">data:         F:\neo4j-community-4.3.6\data</span><br><span class="line">certificates: F:\neo4j-community-4.3.6\certificates</span><br><span class="line">licenses:     F:\neo4j-community-4.3.6\licenses</span><br><span class="line">run:          F:\neo4j-community-4.3.6\run</span><br><span class="line">Starting Neo4j.</span><br><span class="line">Started neo4j. It is available at http://127.0.0.1:7474</span><br><span class="line">There may be a short delay until the server is ready.</span><br></pre></td></tr></table></figure>
+<h4 id="配置">1.2. 配置</h4>
+<p>添加环境变量Path：%你的解压路径%4j-community-4.3.6</p>
+<p>用文本编辑器打开目录 %你的解压路径%4j-community-4.3.64j.conf，找到下方所示的两行代码，去掉第二行开头的#，修改参数能够切换不同的数据库（社区版不能在Neo4j Browser中切换数据库，只能通过修改配置文件完成切换）</p>
+<pre><code># The name of the default database
+dbms.default_database=&lt;your database name&gt;</code></pre>
+<h4 id="运行">1.3. 运行</h4>
+<p>由于我们已经配置了环境变量，直接在cmd中输入 <code>neo4j console</code>，输出为</p>
+<pre><code>Directories in use:
+home:         F:\neo4j-community-4.3.6
+config:       F:\neo4j-community-4.3.6\conf
+logs:         F:\neo4j-community-4.3.6\logs
+plugins:      F:\neo4j-community-4.3.6\plugins
+import:       F:\neo4j-community-4.3.6\import
+data:         F:\neo4j-community-4.3.6\data
+certificates: F:\neo4j-community-4.3.6\certificates
+licenses:     F:\neo4j-community-4.3.6\licenses
+run:          F:\neo4j-community-4.3.6\run
+Starting Neo4j.
+Started neo4j. It is available at http://127.0.0.1:7474
+There may be a short delay until the server is ready.</code></pre>
 <blockquote>
 <p>在cmd中输入 <code>neo4j stop</code> 来停止应用.</p>
 </blockquote>
@@ -218,207 +235,285 @@
 <p>默认用户名为 <code>neo4j</code> ，默认密码为 <code>neo4j</code>.</p>
 </blockquote>
 <p>若修改了配置文件，需要通过重启应用来使配置生效，在cmd中输入 <code>neo4j restart</code>，并刷新浏览器</p>
-<h3 id="2-Cypher语句的基础用法"><a href="#2-Cypher语句的基础用法" class="headerlink" title="2. Cypher语句的基础用法"></a>2. Cypher语句的基础用法</h3><p>Cypher语句的分句可归纳为以下7类：</p>
-<div class="table-container">
+<h3 id="cypher语句的基础用法">2. Cypher语句的基础用法</h3>
+<p>Cypher语句的分句可归纳为以下7类：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>中文</th>
 <th>对应英文</th>
 <th>对应小标题</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>常规语句</td>
 <td>General</td>
 <td>格式规范、数据类型、操作符</td>
 </tr>
-<tr>
+<tr class="even">
 <td>读取语句</td>
 <td>Read</td>
 <td>读取语句</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>写入语句</td>
 <td>Write</td>
 <td>写入语句</td>
 </tr>
-<tr>
+<tr class="even">
 <td>架构语句</td>
 <td>Schema</td>
 <td>不作要求</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>函数语句</td>
 <td>Functions</td>
 <td>不作要求</td>
 </tr>
-<tr>
+<tr class="even">
 <td>跨库语句</td>
 <td>Multidatabase</td>
 <td>不作要求</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>安全语句</td>
 <td>Security</td>
 <td>不作要求</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="2-1-格式规范-Patterns"><a href="#2-1-格式规范-Patterns" class="headerlink" title="2.1. 格式规范 Patterns"></a>2.1. 格式规范 Patterns</h4><h5 id="2-1-1-节点-Node"><a href="#2-1-1-节点-Node" class="headerlink" title="2.1.1. 节点 Node"></a>2.1.1. 节点 Node</h5><p>单个节点用<strong>一对括号</strong>表示。</p>
+<h4 id="格式规范-patterns">2.1. 格式规范 Patterns</h4>
+<h5 id="节点-node">2.1.1. 节点 Node</h5>
+<p>单个节点用<strong>一对括号</strong>表示。</p>
 <p>下式描述了单个节点，并使用变量 a 命名了该节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)</span><br></pre></td></tr></table></figure>
-<h5 id="2-1-2-关系-Relationship"><a href="#2-1-2-关系-Relationship" class="headerlink" title="2.1.2. 关系 Relationship"></a>2.1.2. 关系 Relationship</h5><p>描述多个节点和它们之间的<strong>有向关系</strong>通过<strong>两个减号和一个左/右单书名号</strong>表示。</p>
+<pre class="cypher"><code>(a)</code></pre>
+<h5 id="关系-relationship">2.1.2. 关系 Relationship</h5>
+<p>描述多个节点和它们之间的<strong>有向关系</strong>通过<strong>两个减号和一个左/右单书名号</strong>表示。</p>
 <p>下式描述了两个节点，一个到另一个的单一关系，两个节点都分别命名为 a 和 b。注意这个关系是有向的，方向为a指向b，能够从箭头的方向直观地看出。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)--&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)--&gt;(b)</code></pre>
 <p>下式描述了三个节点的复杂关系，节点 a 和 c 都存在着指向 b 的关系。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)--&gt;(b)&lt;--(c)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)--&gt;(b)&lt;--(c)</code></pre>
 <p>描述多个节点和它们之间的<strong>无向关系</strong>通过<strong>两个减号</strong>表示。</p>
 <p>下式描述了节点 a 与节点 b 的无向关系，这个关系可以是节点 a 指向节点 b，也可以是节点 b 指向节点 a 。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)--(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)--(b)</code></pre>
 <p>与节点一样，关系也可以命名。通过<strong>一对方括号</strong>将两个减号分开来描述关系。有向关系和无向关系使用的描述方法相同。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(a)-[r]-&gt;(b)</span><br><span class="line">(a)-[r]-(b)</span><br></pre></td></tr></table></figure>
-<h5 id="2-1-3-变长关系-Variable-length-Relationship-路径-Path"><a href="#2-1-3-变长关系-Variable-length-Relationship-路径-Path" class="headerlink" title="2.1.3. 变长关系 Variable-length Relationship | 路径 Path"></a>2.1.3. 变长关系 Variable-length Relationship | 路径 Path</h5><p>当关系描述变得越来越复杂时，简单的表达式无法满足关系描述的需求，故引入变长关系，通过在关系的方括号中的<strong>*N..M</strong>来描述。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)-[*2]-&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)-[r]-&gt;(b)
+(a)-[r]-(b)</code></pre>
+<h5 id="变长关系-variable-length-relationship-路径-path">2.1.3. 变长关系 Variable-length Relationship | 路径 Path</h5>
+<p>当关系描述变得越来越复杂时，简单的表达式无法满足关系描述的需求，故引入变长关系，通过在关系的方括号中的*<strong>N..M</strong>来描述。</p>
+<pre class="cypher"><code>(a)-[*2]-&gt;(b)</code></pre>
 <p>上式描述了一个包含三个节点和两个关系的图，为一条长度为2的路径。它的等同于下式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)--&gt;()--&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)--&gt;()--&gt;(b)</code></pre>
 <p>指定的两个节点间的路径长度还可以指定一个范围，下式描述了节点 a 到节点 b 的一条长度为3~5的路径。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)-[*3..5]-&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)-[*3..5]-&gt;(b)</code></pre>
 <p>上式中的3和5都可以省略，分别表示大于等于3和小于等于5的路径。若3和5同时省略，则表示长度大于等于1的所有路径。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(a)-[*3..]-&gt;(b)</span><br><span class="line">(a)-[*..5]-&gt;(b)</span><br><span class="line">(a)-[*]-&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)-[*3..]-&gt;(b)
+(a)-[*..5]-&gt;(b)
+(a)-[*]-&gt;(b)</code></pre>
 <p>路径长度为0表示节点自身，下式描述了节点 a 到节点 b 的长度为1的路径以及节点 a 自身。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)-[*0..1]-&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)-[*0..1]-&gt;(b)</code></pre>
 <blockquote>
 <p>找到一条最短路径shortestPath()</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shortestPath((n1:Person)-[*..6]-(n2:Person))</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>shortestPath((n1:Person)-[*..6]-(n2:Person))</code></pre>
 <p>找到所有的最短路径allShortestPaths()</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">allShortestPaths((n1:Person)-[*..6]-&gt;(n2:Person))</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>allShortestPaths((n1:Person)-[*..6]-&gt;(n2:Person))</code></pre>
 <p>计算路径数量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">size((n)--&gt;()--&gt;())</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>size((n)--&gt;()--&gt;())</code></pre>
 </blockquote>
-<h5 id="2-1-4-标签-Label"><a href="#2-1-4-标签-Label" class="headerlink" title="2.1.4. 标签 Label"></a>2.1.4. 标签 Label</h5><p>节点和关系都可以通过<strong>冒号加标签名</strong>来表示节点所具有的标签。</p>
+<h5 id="标签-label">2.1.4. 标签 Label</h5>
+<p>节点和关系都可以通过<strong>冒号加标签名</strong>来表示节点所具有的标签。</p>
 <p>下式描述了在节点 a 指向节点 b 的关系中，节点 a 必须具有标签 <code>User</code> 。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a:User)--&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a:User)--&gt;(b)</code></pre>
 <p>一个节点也可以具有多个标签。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a:User:Admin)--&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a:User:Admin)--&gt;(b)</code></pre>
 <p>同节点一样，关系也可以具有标签。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)-[r:REL_TYPE]-&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)-[r:REL_TYPE]-&gt;(b)</code></pre>
 <p>但是与节点不同是，关系的标签只能具有一个。如果想要列出两节点间的多种关系，可以通过用管道符 <code>|</code> 间隔列出多个标签。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)-[r:TYPE1 | TYPE2]-&gt;(b)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)-[r:TYPE1 | TYPE2]-&gt;(b)</code></pre>
 <blockquote>
 <p>列出节点的所有标签</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">labels(n)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>labels(n)</code></pre>
 </blockquote>
-<h5 id="2-1-5-属性-Properties"><a href="#2-1-5-属性-Properties" class="headerlink" title="2.1.5. 属性 Properties"></a>2.1.5. 属性 Properties</h5><p>节点和关系都可以具有用<strong>键值对</strong>表示的属性。</p>
-<p>下式描述了节点 a 具有两个属性 <code>name</code> 和 <code>sport</code>，属性值分别为 <code>&#39;Andy&#39;</code> 和 <code>&#39;Brazilian Ju-Jitsu&#39;</code> 。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a &#123;name: &#x27;Andy&#x27;, sport: &#x27;Brazilian Ju-Jitsu&#x27;&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="属性-properties">2.1.5. 属性 Properties</h5>
+<p>节点和关系都可以具有用<strong>键值对</strong>表示的属性。</p>
+<p>下式描述了节点 a 具有两个属性 <code>name</code> 和 <code>sport</code>，属性值分别为 <code>'Andy'</code> 和 <code>'Brazilian Ju-Jitsu'</code> 。</p>
+<pre class="cypher"><code>(a &#123;name: &#39;Andy&#39;, sport: &#39;Brazilian Ju-Jitsu&#39;&#125;)</code></pre>
 <p>下式描述了节点 a 指向节点 b 的关系中，关系的属性 <code>blocked</code> 的值为 <code>false</code> 。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a)-[&#123;blocked: false&#125;]-&gt;(b)</span><br></pre></td></tr></table></figure>
-<h5 id="2-1-6-路径变量-Path-Variables"><a href="#2-1-6-路径变量-Path-Variables" class="headerlink" title="2.1.6. 路径变量 Path Variables"></a>2.1.6. 路径变量 Path Variables</h5><p>上面提到的路径可以声明为变量。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = (a)-[*3..5]-&gt;(b)</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-数据类型-Datatype"><a href="#2-2-数据类型-Datatype" class="headerlink" title="2.2. 数据类型 Datatype"></a>2.2. 数据类型 Datatype</h4><p>此处只列出了一些值得注意的数据类型。</p>
-<h5 id="2-2-1-列表-List"><a href="#2-2-1-列表-List" class="headerlink" title="2.2.1. 列表 List"></a>2.2.1. 列表 List</h5><p>用方括号声明列表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;] AS list</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>(a)-[&#123;blocked: false&#125;]-&gt;(b)</code></pre>
+<h5 id="路径变量-path-variables">2.1.6. 路径变量 Path Variables</h5>
+<p>上面提到的路径可以声明为变量。</p>
+<pre class="cypher"><code>p = (a)-[*3..5]-&gt;(b)</code></pre>
+<h4 id="数据类型-datatype">2.2. 数据类型 Datatype</h4>
+<p>此处只列出了一些值得注意的数据类型。</p>
+<h5 id="列表-list">2.2.1. 列表 List</h5>
+<p>用方括号声明列表</p>
+<pre class="cypher"><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;] AS list</code></pre>
 <blockquote>
 <p>列表长度</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">size(list)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>size(list)</code></pre>
+</blockquote>
+<blockquote>
 <p>创建一个数字列表，以<code>$firstNum</code>开始，以<code>$lastNum</code>结束，步长为<code>$step</code>（步长为可选参数，不加为1）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">range($firstNum, $lastNum, $step)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>range($firstNum, $lastNum, $step)</code></pre>
+</blockquote>
+<blockquote>
 <p>逆序列表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reverse($list)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>reverse($list)</code></pre>
+</blockquote>
+<blockquote>
 <p>判断列表是否为空</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isEmpty(list)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>isEmpty(list)</code></pre>
+</blockquote>
+<blockquote>
 <p>list循环简约的表达</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reduce(accumulator = initial, variable IN list | expression)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>reduce(accumulator = initial, variable IN list | expression)</code></pre>
+</blockquote>
+<blockquote>
 <p>通过节点列表创建属性列表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[x IN list | x.prop]</span><br></pre></td></tr></table></figure>
+<pre><code>[x IN list | x.prop]</code></pre>
 <p>筛选列表内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[x IN list WHERE x.prop &lt;&gt; $value]</span><br></pre></td></tr></table></figure>
+<pre><code>[x IN list WHERE x.prop &lt;&gt; $value]</code></pre>
 <p>通过节点列表创建经过筛选的属性列表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[x IN list WHERE x.prop &lt;&gt; $value | x.prop]</span><br></pre></td></tr></table></figure>
+<pre><code>[x IN list WHERE x.prop &lt;&gt; $value | x.prop]</code></pre>
 <blockquote>
 <p>列表谓词逻辑判断（全真、任意、全假、唯一的条件成立时返回true，否则返回false）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">all(variable IN list WHERE predicate)</span><br><span class="line">any(variable IN list WHERE predicate)</span><br><span class="line">none(variable IN list WHERE predicate)</span><br><span class="line">single(variable IN list WHERE predicate)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>all(variable IN list WHERE predicate)
+any(variable IN list WHERE predicate)
+none(variable IN list WHERE predicate)
+single(variable IN list WHERE predicate)</code></pre>
 </blockquote>
 </blockquote>
 <p>列表索引、列表切片</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list[$idx]</span><br><span class="line">list[$startIdx..$endIdx]</span><br></pre></td></tr></table></figure>
-<p>通过 <code>UNWIND</code> 可以将列表中的每一项展开为单独的列<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UNWIND $names AS name</span><br><span class="line">MATCH (n &#123;name: name&#125;)</span><br><span class="line">RETURN avg(n.age)</span><br></pre></td></tr></table></figure></p>
+<pre class="cypher"><code>list[$idx]
+list[$startIdx..$endIdx]</code></pre>
+<p>通过 <code>UNWIND</code> 可以将列表中的每一项展开为单独的列</p>
+<pre class="cypher"><code>UNWIND $names AS name
+MATCH (n &#123;name: name&#125;)
+RETURN avg(n.age)</code></pre>
 <p>通过 <code>IN</code> 可以检查某元素是否在列表中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.property IN [$value1, $value2]</span><br></pre></td></tr></table></figure>
-<h5 id="2-2-2-字典-Map"><a href="#2-2-2-字典-Map" class="headerlink" title="2.2.2. 字典 Map"></a>2.2.2. 字典 Map</h5><p>用花括号声明字典</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;name: &#x27;Alice&#x27;, age: 38,</span><br><span class="line"> address: &#123;city: &#x27;London&#x27;, residential: true&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>n.property IN [$value1, $value2]</code></pre>
+<h5 id="字典-map">2.2.2. 字典 Map</h5>
+<p>用花括号声明字典</p>
+<pre><code>&#123;name: &#39;Alice&#39;, age: 38,
+ address: &#123;city: &#39;London&#39;, residential: true&#125;&#125;</code></pre>
 <p>通过字典的key获取value</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.name, map.age, map.children[0]</span><br></pre></td></tr></table></figure>
-<h5 id="2-2-3-空值-null"><a href="#2-2-3-空值-null" class="headerlink" title="2.2.3. 空值 null"></a>2.2.3. 空值 null</h5><p>空值为 <code>null</code></p>
-<h4 id="2-3-操作符-Operators"><a href="#2-3-操作符-Operators" class="headerlink" title="2.3. 操作符 Operators"></a>2.3. 操作符 Operators</h4><div class="table-container">
+<pre class="cypher"><code>map.name, map.age, map.children[0]</code></pre>
+<h5 id="空值-null">2.2.3. 空值 null</h5>
+<p>空值为 <code>null</code></p>
+<h4 id="操作符-operators">2.3. 操作符 Operators</h4>
 <table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Aggregation operators</td>
 <td><code>DISTINCT</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Property operators</td>
 <td><code>.</code> for static property access, <code>[]</code> for dynamic property access, <code>=</code> for replacing all properties, <code>+=</code> for mutating specific properties</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Mathematical operators</td>
 <td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>^</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Comparison operators</td>
 <td><code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>IS NULL</code>, <code>IS NOT NULL</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>String operators</td>
 <td><code>STARTS WITH</code>, <code>ENDS WITH</code>, <code>CONTAINS</code>, <code>+</code> for concatenation, <code>=~</code> for regex matching</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Boolean operators</td>
 <td><code>AND</code>, <code>OR</code>, <code>XOR</code>, <code>NOT</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Condition operators</td>
 <td><code>CASE</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h5 id="2-3-1-聚合运算符"><a href="#2-3-1-聚合运算符" class="headerlink" title="2.3.1. 聚合运算符"></a>2.3.1. 聚合运算符</h5><p>去重 <code>DISTINCT</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE</span><br><span class="line">  (a:Person &#123;name: &#x27;Anne&#x27;, eyeColor: &#x27;blue&#x27;&#125;),</span><br><span class="line">  (b:Person &#123;name: &#x27;Bill&#x27;, eyeColor: &#x27;brown&#x27;&#125;),</span><br><span class="line">  (c:Person &#123;name: &#x27;Carol&#x27;, eyeColor: &#x27;blue&#x27;&#125;)</span><br><span class="line">WITH [a, b, c] AS ps</span><br><span class="line">UNWIND ps AS p</span><br><span class="line">RETURN DISTINCT p.eyeColor</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p.eyeColor</span><br><span class="line"></span><br><span class="line">&quot;blue&quot;</span><br><span class="line">&quot;brown&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="2-3-2-属性运算符"><a href="#2-3-2-属性运算符" class="headerlink" title="2.3.2. 属性运算符"></a>2.3.2. 属性运算符</h5><p>静态获取属性 <code>.</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE</span><br><span class="line">  (a:Person &#123;name: &#x27;Jane&#x27;, livesIn: &#x27;London&#x27;&#125;),</span><br><span class="line">  (b:Person &#123;name: &#x27;Tom&#x27;, livesIn: &#x27;Copenhagen&#x27;&#125;)</span><br><span class="line">WITH a, b</span><br><span class="line">MATCH (p:Person)</span><br><span class="line">RETURN  p.name</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p.name</span><br><span class="line"></span><br><span class="line">&quot;Jane&quot;</span><br><span class="line">&quot;Tom&quot;</span><br></pre></td></tr></table></figure>
+<h5 id="聚合运算符">2.3.1. 聚合运算符</h5>
+<p>去重 <code>DISTINCT</code></p>
+<pre class="cypher"><code>CREATE
+  (a:Person &#123;name: &#39;Anne&#39;, eyeColor: &#39;blue&#39;&#125;),
+  (b:Person &#123;name: &#39;Bill&#39;, eyeColor: &#39;brown&#39;&#125;),
+  (c:Person &#123;name: &#39;Carol&#39;, eyeColor: &#39;blue&#39;&#125;)
+WITH [a, b, c] AS ps
+UNWIND ps AS p
+RETURN DISTINCT p.eyeColor</code></pre>
+<pre><code>p.eyeColor
+
+&quot;blue&quot;
+&quot;brown&quot;</code></pre>
+<h5 id="属性运算符">2.3.2. 属性运算符</h5>
+<p>静态获取属性 <code>.</code></p>
+<pre class="cypher"><code>CREATE
+  (a:Person &#123;name: &#39;Jane&#39;, livesIn: &#39;London&#39;&#125;),
+  (b:Person &#123;name: &#39;Tom&#39;, livesIn: &#39;Copenhagen&#39;&#125;)
+WITH a, b
+MATCH (p:Person)
+RETURN  p.name</code></pre>
+<pre><code>p.name
+
+&quot;Jane&quot;
+&quot;Tom&quot;</code></pre>
 <blockquote>
 <p>获取嵌套的属性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WITH &#123;person: &#123;name: &#x27;Anne&#x27;, age: 25&#125;&#125; AS p</span><br><span class="line">RETURN p.person.name</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>WITH &#123;person: &#123;name: &#39;Anne&#39;, age: 25&#125;&#125; AS p
+RETURN p.person.name</code></pre>
 </blockquote>
 <p>获取动态计算的属性 <code>[]</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE</span><br><span class="line">  (a:Restaurant &#123;name: &#x27;Hungry Jo&#x27;, rating_hygiene: 10, rating_food: 7&#125;),</span><br><span class="line">  (b:Restaurant &#123;name: &#x27;Buttercup Tea Rooms&#x27;, rating_hygiene: 5, rating_food: 6&#125;),</span><br><span class="line">  (c1:Category &#123;name: &#x27;hygiene&#x27;&#125;),</span><br><span class="line">  (c2:Category &#123;name: &#x27;food&#x27;&#125;)</span><br><span class="line">WITH a, b, c1, c2</span><br><span class="line">MATCH (restaurant:Restaurant), (category:Category)</span><br><span class="line">WHERE restaurant[&quot;rating_&quot; + category.name] &gt; 6</span><br><span class="line">RETURN DISTINCT restaurant.name</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">restaurant.name</span><br><span class="line"></span><br><span class="line">&quot;Hungry Jo&quot;</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE
+  (a:Restaurant &#123;name: &#39;Hungry Jo&#39;, rating_hygiene: 10, rating_food: 7&#125;),
+  (b:Restaurant &#123;name: &#39;Buttercup Tea Rooms&#39;, rating_hygiene: 5, rating_food: 6&#125;),
+  (c1:Category &#123;name: &#39;hygiene&#39;&#125;),
+  (c2:Category &#123;name: &#39;food&#39;&#125;)
+WITH a, b, c1, c2
+MATCH (restaurant:Restaurant), (category:Category)
+WHERE restaurant[&quot;rating_&quot; + category.name] &gt; 6
+RETURN DISTINCT restaurant.name</code></pre>
+<pre><code>restaurant.name
+
+&quot;Hungry Jo&quot;</code></pre>
 <p>替换属性 <code>=</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE (a:Person &#123;name: &#x27;Jane&#x27;, age: 20&#125;)</span><br><span class="line">WITH a</span><br><span class="line">MATCH (p:Person &#123;name: &#x27;Jane&#x27;&#125;)</span><br><span class="line">SET p = &#123;name: &#x27;Ellen&#x27;, livesIn: &#x27;London&#x27;&#125;</span><br><span class="line">RETURN p.name, p.age, p.livesIn</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p.name 	 p.age 	 p.livesIn</span><br><span class="line"></span><br><span class="line">&quot;Ellen&quot;  &lt;null&gt;  &quot;London&quot;</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (a:Person &#123;name: &#39;Jane&#39;, age: 20&#125;)
+WITH a
+MATCH (p:Person &#123;name: &#39;Jane&#39;&#125;)
+SET p = &#123;name: &#39;Ellen&#39;, livesIn: &#39;London&#39;&#125;
+RETURN p.name, p.age, p.livesIn</code></pre>
+<pre><code>p.name   p.age   p.livesIn
+
+&quot;Ellen&quot;  &lt;null&gt;  &quot;London&quot;</code></pre>
 <p>添加属性 <code>+=</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE (a:Person &#123;name: &#x27;Jane&#x27;, age: 20&#125;)</span><br><span class="line">WITH a</span><br><span class="line">MATCH (p:Person &#123;name: &#x27;Jane&#x27;&#125;)</span><br><span class="line">SET p += &#123;name: &#x27;Ellen&#x27;, livesIn: &#x27;London&#x27;&#125;</span><br><span class="line">RETURN p.name, p.age, p.livesIn</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p.name 	 p.age 	 p.livesIn</span><br><span class="line"></span><br><span class="line">&quot;Ellen&quot;  20      &quot;London&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="2-3-3-数学运算符"><a href="#2-3-3-数学运算符" class="headerlink" title="2.3.3. 数学运算符"></a>2.3.3. 数学运算符</h5><p>加 <code>+</code></p>
+<pre class="cypher"><code>CREATE (a:Person &#123;name: &#39;Jane&#39;, age: 20&#125;)
+WITH a
+MATCH (p:Person &#123;name: &#39;Jane&#39;&#125;)
+SET p += &#123;name: &#39;Ellen&#39;, livesIn: &#39;London&#39;&#125;
+RETURN p.name, p.age, p.livesIn</code></pre>
+<pre><code>p.name   p.age   p.livesIn
+
+&quot;Ellen&quot;  20      &quot;London&quot;</code></pre>
+<h5 id="数学运算符">2.3.3. 数学运算符</h5>
+<p>加 <code>+</code></p>
 <p>减 <code>-</code></p>
 <p>乘 <code>*</code></p>
 <p>除 <code>/</code></p>
 <p>模 <code>%</code></p>
 <p>乘方 <code>^</code></p>
-<h5 id="2-3-4-比较运算符"><a href="#2-3-4-比较运算符" class="headerlink" title="2.3.4. 比较运算符"></a>2.3.4. 比较运算符</h5><p>相等 <code>=</code></p>
+<h5 id="比较运算符">2.3.4. 比较运算符</h5>
+<p>相等 <code>=</code></p>
 <p>不相等 <code>&lt;&gt;</code></p>
 <p>小于 <code>&lt;</code></p>
 <p>大于 <code>&gt;</code></p>
@@ -428,110 +523,175 @@
 <p>不为空 <code>IS NOT NULL</code></p>
 <blockquote>
 <p>可进行链式比较：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (n) WHERE 21 &lt; n.age &lt;= 30 RETURN n</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (n) WHERE 21 &lt; n.age &lt;= 30 RETURN n</code></pre>
 <p>等同于</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (n) WHERE 21 &lt; n.age AND n.age &lt;= 30 RETURN n</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (n) WHERE 21 &lt; n.age AND n.age &lt;= 30 RETURN n</code></pre>
 <p>另一个例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &lt; b = c &lt;= d &lt;&gt; e</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>a &lt; b = c &lt;= d &lt;&gt; e</code></pre>
 <p>等同于</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &lt; b AND b = c AND c &lt;= d AND d &lt;&gt; e</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>a &lt; b AND b = c AND c &lt;= d AND d &lt;&gt; e</code></pre>
 </blockquote>
-<h5 id="2-3-5-字符串运算符"><a href="#2-3-5-字符串运算符" class="headerlink" title="2.3.5. 字符串运算符"></a>2.3.5. 字符串运算符</h5><ul>
+<h5 id="字符串运算符">2.3.5. 字符串运算符</h5>
+<ul>
 <li>判断字符串是否以特定内容为开头 <code>STARTS WITH</code></li>
 <li>判断字符串是否以特定内容为结尾 <code>ENDS WITH</code></li>
 <li>判断字符串是否以包含特定内容 <code>CONTAINS</code></li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">WITH [&#x27;John&#x27;, &#x27;Mark&#x27;, &#x27;Jonathan&#x27;, &#x27;Bill&#x27;] AS somenames</span><br><span class="line">UNWIND somenames AS names</span><br><span class="line">WITH names AS candidate</span><br><span class="line">WHERE candidate STARTS WITH &#x27;Jo&#x27;</span><br><span class="line">RETURN candidate</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">candidate</span><br><span class="line"></span><br><span class="line">&quot;John&quot;</span><br><span class="line">&quot;Jonathan&quot;</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>WITH [&#39;John&#39;, &#39;Mark&#39;, &#39;Jonathan&#39;, &#39;Bill&#39;] AS somenames
+UNWIND somenames AS names
+WITH names AS candidate
+WHERE candidate STARTS WITH &#39;Jo&#39;
+RETURN candidate</code></pre>
+<pre><code>candidate
+
+&quot;John&quot;
+&quot;Jonathan&quot;</code></pre>
 <p>字符串拼接 <code>+</code></p>
 <p>字符串模糊匹配 <code>=~</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">WITH [&#x27;mouse&#x27;, &#x27;chair&#x27;, &#x27;door&#x27;, &#x27;house&#x27;] AS wordlist</span><br><span class="line">UNWIND wordlist AS word</span><br><span class="line">WITH word</span><br><span class="line">WHERE word =~ &#x27;.*ous.*&#x27;</span><br><span class="line">RETURN word</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">word</span><br><span class="line"></span><br><span class="line">&quot;mouse&quot;</span><br><span class="line">&quot;house&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="2-3-6-布尔运算符"><a href="#2-3-6-布尔运算符" class="headerlink" title="2.3.6. 布尔运算符"></a>2.3.6. 布尔运算符</h5><p>与 <code>AND</code></p>
+<pre class="cypher"><code>WITH [&#39;mouse&#39;, &#39;chair&#39;, &#39;door&#39;, &#39;house&#39;] AS wordlist
+UNWIND wordlist AS word
+WITH word
+WHERE word =~ &#39;.*ous.*&#39;
+RETURN word</code></pre>
+<pre><code>word
+
+&quot;mouse&quot;
+&quot;house&quot;</code></pre>
+<h5 id="布尔运算符">2.3.6. 布尔运算符</h5>
+<p>与 <code>AND</code></p>
 <p>或 <code>OR</code></p>
 <p>异或 <code>XOR</code></p>
 <p>非 <code>NOT</code></p>
-<h5 id="2-3-7-条件控制运算符"><a href="#2-3-7-条件控制运算符" class="headerlink" title="2.3.7. 条件控制运算符"></a>2.3.7. 条件控制运算符</h5><p>从匹配的 <code>WHEN</code> 值中返回 <code>THEN</code> 值， <code>ELSE</code> 值是可选的，不加 <code>ELSE</code> 则替换为 <code>null</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CASE n.eyes</span><br><span class="line"> WHEN &#x27;blue&#x27; THEN 1</span><br><span class="line"> WHEN &#x27;brown&#x27; THEN 2</span><br><span class="line"> ELSE 3</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-<h4 id="2-4-读取语句"><a href="#2-4-读取语句" class="headerlink" title="2.4. 读取语句"></a>2.4. 读取语句</h4><p>读取查询结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[MATCH WHERE]</span><br><span class="line">[OPTIONAL MATCH WHERE]</span><br><span class="line">[WITH [ORDER BY] [SKIP] [LIMIT]]</span><br><span class="line">RETURN [ORDER BY] [SKIP] [LIMIT]</span><br></pre></td></tr></table></figure>
-<h5 id="2-4-1-MATCH-匹配语句"><a href="#2-4-1-MATCH-匹配语句" class="headerlink" title="2.4.1. MATCH 匹配语句"></a>2.4.1. MATCH 匹配语句</h5><p>匹配所有节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (n)</span><br></pre></td></tr></table></figure>
+<h5 id="条件控制运算符">2.3.7. 条件控制运算符</h5>
+<p>从匹配的 <code>WHEN</code> 值中返回 <code>THEN</code> 值， <code>ELSE</code> 值是可选的，不加 <code>ELSE</code> 则替换为 <code>null</code></p>
+<pre class="cypher"><code>CASE n.eyes
+ WHEN &#39;blue&#39; THEN 1
+ WHEN &#39;brown&#39; THEN 2
+ ELSE 3
+END</code></pre>
+<h4 id="读取语句">2.4. 读取语句</h4>
+<p>读取查询结构</p>
+<pre class="cypher"><code>[MATCH WHERE]
+[OPTIONAL MATCH WHERE]
+[WITH [ORDER BY] [SKIP] [LIMIT]]
+RETURN [ORDER BY] [SKIP] [LIMIT]</code></pre>
+<h5 id="match-匹配语句">2.4.1. MATCH 匹配语句</h5>
+<p>匹配所有节点。</p>
+<pre class="cypher"><code>MATCH (n)</code></pre>
 <p>匹配某标签的所有节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (movie:Movie)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (movie:Movie)</code></pre>
 <p>匹配相关联的节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (director &#123;name: &#x27;Oliver Stone&#x27;&#125;)--(movie)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (director &#123;name: &#39;Oliver Stone&#39;&#125;)--(movie)</code></pre>
 <p>匹配关系。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MATCH (n:Person)-[:KNOWS]-&gt;(m:Person) WHERE n.name = &#x27;Alice&#x27; </span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (n:Person)-[:KNOWS]-&gt;(m:Person) WHERE n.name = &#39;Alice&#39; </code></pre>
 <p>通过 <code>OPTIONAL MATCH</code> 匹配，匹配结果中的缺失值会用 <code>null</code> 代替，若无结果也会返回 <code>null</code> 。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OPTIONAL MATCH (n)-[r]-&gt;(m) </span><br></pre></td></tr></table></figure>
-<h5 id="2-4-2-WHERE-条件语句"><a href="#2-4-2-WHERE-条件语句" class="headerlink" title="2.4.2. WHERE 条件语句"></a>2.4.2. WHERE 条件语句</h5><p>为匹配语句添加约束条件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (n)--&gt;(m) </span><br><span class="line">WHERE n.age = m.age</span><br></pre></td></tr></table></figure>
-<h5 id="2-4-3-RETURN-返回语句"><a href="#2-4-3-RETURN-返回语句" class="headerlink" title="2.4.3. RETURN 返回语句"></a>2.4.3. RETURN 返回语句</h5><p>返回所有变量的值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN *</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>OPTIONAL MATCH (n)-[r]-&gt;(m) </code></pre>
+<h5 id="where-条件语句">2.4.2. WHERE 条件语句</h5>
+<p>为匹配语句添加约束条件。</p>
+<pre class="cypher"><code>MATCH (n)--&gt;(m) 
+WHERE n.age = m.age</code></pre>
+<h5 id="return-返回语句">2.4.3. RETURN 返回语句</h5>
+<p>返回所有变量的值。</p>
+<pre class="cypher"><code>RETURN *</code></pre>
 <p>为结果列使用别名。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN n AS columnName</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>RETURN n AS columnName</code></pre>
 <p>结果去重。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN DISTINCT n</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>RETURN DISTINCT n</code></pre>
 <p>结果排序。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN ORDER BY n.property</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>RETURN ORDER BY n.property</code></pre>
 <p>结果降序/升序排序。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RETURN ORDER BY n.property DESC</span><br><span class="line">RETURN ORDER BY n.property ASC</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>RETURN ORDER BY n.property DESC
+RETURN ORDER BY n.property ASC</code></pre>
 <p>跳过指定数量的结果。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN SKIP $skipNumber</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>RETURN SKIP $skipNumber</code></pre>
 <p>指定返回结果的数量。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN LIMIT $limitNumber</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>RETURN LIMIT $limitNumber</code></pre>
 <p>返回结果数。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RETURN count(*)</span><br></pre></td></tr></table></figure>
-<h5 id="2-4-4-WITH-子查询语句"><a href="#2-4-4-WITH-子查询语句" class="headerlink" title="2.4.4. WITH 子查询语句"></a>2.4.4. WITH 子查询语句</h5><p>WITH 语法类似于 RETURN。它会将查询明确地分为多个部分，可以声明一些变量转移到下一部分。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MATCH (user)-[:FRIEND]-(friend)</span><br><span class="line">WHERE user.name = $name</span><br><span class="line">WITH user, count(friend) AS friends</span><br><span class="line">WHERE friends &gt; 10</span><br><span class="line">RETURN user</span><br></pre></td></tr></table></figure>
-<h5 id="2-4-5-UNION-合并语句"><a href="#2-4-5-UNION-合并语句" class="headerlink" title="2.4.5. UNION 合并语句"></a>2.4.5. UNION 合并语句</h5><p>将多个查询结果合并，合并时需要注意结果列的名称和类型必须匹配。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MATCH (a)-[:KNOWS]-&gt;(b)</span><br><span class="line">RETURN b.name</span><br><span class="line">UNION</span><br><span class="line">MATCH (a)-[:LOVES]-&gt;(b)</span><br><span class="line">RETURN b.name</span><br></pre></td></tr></table></figure>
-<h4 id="2-5-写入语句"><a href="#2-5-写入语句" class="headerlink" title="2.5. 写入语句"></a>2.5. 写入语句</h4><p>只写查询结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(CREATE | MERGE)*</span><br><span class="line">[SET|DELETE|REMOVE|FOREACH]*</span><br><span class="line">[RETURN [ORDER BY] [SKIP] [LIMIT]]</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>RETURN count(*)</code></pre>
+<h5 id="with-子查询语句">2.4.4. WITH 子查询语句</h5>
+<p>WITH 语法类似于 RETURN。它会将查询明确地分为多个部分，可以声明一些变量转移到下一部分。</p>
+<pre class="cypher"><code>MATCH (user)-[:FRIEND]-(friend)
+WHERE user.name = $name
+WITH user, count(friend) AS friends
+WHERE friends &gt; 10
+RETURN user</code></pre>
+<h5 id="union-合并语句">2.4.5. UNION 合并语句</h5>
+<p>将多个查询结果合并，合并时需要注意结果列的名称和类型必须匹配。</p>
+<pre class="cypher"><code>MATCH (a)-[:KNOWS]-&gt;(b)
+RETURN b.name
+UNION
+MATCH (a)-[:LOVES]-&gt;(b)
+RETURN b.name</code></pre>
+<h4 id="写入语句">2.5. 写入语句</h4>
+<p>只写查询结构</p>
+<pre class="cypher"><code>(CREATE | MERGE)*
+[SET|DELETE|REMOVE|FOREACH]*
+[RETURN [ORDER BY] [SKIP] [LIMIT]]</code></pre>
 <p>读写查询结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[MATCH WHERE]</span><br><span class="line">[OPTIONAL MATCH WHERE]</span><br><span class="line">[WITH [ORDER BY] [SKIP] [LIMIT]]</span><br><span class="line">(CREATE | MERGE)*</span><br><span class="line">[SET|DELETE|REMOVE|FOREACH]*</span><br><span class="line">[RETURN [ORDER BY] [SKIP] [LIMIT]]</span><br></pre></td></tr></table></figure>
-<h5 id="2-5-1-CREATE-创建语句"><a href="#2-5-1-CREATE-创建语句" class="headerlink" title="2.5.1. CREATE 创建语句"></a>2.5.1. CREATE 创建语句</h5><p>创建节点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (n)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>[MATCH WHERE]
+[OPTIONAL MATCH WHERE]
+[WITH [ORDER BY] [SKIP] [LIMIT]]
+(CREATE | MERGE)*
+[SET|DELETE|REMOVE|FOREACH]*
+[RETURN [ORDER BY] [SKIP] [LIMIT]]</code></pre>
+<h5 id="create-创建语句">2.5.1. CREATE 创建语句</h5>
+<p>创建节点</p>
+<pre class="cypher"><code>CREATE (n)</code></pre>
 <p>创建带标签的节点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (n:Person)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (n:Person)</code></pre>
 <p>创建带属性的节点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (a &#123;name: &#x27;Andy&#x27;&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (a &#123;name: &#39;Andy&#39;&#125;)</code></pre>
 <p>创建关系</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE (n)-[:LOVES &#123;since: $value&#125;]-&gt;(m)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>CREATE (n)-[:LOVES &#123;since: $value&#125;]-&gt;(m)</code></pre>
 <p>匹配相关节点创建关系</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MATCH (a:Person), (b:Person)</span><br><span class="line">WHERE a.name = &#x27;A&#x27; AND b.name = &#x27;B&#x27;</span><br><span class="line">CREATE (a)-[r:RELTYPE]-&gt;(b)</span><br></pre></td></tr></table></figure>
-<h5 id="2-5-2-SET-设置语句"><a href="#2-5-2-SET-设置语句" class="headerlink" title="2.5.2. SET 设置语句"></a>2.5.2. SET 设置语句</h5><p>设置标签和属性的值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET n:Person</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET n.property1 = $value1, n.property2 = $value2</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET n = $map</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET n += $map</span><br></pre></td></tr></table></figure>
-<h5 id="2-5-3-MERGE-归并语句"><a href="#2-5-3-MERGE-归并语句" class="headerlink" title="2.5.3. MERGE 归并语句"></a>2.5.3. MERGE 归并语句</h5><p>匹配符合条件的节点。若没有符合条件的节点，将根据所设条件创建一个节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MERGE (michael:Person &#123;name: &#x27;Michael Douglas&#x27;&#125;)</span><br><span class="line">RETURN michael</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (a:Person), (b:Person)
+WHERE a.name = &#39;A&#39; AND b.name = &#39;B&#39;
+CREATE (a)-[r:RELTYPE]-&gt;(b)</code></pre>
+<h5 id="set-设置语句">2.5.2. SET 设置语句</h5>
+<p>设置标签和属性的值。</p>
+<pre class="cypher"><code>SET n:Person</code></pre>
+<pre class="cypher"><code>SET n.property1 = $value1, n.property2 = $value2</code></pre>
+<pre class="cypher"><code>SET n = $map</code></pre>
+<pre class="cypher"><code>SET n += $map</code></pre>
+<h5 id="merge-归并语句">2.5.3. MERGE 归并语句</h5>
+<p>匹配符合条件的节点。若没有符合条件的节点，将根据所设条件创建一个节点。</p>
+<pre class="cypher"><code>MERGE (michael:Person &#123;name: &#39;Michael Douglas&#39;&#125;)
+RETURN michael</code></pre>
 <p>归并匹配节点的共性属性，创建新的节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MATCH (person:Person)</span><br><span class="line">MERGE (city:City &#123;name: person.bornIn&#125;)</span><br><span class="line">RETURN person, city</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (person:Person)
+MERGE (city:City &#123;name: person.bornIn&#125;)
+RETURN person, city</code></pre>
 <p>匹配符合条件的节点，并通过 <code>MERGE</code> 为节点创建关系。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MATCH (charlie:Person &#123;name: &#x27;Charlie Sheen&#x27;&#125;), (wallStreet:Movie &#123;title: &#x27;Wall Street&#x27;&#125;)</span><br><span class="line">MERGE (charlie)-[r:ACTED_IN]-&gt;(wallStreet)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>MATCH (charlie:Person &#123;name: &#39;Charlie Sheen&#39;&#125;), (wallStreet:Movie &#123;title: &#39;Wall Street&#39;&#125;)
+MERGE (charlie)-[r:ACTED_IN]-&gt;(wallStreet)</code></pre>
 <blockquote>
 <p>注意 <code>MERGE</code> 并不能将标签和属性完全相同的节点合并为同一个，而是以寻找节点共性、创建共性新节点的功能存在。在创建关系时也经常使用 <code>MERGE</code> 。</p>
 </blockquote>
-<h5 id="2-5-4-DELETE-删除语句"><a href="#2-5-4-DELETE-删除语句" class="headerlink" title="2.5.4. DELETE 删除语句"></a>2.5.4. DELETE 删除语句</h5><p>删除节点和关系。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE n, r</span><br></pre></td></tr></table></figure>
+<h5 id="delete-删除语句">2.5.4. DELETE 删除语句</h5>
+<p>删除节点和关系。</p>
+<pre class="cypher"><code>DELETE n, r</code></pre>
 <p>通过 <code>DETACH DELETE</code> 分离式删除，将会删除节点以及节点所有的关系。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DETACH DELETE n</span><br></pre></td></tr></table></figure>
-<h5 id="2-5-5-REMOVE-移除语句"><a href="#2-5-5-REMOVE-移除语句" class="headerlink" title="2.5.5. REMOVE 移除语句"></a>2.5.5. REMOVE 移除语句</h5><p>移除标签和属性。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REMOVE n:Person, n.property</span><br></pre></td></tr></table></figure>
-<h5 id="2-5-6-FOREACH-遍历语句"><a href="#2-5-6-FOREACH-遍历语句" class="headerlink" title="2.5.6. FOREACH 遍历语句"></a>2.5.6. FOREACH 遍历语句</h5><p>遍历指定内容。</p>
+<pre class="cypher"><code>DETACH DELETE n</code></pre>
+<h5 id="remove-移除语句">2.5.5. REMOVE 移除语句</h5>
+<p>移除标签和属性。</p>
+<pre class="cypher"><code>REMOVE n:Person, n.property</code></pre>
+<h5 id="foreach-遍历语句">2.5.6. FOREACH 遍历语句</h5>
+<p>遍历指定内容。</p>
 <p>为路径中的所有关系添加属性。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FOREACH (r IN relationships(path) | SET r.marked = true)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>FOREACH (r IN relationships(path) | SET r.marked = true)</code></pre>
 <p>为列表中的每个值创建 <code>name</code> 为这个值的 <code>Person</code> 节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FOREACH (value IN coll | CREATE (:Person &#123;name: value&#125;))</span><br></pre></td></tr></table></figure>
-<h5 id="2-5-7-LOAD-CSV-导入语句"><a href="#2-5-7-LOAD-CSV-导入语句" class="headerlink" title="2.5.7. LOAD CSV 导入语句"></a>2.5.7. LOAD CSV 导入语句</h5><p>将需要导入的文件放进 neo4j 目录下 import 文件夹中， <code>&#39;file:///filename.csv&#39;</code>为导入路径，也可输入绝对路径进行导入。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LOAD CSV FROM &#x27;file:///artists.csv&#x27; AS line</span><br><span class="line">CREATE (:Artist &#123;name: line[1], year: toInteger(line[2])&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>FOREACH (value IN coll | CREATE (:Person &#123;name: value&#125;))</code></pre>
+<h5 id="load-csv-导入语句">2.5.7. LOAD CSV 导入语句</h5>
+<p>将需要导入的文件放进 neo4j 目录下 import 文件夹中， <code>'file:///filename.csv'</code>为导入路径，也可输入绝对路径进行导入。</p>
+<pre class="cypher"><code>LOAD CSV FROM &#39;file:///artists.csv&#39; AS line
+CREATE (:Artist &#123;name: line[1], year: toInteger(line[2])&#125;)</code></pre>
 <p>若csv文件中有headers，可使用以下方式导入。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LOAD CSV WITH HEADERS FROM &#x27;file:///artists-with-headers.csv&#x27; AS line</span><br><span class="line">CREATE (:Artist &#123;name: line.Name, year: toInteger(line.Year)&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>LOAD CSV WITH HEADERS FROM &#39;file:///artists-with-headers.csv&#39; AS line
+CREATE (:Artist &#123;name: line.Name, year: toInteger(line.Year)&#125;)</code></pre>
 <p>当导入数据量较大时，可以设置执行一定数量行后自动提交一次事物。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:auto USING PERIODIC COMMIT</span><br><span class="line">LOAD CSV WITH HEADERS FROM &#x27;file:///artists-with-headers.csv&#x27; AS line</span><br><span class="line">CREATE (:Artist &#123;name: line.Name, year: toInteger(line.Year)&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="cypher"><code>:auto USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM &#39;file:///artists-with-headers.csv&#39; AS line
+CREATE (:Artist &#123;name: line.Name, year: toInteger(line.Year)&#125;)</code></pre>
 
         </div>
 
@@ -630,7 +790,7 @@
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/%E8%AF%95%E9%A2%98/">试题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
     </div>
   </div>
 
@@ -640,7 +800,7 @@
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/" rel="tag">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA/" rel="tag">知识表示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/KR/" rel="tag">KR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">计算机,数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机,数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%BD%91%E7%BB%9C/" rel="tag">计算机,网络</a></li></ul>
     </div>
   </div>
 

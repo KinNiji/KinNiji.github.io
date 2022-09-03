@@ -577,74 +577,6 @@
 <li>某一位哲学家主动放下右手的筷子</li>
 <li>某哲学家暴力夺取邻近哲学家的筷子</li>
 </ul>
-<h1 id="数据库">数据库</h1>
-<h3 id="模型">模型</h3>
-<p>概念数据模型：实体联系模型(E-R模型)、扩充的实体联系模型(EER模型)、面向对象模型、谓词模型</p>
-<h3 id="关系代数">关系代数</h3>
-<figure>
-<img src="关系代数.png" alt="关系代数" /><figcaption aria-hidden="true">关系代数</figcaption>
-</figure>
-<p>交换律：选择、自然连接、集合的并交</p>
-<p>分配率：投影的并、选择的并交差</p>
-<p>结合率：集合的并交、自然连接</p>
-<p>关系代数的操作可分为三类：</p>
-<p>基于传统集合论的操作：这类操作讲关系看成是元组的集合,其操作是从关系的“水平”向，即行的角度来进行的，有并、交、差、笛卡尔积。</p>
-<p>专门的关系操作：这列操作又可分为一元操作和二元操作。一元操作有选择和投影；二元操作有连接和除。连接操作又包括θ连接、等值连接和自然连接。</p>
-<p>扩充的关系操作：这类操作主要有广义投影、赋值、外连接、半连接、聚集、外部并等。并、差、笛卡尔积、投影和选择这五种操作称为基本的操作。</p>
-<h3 id="参照完整性">参照完整性</h3>
-<p>参照关系=从关系：外码所在的关系</p>
-<p>被参照关系=主关系：以外码作为主码的关系</p>
-<p>外码并不一定要与相应的主码同名。</p>
-<p>参照完整性规则：</p>
-<p>若属性（或属性值）F是关系R的外码，它与关系S的主码Ks相对应(关系R和S不一定是不同的关系)，则对于R中每个元组在F上的值必须满足：</p>
-<ul>
-<li>或者取空值(F的每个属性值均为空值)</li>
-<li>或者等于S中某个元组的主码值</li>
-</ul>
-<h3 id="armstrong公理系统">Armstrong公理系统</h3>
-<p>设 F 是属性组 U 上的一组函数依赖，于是有如下推理规则：</p>
-<ul>
-<li>自反律：若 Y ⊆ X ⊆ U，则 X → Y 为 F 所逻辑蕴含</li>
-<li>增广律：若 X → Y 为 F 所逻辑蕴含，且 Z ⊆ U，则 XZ → YZ 为 F 所逻辑蕴含</li>
-<li>传递律：若 X → Y 及 Y → Z 为 F 所逻辑蕴含，则 X → Z 为 F 所逻辑蕴含</li>
-</ul>
-<p>根据Armstrong公理系统的三条推理规则，可以得到如下推理规则：</p>
-<ul>
-<li>合并规则：由 X → Y， X → Z，有 X → YZ</li>
-<li>伪传递规则：由 X → Y，WY → Z，有 XW → Z</li>
-<li>分解规则：由 X → Y，Z ⊆ Y，有 X → Z</li>
-</ul>
-<h3 id="模式分解">模式分解</h3>
-<p>分解具有无损连接性和分解保持函数依赖是两个相互独立的标准。</p>
-<p>具有无损连接性的分解不定保持函数依赖，保持函数依赖的分解不一定具有无损连接性。</p>
-<p>关系模式的个分解可能是具有无损连接性，可能是保持函数依赖的，也可能是既具有无损连接性又保持函数依赖的。</p>
-<h4 id="无损连接">无损连接</h4>
-<p>达到BCNF，并进一步达到4NF</p>
-<p>若对于 R 的任何一个可能取值 r，都有 r 在 R1，R2，...，Rn 上的投影的自然连接等于 r</p>
-<h4 id="函数依赖">函数依赖</h4>
-<p>达到3NF，但不一定达到BCNF</p>
-<p>F 所逻辑蕴含的函数依赖一定也由分解得到的各个关系模式中的函数依赖所逻辑蕴含</p>
-<ul>
-<li>若 X → Y，Y ⊆ X，则称 X → Y 为平凡的函数依赖</li>
-<li>若 X → Y，Y ⊄ X，则称 X → Y 为非平凡的函数依赖</li>
-</ul>
-<h4 id="多值依赖">多值依赖</h4>
-<p>性质：</p>
-<ul>
-<li>若 X →→ Y，则 X →→ Z，其中 Z = U - X - Y，即多值依赖具有对称性
-<ul>
-<li>推论：若 Z = ∅，则 X →→ Y</li>
-</ul></li>
-<li>若 X → Y，则 X →→ Y，即函数依赖可以看做多值依赖的特殊情况</li>
-<li>若 XY ⊆ W ⊆ U，那么当 X →→ Y 在 R(U) 上成立时，X →→ Y 也在 R(W) 上成立</li>
-<li>若 X →→ Y 在 R(U) 上成立，且 Y’ ⊆ Y，<strong>不能</strong>断言 X →→Y‘ 在 R(U) 上成立</li>
-<li>若 X → Y 在 R(U) 上成立，且 Y’ ⊆ Y，那么肯定 X → Y' 在 R(U) 上成立。</li>
-</ul>
-<h3 id="事务的acid性质">事务的ACID性质</h3>
-<p>原子性(Atomicity)</p>
-<p>一致性(Consistency)</p>
-<p>隔离性(Isolation)</p>
-<p>持久性(Durability)</p>
 
         </div>
 
@@ -743,7 +675,7 @@
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/%E8%AF%95%E9%A2%98/">试题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
     </div>
   </div>
 
@@ -753,7 +685,7 @@
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/" rel="tag">MATLAB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E8%A1%A8%E7%A4%BA/" rel="tag">知识表示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/KR/" rel="tag">KR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">计算机,数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机,数据库,Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%BD%91%E7%BB%9C/" rel="tag">计算机,网络</a></li></ul>
     </div>
   </div>
 
