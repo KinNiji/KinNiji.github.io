@@ -8,25 +8,25 @@
     
     <title>Neo4j快速入门 | NijiBlog</title>
 
-    <meta name="description" content="NijiBlog">
-    <meta name="keywords" content="">
+    <meta name="description" content="笔记">
+    <meta name="keywords" content="blog">
 
     
 
-    <meta property="og:locale" content="cn" />
+    <meta property="og:locale" content="cn,ja,default" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content= "Neo4j快速入门 | NijiBlog"  />
-    <meta property="og:description" content= "NijiBlog" />
+    <meta property="og:description" content= "笔记" />
     <meta property="og:url" content="https://kinniji.github.io/Neo4j%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html" />
     <meta property="og:site_name" content="" />
     <meta property="article:author" content="Niji" />
     <meta property="article:publisher" content="" />
-    <meta property="og:description" content="NijiBlog" />
+    <meta property="og:description" content="笔记" />
     <meta name="twitter:title" content="Neo4j快速入门 | NijiBlog"/>
-    <meta name="twitter:description" content="NijiBlog"/>
+    <meta name="twitter:description" content="笔记"/>
     <script type="application/ld+json">
         {
-            "description": "NijiBlog",
+            "description": "笔记",
             "author": { "@type": "Person", "name": "Niji" },
             "@type": "BlogPosting",
             "url": "https://kinniji.github.io/Neo4j%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html",
@@ -34,7 +34,7 @@
             "@type": "Organization",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://KinNiji.github.ioundefined"
+                "url": "https://KinNiji.github.io/images/avatar.jpg"
             },
             "name": "Niji"
             },
@@ -85,17 +85,17 @@
 
     </script>
 
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
 
     <div class="container">
     <header class="header">
         <div class="header-type">
+            
+            <div class="header-type-avatar avatar avatar-sm">
+                <img src="/images/avatar.jpg" alt="Niji">
+            </div>
             
             <div class="header-type-inner">
                 
@@ -111,13 +111,19 @@
         <div class="header-menu">
             <div class="header-menu-inner">
                 
-                <a href="/">Home</a>
+                <a href="/">首页</a>
                 
-                <a href="/archives">Archives</a>
+                <a href="/archives">归档</a>
+                
+                <a href="/friends">收藏</a>
                 
             </div>
             <div class="header-menu-social">
                 
+    <a class="social" target="_blank" href="https://github.com/KinNiji">
+        <ion-icon name="github"></ion-icon>
+    </a>
+
     <a class="social" target="_blank" href="">
         <ion-icon name=""></ion-icon>
     </a>
@@ -141,9 +147,11 @@
                 </div>
                 <div class="header-menu-mobile-menu-list">
                     
-                    <a href="/">Home</a>
+                    <a href="/">首页</a>
                     
-                    <a href="/archives">Archives</a>
+                    <a href="/archives">归档</a>
+                    
+                    <a href="/friends">收藏</a>
                     
                 </div>
             </div>
@@ -188,16 +196,20 @@
 
             
             <div class="article-category">
-                <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+                <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
             </div>
             
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机 - 数据库 - Neo4j</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
             </div>
             
 
+            
+            <div class="article-busuanzi">
+                <span id="busuanzi_value_page_pv">N</span> 人看过
+            </div>
             
 
         </div>
@@ -421,32 +433,32 @@
 <p>The following naming conventions are recommended:</p>
 <table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 47%" />
-<col style="width: 37%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Graph entity</th>
-<th>Recommended style</th>
-<th>Example</th>
+<th style="text-align: center;">Graph entity</th>
+<th style="text-align: center;">Recommended style</th>
+<th style="text-align: center;">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Node label</td>
-<td>Camel case, beginning with an upper-case character</td>
-<td><code>:VehicleOwner</code> rather than <code>:vehice_owner</code></td>
+<td style="text-align: center;">Node label</td>
+<td style="text-align: center;">Camel case, beginning with an upper-case character</td>
+<td style="text-align: center;"><code>:VehicleOwner</code> rather than <code>:vehice_owner</code></td>
 </tr>
 <tr class="even">
-<td>Relationship type</td>
-<td>Upper case, using underscore to separate words</td>
-<td><code>:OWNS_VEHICLE</code> rather than <code>:ownsVehicle</code></td>
+<td style="text-align: center;">Relationship type</td>
+<td style="text-align: center;">Upper case, using underscore to separate words</td>
+<td style="text-align: center;"><code>:OWNS_VEHICLE</code> rather than <code>:ownsVehicle</code></td>
 </tr>
 <tr class="odd">
-<td>Property</td>
-<td>Lower camel case, beginning with a lower-case character</td>
-<td><code>firstName</code> rather than <code>first_name</code></td>
+<td style="text-align: center;">Property</td>
+<td style="text-align: center;">Lower camel case, beginning with a lower-case character</td>
+<td style="text-align: center;"><code>firstName</code> rather than <code>first_name</code></td>
 </tr>
 </tbody>
 </table>
@@ -456,13 +468,13 @@
 <p>The example we’re going to explore is a social network—a set of users who can be friends with each other. Figure 1.1 illustrates the social network, where users connected with arrows are friends.</p>
 <blockquote>
 <h6 id="figure-users-and-their-friends-represented-as-a-graph-data-structure">Figure: Users and their friends represented as a graph data structure</h6>
-<p><img src="\f1.png" alt="f1" style="zoom: 80%;" /></p>
+<p><img src="../images/f1.png" alt="f1" style="zoom: 80%;" /></p>
 </blockquote>
 <h5 id="graph-data-in-a-relational-database">1.2.1.1. Graph data in a relational database</h5>
 <p>In a relational database, you’d typically have two relational tables for storing social network data: one for user information, and another for the relationships between users.</p>
 <blockquote>
 <p>Figure: SQL diagram of tables representing user and friend data</p>
-<p><img src="\f2.png" alt="f2" style="zoom:80%;" /></p>
+<p><img src="../images/f2.png" alt="f2" style="zoom:80%;" /></p>
 </blockquote>
 <p>The following listing shows the SQL script for creating tables using a MySQL database.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> t_user ( </span>
@@ -508,31 +520,31 @@
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Depth</th>
-<th>Execution time (seconds) for 1,000 users</th>
-<th>Count result</th>
+<th style="text-align: center;">Depth</th>
+<th style="text-align: center;">Execution time (seconds) for 1,000 users</th>
+<th style="text-align: center;">Count result</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2</td>
-<td>0.028</td>
-<td>~900</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.028</td>
+<td style="text-align: center;">~900</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">3</td>
-<td>0.213</td>
-<td>~999</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.213</td>
+<td style="text-align: center;">~999</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">4</td>
-<td>10.273</td>
-<td>~999</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">10.273</td>
+<td style="text-align: center;">~999</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">5</td>
-<td>92.613</td>
-<td>~999</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">92.613</td>
+<td style="text-align: center;">~999</td>
 </tr>
 </tbody>
 </table>
@@ -552,31 +564,31 @@
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Depth</th>
-<th>Execution time (seconds) for 1,000 users</th>
-<th>Count result</th>
+<th style="text-align: center;">Depth</th>
+<th style="text-align: center;">Execution time (seconds) for 1,000 users</th>
+<th style="text-align: center;">Count result</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2</td>
-<td>0.04</td>
-<td>~900</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">~900</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">3</td>
-<td>0.06</td>
-<td>~999</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">~999</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">4</td>
-<td>0.07</td>
-<td>~999</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">~999</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">5</td>
-<td>0.07</td>
-<td>~999</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">~999</td>
 </tr>
 </tbody>
 </table>
@@ -592,31 +604,31 @@
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Depth</th>
-<th>Execution time (seconds) for 1 million users</th>
-<th>Count result</th>
+<th style="text-align: center;">Depth</th>
+<th style="text-align: center;">Execution time (seconds) for 1 million users</th>
+<th style="text-align: center;">Count result</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2</td>
-<td>0.016</td>
-<td>~2,500</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.016</td>
+<td style="text-align: center;">~2,500</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">3</td>
-<td>30.267</td>
-<td>~125,000</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">30.267</td>
+<td style="text-align: center;">~125,000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">4</td>
-<td>1,543.505</td>
-<td>~600,000</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1,543.505</td>
+<td style="text-align: center;">~600,000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">5</td>
-<td>Not finished</td>
-<td>—</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">Not finished</td>
+<td style="text-align: center;">—</td>
 </tr>
 </tbody>
 </table>
@@ -633,31 +645,31 @@
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Depth</th>
-<th>Execution time (seconds) for 1 million users</th>
-<th>Count result</th>
+<th style="text-align: center;">Depth</th>
+<th style="text-align: center;">Execution time (seconds) for 1 million users</th>
+<th style="text-align: center;">Count result</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2</td>
-<td>0.01</td>
-<td>~2,500</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">~2,500</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">3</td>
-<td>0.168</td>
-<td>~125,000</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.168</td>
+<td style="text-align: center;">~125,000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">4</td>
-<td>1.359</td>
-<td>~600,000</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1.359</td>
+<td style="text-align: center;">~600,000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">5</td>
-<td>2.132</td>
-<td>~800,000</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2.132</td>
+<td style="text-align: center;">~800,000</td>
 </tr>
 </tbody>
 </table>
@@ -666,88 +678,88 @@
 <p>The main reason for Neo4j’s predictability is the localized nature of the graph traversal; irrespective of how many nodes and relationships are in the graph, the traversal will only visit ones that are connected to the starting node, according to the traversal rules. Remember, relational join operations compute the Cartesian product before discarding irrelevant results, affecting performance exponentially with the growth of the data set. Neo4j, however, only visits nodes that are relevant to the traversal, so it’s able to maintain predictable performance regardless of the total data set size. The more nodes the traversal has to visit, the slower the traversal, as you’ve seen while increasing the traversal depth. But this increase is linear and is still independent of the total graph size.</p>
 <p>These experiments demonstrate that the Neo4j graph database is significantly faster in querying graph data than using a relational database. In addition, a single Neo4j instance can handle data sets of three orders of magnitude without performance penalties. The independence of traversal performance on graph size is one of the key aspects that make Neo4j an ideal candidate for solving graph problems, even when data sets are very large.</p>
 <h4 id="对比其它非关系型数据库">1.2.2. 对比其它非关系型数据库</h4>
-<p><img src="\f3.png" alt="f3" style="zoom:50%;" /></p>
+<p><img src="../images/f3.png" alt="f3" style="zoom:50%;" /></p>
 <table>
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 42%" />
-<col style="width: 37%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>NoSQL category</th>
-<th>Typical use cases</th>
-<th>Best-known technologies</th>
+<th style="text-align: center;">NoSQL category</th>
+<th style="text-align: center;">Typical use cases</th>
+<th style="text-align: center;">Best-known technologies</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Key-value stores</td>
-<td>■ Caches<br/>■ Simple domain with fast read access<br/>■ Massively concurrent systems</td>
-<td>■ Redis<br/>■ Memcached<br/>■ Tokyo Cabinet</td>
+<td style="text-align: center;">Key-value stores</td>
+<td style="text-align: center;">■ Caches<br/>■ Simple domain with fast read access<br/>■ Massively concurrent systems</td>
+<td style="text-align: center;">■ Redis<br/>■ Memcached<br/>■ Tokyo Cabinet</td>
 </tr>
 <tr class="even">
-<td>Column-family stores</td>
-<td>■ Write on a big scale <br/>■ Collocated data access (for reading and writing)</td>
-<td>■ Cassandra <br/>■ Google BigTable<br/>■ Apache HBase</td>
+<td style="text-align: center;">Column-family stores</td>
+<td style="text-align: center;">■ Write on a big scale <br/>■ Collocated data access (for reading and writing)</td>
+<td style="text-align: center;">■ Cassandra <br/>■ Google BigTable<br/>■ Apache HBase</td>
 </tr>
 <tr class="odd">
-<td>Document-oriented databases</td>
-<td>■ When domain model is a document by nature<br/>■ To simplify development using natural document data structures<br/>■ Highly scalable systems (although on a lower level than the key-value and column family stores)</td>
-<td>■ MongoDB<br/>■ CouchDB</td>
+<td style="text-align: center;">Document-oriented databases</td>
+<td style="text-align: center;">■ When domain model is a document by nature<br/>■ To simplify development using natural document data structures<br/>■ Highly scalable systems (although on a lower level than the key-value and column family stores)</td>
+<td style="text-align: center;">■ MongoDB<br/>■ CouchDB</td>
 </tr>
 <tr class="even">
-<td>Graph databases</td>
-<td>■ With interconnected data<br/>■ Domain can be represented with nodes and relationships naturally<br/>■ Social networks<br/>■ Recommendation engines<br/>■ Access control lists</td>
-<td>■ Neo4j<br/>■ AllegroGraph<br/>■ OrientDB</td>
+<td style="text-align: center;">Graph databases</td>
+<td style="text-align: center;">■ With interconnected data<br/>■ Domain can be represented with nodes and relationships naturally<br/>■ Social networks<br/>■ Recommendation engines<br/>■ Access control lists</td>
+<td style="text-align: center;">■ Neo4j<br/>■ AllegroGraph<br/>■ OrientDB</td>
 </tr>
 </tbody>
 </table>
 <table>
 <colgroup>
-<col style="width: 8%" />
-<col style="width: 12%" />
-<col style="width: 35%" />
-<col style="width: 31%" />
-<col style="width: 11%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>分类</th>
-<th>数据模型</th>
-<th>优势</th>
-<th>劣势</th>
-<th>举例</th>
+<th style="text-align: center;">分类</th>
+<th style="text-align: center;">数据模型</th>
+<th style="text-align: center;">优势</th>
+<th style="text-align: center;">劣势</th>
+<th style="text-align: center;">举例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>键值数据库</td>
-<td>哈希表</td>
-<td>查找速度快</td>
-<td>数据无结构化，通常只被当作字符串或者二进制数据</td>
-<td>Redis</td>
+<td style="text-align: center;">键值数据库</td>
+<td style="text-align: center;">哈希表</td>
+<td style="text-align: center;">查找速度快</td>
+<td style="text-align: center;">数据无结构化，通常只被当作字符串或者二进制数据</td>
+<td style="text-align: center;">Redis</td>
 </tr>
 <tr class="even">
-<td>列存储数据库</td>
-<td>列式数据存储</td>
-<td>查找速度快；支持分布横向扩展；数据压缩率高</td>
-<td>功能相对受限</td>
-<td>HBase</td>
+<td style="text-align: center;">列存储数据库</td>
+<td style="text-align: center;">列式数据存储</td>
+<td style="text-align: center;">查找速度快；支持分布横向扩展；数据压缩率高</td>
+<td style="text-align: center;">功能相对受限</td>
+<td style="text-align: center;">HBase</td>
 </tr>
 <tr class="odd">
-<td>文档型数据库</td>
-<td>键值对扩展</td>
-<td>数据结构要求不严格；表结构可变；不需要预先定义表结构</td>
-<td>查询性能不高，缺乏统一的查询语法</td>
-<td>MongoDB</td>
+<td style="text-align: center;">文档型数据库</td>
+<td style="text-align: center;">键值对扩展</td>
+<td style="text-align: center;">数据结构要求不严格；表结构可变；不需要预先定义表结构</td>
+<td style="text-align: center;">查询性能不高，缺乏统一的查询语法</td>
+<td style="text-align: center;">MongoDB</td>
 </tr>
 <tr class="even">
-<td>图数据库</td>
-<td>节点和关系组成的图</td>
-<td>利用图结构相关算法(最短路径、节点度关系查找等)</td>
-<td>可能需要对整个图做计算，不利于图数据分布存储</td>
-<td>Neo4j、JanusGraph</td>
+<td style="text-align: center;">图数据库</td>
+<td style="text-align: center;">节点和关系组成的图</td>
+<td style="text-align: center;">利用图结构相关算法(最短路径、节点度关系查找等)</td>
+<td style="text-align: center;">可能需要对整个图做计算，不利于图数据分布存储</td>
+<td style="text-align: center;">Neo4j、JanusGraph</td>
 </tr>
 </tbody>
 </table>
@@ -1416,6 +1428,8 @@ CREATE (person)-[:ACTED_IN &#123;role: csvLine.role&#125;]-&gt;(movie)</code></p
 
 
 
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 </div>
                 </section>
             </section>
@@ -1439,7 +1453,7 @@ CREATE (person)-[:ACTED_IN &#123;role: csvLine.role&#125;]-&gt;(movie)</code></p
   <div class="widget-wrap widget-cate">
     <div class="widget-title"><span>Categories</span></div>
     <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%95%E9%A2%98/">试题</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/NLP/">NLP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/KR/">KR</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8C%BB%E5%AD%A6/">医学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/">统计学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/Neo4j/">Neo4j</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BD%91%E7%BB%9C/">网络</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -1449,7 +1463,48 @@ CREATE (person)-[:ACTED_IN &#123;role: csvLine.role&#125;]-&gt;(movie)</code></p
   <div class="widget-wrap widget-tags">
     <div class="widget-title"><span>Tags</span></div>
     <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI-NLP/" rel="tag">AI - NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KR/" rel="tag">KR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BB%E5%AD%A6/" rel="tag">医学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/" rel="tag">统计学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94/" rel="tag">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">计算机 - 数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E6%95%B0%E6%8D%AE%E5%BA%93-Neo4j/" rel="tag">计算机 - 数据库 - Neo4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA-%E7%BD%91%E7%BB%9C/" rel="tag">计算机 - 网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E9%A2%98/" rel="tag">试题</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-recent-posts">
+    <div class="widget-title"><span>Recent Posts</span></div>
+    <div class="widget-inner">
+      <ul>
+        
+          <li>
+            <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+          </li>
+        
+          <li>
+            <a href="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+          </li>
+        
+          <li>
+            <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9B%9B%E7%BA%A7/">数据库四级</a>
+          </li>
+        
+          <li>
+            <a href="/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%EF%BC%88%E5%90%AB%E8%AF%95%E9%A2%98%EF%BC%89/">信息安全（含试题）</a>
+          </li>
+        
+          <li>
+            <a href="/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F%E5%AD%A6%EF%BC%88%E5%90%AB%E8%AF%95%E9%A2%98%EF%BC%89/">医学影像学（含试题）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap widget-archive">
+    <div class="widget-title"><span>Archive</span></div>
+    <div class="widget-inner">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a></li></ul>
     </div>
   </div>
 
@@ -1468,12 +1523,11 @@ CREATE (person)-[:ACTED_IN &#123;role: csvLine.role&#125;]-&gt;(movie)</code></p
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
     </div>
 
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
     <div class="footer-wrap">
         <div class="footer-inner"> 
             NijiBlog &copy; 2022<br>
-            Powered By Hexo · Theme By <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a>
+            Powered By <a href="https://hexo.io/zh-cn/" target="_blank">Hexo</a> ·
+            Theme By <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Aomori</a>
         </div>
     </div>
 
@@ -1503,6 +1557,21 @@ CREATE (person)-[:ACTED_IN &#123;role: csvLine.role&#125;]-&gt;(movie)</code></p
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
