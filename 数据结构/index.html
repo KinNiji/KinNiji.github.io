@@ -1830,20 +1830,22 @@
 <span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">while</span> (top != <span class="dv">0</span>)&#123;</span>
 <span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 访问下标为栈顶元素的顶点结点</span></span>
 <span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>                j = stack[top--];</span>
-<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>                Visited[j] = TRUE;</span>
-<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>                Visit(j, G-&gt;adjList[j].data);</span>
-<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 未被访问过的下标入栈</span></span>
-<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>                <span class="cf">while</span> (p != NULL)&#123;</span>
-<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> (!Visited[p-&gt;adjVex])</span>
-<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>                        stack[++top] = p-&gt;adjVex;</span>
-<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a>                    p = p-&gt;next;</span>
-<span id="cb50-29"><a href="#cb50-29" aria-hidden="true" tabindex="-1"></a>                &#125;</span>
-<span id="cb50-30"><a href="#cb50-30" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 顶点结点的所有表结点下标入栈</span></span>
-<span id="cb50-31"><a href="#cb50-31" aria-hidden="true" tabindex="-1"></a>                p = G-&gt;adjList[j].first;</span>
-<span id="cb50-32"><a href="#cb50-32" aria-hidden="true" tabindex="-1"></a>            &#125;</span>
-<span id="cb50-33"><a href="#cb50-33" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
-<span id="cb50-34"><a href="#cb50-34" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
-<span id="cb50-35"><a href="#cb50-35" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> (!Visited[j])&#123;</span>
+<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>                    Visited[j] = TRUE;</span>
+<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>                    Visit(j, G-&gt;adjList[j].data);</span>
+<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>                    <span class="co">// 顶点结点的所有表结点下标入栈</span></span>
+<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>                    p = G-&gt;adjList[j].first;</span>
+<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>                    <span class="co">// 未被访问过的下标入栈</span></span>
+<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">while</span> (p != NULL)&#123;</span>
+<span id="cb50-29"><a href="#cb50-29" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> (!Visited[p-&gt;adjVex])</span>
+<span id="cb50-30"><a href="#cb50-30" aria-hidden="true" tabindex="-1"></a>                            stack[++top] = p-&gt;adjVex;</span>
+<span id="cb50-31"><a href="#cb50-31" aria-hidden="true" tabindex="-1"></a>                        p = p-&gt;next;</span>
+<span id="cb50-32"><a href="#cb50-32" aria-hidden="true" tabindex="-1"></a>                    &#125;</span>
+<span id="cb50-33"><a href="#cb50-33" aria-hidden="true" tabindex="-1"></a>                &#125;</span>
+<span id="cb50-34"><a href="#cb50-34" aria-hidden="true" tabindex="-1"></a>            &#125;</span>
+<span id="cb50-35"><a href="#cb50-35" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
+<span id="cb50-36"><a href="#cb50-36" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
+<span id="cb50-37"><a href="#cb50-37" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
 <h3 id="广度优先bfs">广度优先BFS</h3>
 <p>依靠队列实现</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BFS_Traverse(ALGraph *G)</span>
@@ -1867,20 +1869,22 @@
 <span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">while</span> (front != rear)&#123;</span>
 <span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 访问下标为队首元素的顶点结点</span></span>
 <span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>                j = queue[++front];</span>
-<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>                Visited[j] = TRUE;</span>
-<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>                Visit(j, G-&gt;adjList[j].data);</span>
-<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 顶点结点的所有表结点下标入队</span></span>
-<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>                p = G-&gt;adjList[j].first;</span>
-<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 未被访问过的下标入队</span></span>
-<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>                <span class="cf">while</span> (p != NULL)&#123;</span>
-<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> (!Visited[p-&gt;adjVex])</span>
-<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>                        queue[++rear] = p-&gt;adjVex;</span>
-<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>                    p = p-&gt;next;</span>
-<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a>                &#125;</span>
-<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a>            &#125;</span>
-<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
-<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
-<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> (!Visited[j])&#123;</span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>                    Visited[j] = TRUE;</span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>                    Visit(j, G-&gt;adjList[j].data);</span>
+<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>                    <span class="co">// 顶点结点的所有表结点下标入队</span></span>
+<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>                    p = G-&gt;adjList[j].first;</span>
+<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>                    <span class="co">// 未被访问过的下标入队</span></span>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">while</span> (p != NULL)&#123;</span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">if</span> (!Visited[p-&gt;adjVex])</span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a>                            queue[++rear] = p-&gt;adjVex;</span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a>                        p = p-&gt;next;</span>
+<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a>                    &#125;</span>
+<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a>                &#125;</span>
+<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a>            &#125;</span>
+<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
+<span id="cb51-36"><a href="#cb51-36" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
+<span id="cb51-37"><a href="#cb51-37" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
 <h2 id="最小生成树算法">最小生成树算法**</h2>
 <h3 id="prim算法">Prim算法</h3>
 <p>从某一个顶点开始构建生成树，每次将代价最小的新定点纳入生成树，直到所有顶点入树。</p>
@@ -1995,7 +1999,7 @@
 <span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Description:</span><span class="co"> Dijkstra算法查找单源最短路径</span></span>
 <span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> ALGraph: 图（邻接链表）</span></span>
 <span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> u: 单源，即顶点u到其余所有顶点的最短路径</span></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: null </span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: null</span></span>
 <span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="co"> **/</span></span>
 <span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>&#123;</span>
 <span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i, j, k;</span>
@@ -2022,23 +2026,13 @@
 <span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a>            &#125;</span>
 <span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a>        final[k] = TRUE;</span>
 <span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a>        <span class="co">// 通过顶点k，上一个的顶点到与顶点k相邻的顶点是否存在更短路径</span></span>
-<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="dt">int</span> l = <span class="dv">0</span>; l &lt; G-&gt;vexNum; l++)</span>
-<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (!final[l] &amp;&amp; dist[k] + G-&gt;adjVec[k][l] &lt; dist[l])&#123;</span>
-<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a>                dist[l] = dist[k] + G-&gt;adjVec[k][l];</span>
-<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a>                pre[l] = k;</span>
+<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (j = <span class="dv">0</span>; j &lt; G-&gt;vexNum; j++)</span>
+<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (!final[j] &amp;&amp; dist[k] + G-&gt;adjVec[k][j] &lt; dist[j])&#123;</span>
+<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a>                dist[j] = dist[k] + G-&gt;adjVec[k][j];</span>
+<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a>                pre[j] = k;</span>
 <span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a>            &#125;</span>
-<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a>        <span class="co">// 输出</span></span>
-<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="dt">int</span> l = <span class="dv">0</span>; l &lt; G-&gt;vexNum; l++)</span>
-<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a>            printf(<span class="st">&quot;%d</span><span class="sc">\t</span><span class="st">&quot;</span>, (<span class="dt">int</span>)final[l]);</span>
-<span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a>        printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
-<span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="dt">int</span> l = <span class="dv">0</span>; l &lt; G-&gt;vexNum; l++)</span>
-<span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a>            printf(<span class="st">&quot;%d</span><span class="sc">\t</span><span class="st">&quot;</span>, (<span class="dt">int</span>)dist[l]);</span>
-<span id="cb54-51"><a href="#cb54-51" aria-hidden="true" tabindex="-1"></a>        printf(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
-<span id="cb54-52"><a href="#cb54-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (<span class="dt">int</span> l = <span class="dv">0</span>; l &lt; G-&gt;vexNum; l++)</span>
-<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a>            printf(<span class="st">&quot;%d</span><span class="sc">\t</span><span class="st">&quot;</span>, pre[l]);</span>
-<span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a>        printf(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>);</span>
-<span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
-<span id="cb54-56"><a href="#cb54-56" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
+<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
+<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
 <h3 id="floyd算法">Floyd算法</h3>
 <p>求图的各顶点间的最短路径</p>
 <p>不能解决带负权值回路的图</p>
@@ -2053,7 +2047,7 @@
 <span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Description:</span><span class="co"> 递归输出Floyd算法两顶点间的最短路径</span></span>
 <span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> i: 顶点i</span></span>
 <span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> j: 顶点j</span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: null </span></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: null</span></span>
 <span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="co"> **/</span></span>
 <span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>&#123;</span>
 <span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (Path[i][j] != -<span class="dv">1</span>)&#123;</span>
@@ -2103,42 +2097,41 @@
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Description:</span><span class="co"> 拓扑排序</span></span>
 <span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> ALGraph: 图（邻接链表）</span></span>
 <span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> topology: 拓扑排序</span></span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: BOOLEAN </span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: BOOLEAN</span></span>
 <span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"> *  TRUE：有拓扑排序</span></span>
 <span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="co"> *  FALSE：图中有环</span></span>
 <span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="co"> **/</span></span>
 <span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>&#123;</span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i, k, adj_k, top = <span class="dv">0</span>, count = <span class="dv">0</span>;</span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>    BOOLEAN <span class="dt">bool</span> = TRUE;</span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> stack[MAX_VEX];</span>
-<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>    ArcLNode *p;</span>
-<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 入度为0的顶点入栈</span></span>
-<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; G-&gt;vexNum; i++)</span>
-<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (G-&gt;adjList[i].inDegree == <span class="dv">0</span>)</span>
-<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>            stack[++top] = G-&gt;adjList[i].data;</span>
-<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (top != <span class="dv">0</span>) &#123;</span>
-<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">// 栈顶出栈</span></span>
-<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a>        k = stack[top--];</span>
-<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>        topology[count++] = k;</span>
-<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a>        p = G-&gt;adjList[k].first;</span>
-<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> (p != NULL)&#123;</span>
-<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 所有顶点k的后继顶点入度减1（删除顶点k为弧尾的所有弧）</span></span>
-<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>            adj_k = p-&gt;adjVex;</span>
-<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>            G-&gt;adjList[adj_k].inDegree--;</span>
-<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 入度为0的顶点入栈</span></span>
-<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (G-&gt;adjList[adj_k].inDegree == <span class="dv">0</span>)</span>
-<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a>                stack[++top] = adj_k;</span>
-<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a>            p = p-&gt;next;</span>
-<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
-<span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
-<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 还原图顶点的入度</span></span>
-<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a>    Count_ALGraph_InDegree(G);</span>
-<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 拓扑序列长度小于顶点数，说明图中有环</span></span>
-<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (count &lt; G-&gt;vexNum)</span>
-<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> FALSE;</span>
-<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> TRUE;</span></code></pre></div>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i, j, adj, stack[MAX_VEX], top = <span class="dv">0</span>, count = <span class="dv">0</span>;</span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>    ArcLNode *p;</span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 入度为0的顶点入栈</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; G-&gt;vexNum; i++)</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (G-&gt;adjList[i].inDegree == <span class="dv">0</span>)</span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>            stack[++top] = G-&gt;adjList[i].data;</span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (top != <span class="dv">0</span>) &#123;</span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">// 栈顶出栈</span></span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a>        j = stack[top--];</span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>        topology[count++] = j;</span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a>        p = G-&gt;adjList[j].first;</span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> (p != NULL)&#123;</span>
+<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 所有顶点k的后继顶点入度减1（删除顶点k为弧尾的所有弧）</span></span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>            adj = p-&gt;adjVex;</span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>            G-&gt;adjList[adj].inDegree--;</span>
+<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 入度为0的顶点入栈</span></span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (G-&gt;adjList[adj].inDegree == <span class="dv">0</span>)</span>
+<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>                stack[++top] = adj;</span>
+<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>            p = p-&gt;next;</span>
+<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
+<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
+<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 还原图顶点的入度</span></span>
+<span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a>    Count_ALGraph_InDegree(G);</span>
+<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 拓扑序列长度小于顶点数，说明图中有环</span></span>
+<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (count &lt; G-&gt;vexNum)</span>
+<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> FALSE;</span>
+<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> TRUE;</span>
+<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
 <h2 id="关键路径">关键路径*</h2>
 <p>AOE网：边表示活动的有向无环图（Activity On Edge），图中顶点表示事件，每个事件表示在其前的所有活动已经完成，其后的活动可以开始；弧表示活动，弧上的权值表示相应活动所需的开销。</p>
 <p>事件的最早发生时间ve：拓扑序列中每个顶点的所有（前驱顶点的最早发生时间+活动开销）的最大值</p>
