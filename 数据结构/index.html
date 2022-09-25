@@ -1187,23 +1187,22 @@
 <span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: null</span></span>
 <span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co"> **/</span></span>
 <span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>&#123;</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    BTLNode *stack[MAX_SIZE];</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    BTLNode *p = T, *q;</span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> top = <span class="dv">0</span>;</span>
-<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (p != NULL || top != <span class="dv">0</span>)&#123;</span>
-<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>        <span class="co">// 指向左子树，循环直至左子树为空</span></span>
-<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (p != NULL)&#123;</span>
-<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>            stack[++top] = p;</span>
-<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>            p = p-&gt;lChild;</span>
-<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>        &#125; <span class="cf">else</span> &#123;</span>
-<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 出栈并访问</span></span>
-<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>            q = stack[top--];</span>
-<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>            Visit(q-&gt;data);</span>
-<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 指向右子树</span></span>
-<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>            p = q-&gt;rChild;</span>
-<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
-<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
-<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    BTLNode *stack[MAX_SIZE], *p = T;</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> top = <span class="dv">0</span>;</span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (p != NULL || top != <span class="dv">0</span>)&#123;</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">// 指向左子树，循环直至左子树为空</span></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (p != NULL)&#123;</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>            stack[++top] = p;</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>            p = p-&gt;lChild;</span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>        &#125; <span class="cf">else</span> &#123;</span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 出栈并访问</span></span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>            p = stack[top--];</span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>            Visit(p-&gt;data);</span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 指向右子树</span></span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>            p = p-&gt;rChild;</span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>        &#125;</span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>    &#125;</span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
 <h4 id="后续遍历">后续遍历</h4>
 <div class="sourceCode" id="cb31"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Postorder_Traverse_Recursion(BTLNode *T)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
@@ -1732,16 +1731,16 @@
 <div class="sourceCode" id="cb46"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Description:</span><span class="co"> 边表</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"> **/</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">struct</span> EdgeLNode&#123;</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">struct</span> EdgeNode&#123;</span>
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 边所依附的两个顶点</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    VexType vex1, vex2;</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> vex1, vex2;</span>
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 边的权重</span></span>
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    WeightType weight;</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>&#125;EdgeLNode, *EdgeList;</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>&#125;EdgeNode;</span>
 <span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">struct</span> EdgeListGraph&#123;</span>
 <span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 边表</span></span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    EdgeList edgeList[MAX_EDGE];</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    EdgeNode edgeList[MAX_EDGE];</span>
 <span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 顶点信息顺序表</span></span>
 <span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>    VexType vexList[MAX_VEX];</span>
 <span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 顶点数、边数</span></span>
@@ -1899,15 +1898,15 @@
 <span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> cost;</span>
 <span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>&#125;closeEdge[MAX_EDGE];</span>
 <span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>EdgeList MST_Prim(ASGraph *G, <span class="dt">int</span> u)</span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>EdgeNode *MST_Prim(ASGraph *G, <span class="dt">int</span> u)</span>
 <span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
 <span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Description:</span><span class="co"> Prime算法构建最小生成树</span></span>
 <span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> ALGraph: 图（邻接矩阵）</span></span>
 <span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> u: 从下标为u的顶点开始构建</span></span>
-<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: EdgeList 边表</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: EdgeSqList 边表</span></span>
 <span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a><span class="co"> **/</span></span>
 <span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>&#123;</span>
-<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>    EdgeList MT = (EdgeLNode *) malloc((G-&gt;vexNum - <span class="dv">1</span>) * <span class="kw">sizeof</span>(EdgeLNode));</span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>    EdgeNode *MT = (EdgeNode *) malloc((G-&gt;vexNum - <span class="dv">1</span>) * <span class="kw">sizeof</span>(EdgeNode));</span>
 <span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i, j, k;</span>
 <span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> min;</span>
 <span id="cb52-25"><a href="#cb52-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 初始化比较数组</span></span>
@@ -1941,14 +1940,14 @@
 <h3 id="kruskal算法">Kruskal算法</h3>
 <p>每次选择一条权值最小的边，使边依附的两个顶点连通（若已经连通则跳过），直到所有顶点连通。</p>
 <p>适用于稀疏图，复杂度<span class="math inline">\(O(|E|log_2|E|)\)</span></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>EdgeList MST_Kruskal(ELGraph *G)</span>
+<div class="sourceCode" id="cb53"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>EdgeNode *MST_Kruskal(ELGraph *G)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Description:</span><span class="co"> Kruskal算法最小生成树</span></span>
 <span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@Param</span><span class="co"> G: 图</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: EdgeList 边表</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="co"> * </span><span class="an">@return</span><span class="co">: EdgeSqList 边表</span></span>
 <span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="co"> **/</span></span>
 <span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>&#123;</span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    EdgeList MT = (EdgeLNode *) malloc((G-&gt;vexNum - <span class="dv">1</span>) * <span class="kw">sizeof</span>(EdgeLNode));</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    EdgeNode *MT = (EdgeNode *) malloc((G-&gt;vexNum - <span class="dv">1</span>) * <span class="kw">sizeof</span>(EdgeNode));</span>
 <span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i, j, k, s1, s2, *Vest = (<span class="dt">int</span> *) malloc(G-&gt;vexNum * <span class="kw">sizeof</span>(<span class="dt">int</span>));</span>
 <span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 初始化连通数组</span></span>
 <span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* 若Vest[i] = Vest[j]，表明Vi和Vj在同一个连通分量中</span></span>
